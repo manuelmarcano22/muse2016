@@ -1,0 +1,5 @@
+#Ignore all the fits files and tile compressed fits. 
+*.fits
+*.fz
+
+#
