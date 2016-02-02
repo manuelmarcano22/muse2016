@@ -28,7 +28,7 @@ I downloaded the frim the observation of the Cluster **NGC 6397**. The observati
 
 
 ## To-Dos
-- [x] Download data to start processing.
+- [x] ~~Download data to start processing.~~
 Downloaded data taken on 2014-08-30 for NGC 6397.
 
 
