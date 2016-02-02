@@ -2,4 +2,7 @@
 *.fits
 *.fz
 
-#
+
+#Ignore the pdf documents from ESO webpage
+ESO*
+
