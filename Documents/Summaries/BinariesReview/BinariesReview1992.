@@ -1,0 +1,114 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Summaries}
+\author{Manuel Pichardo}
+\date{February 2016}
+
+\usepackage[framemethod=TikZ]{mdframed}
+\newcounter{para}[subsubsection]
+
+
+\newcommand{\para}{
+\vspace{.3cm}
+\addtocounter{para}{1}
+\arabic{para}
+\vspace{.3cm}\\
+}
+
+
+
+
+\mdfdefinestyle{MyFrame}{%
+    linecolor=blue,
+    outerlinewidth=2pt,
+    roundcorner=20pt,
+    innertopmargin=\baselineskip,
+    innerbottommargin=\baselineskip,
+    innerrightmargin=20pt,
+    innerleftmargin=20pt,
+    backgroundcolor=gray!50!white}
+
+\begin{document}
+
+\maketitle
+
+\section{Binaries in Globular Clusters}
+
+
+\subsection{Chapter 3}
+
+\subsubsection{Globular Cluster Evolution}
+
+\vspace{.3cm}
+\addtocounter{para}{1}
+\arabic{para}
+\vspace{.3cm}
+
+Stable dynamical equilibrium but not in "thermal" time scale. Evaporation cause core collapse due to "gravothermal instability"
+
+
+
+\begin{itemize}
+    \item Evaporation of stars?
+    \item gravothermal?
+\end{itemize}
+
+
+\vspace{.3cm}
+\addtocounter{para}{1}
+\arabic{para}
+\vspace{.3cm}
+
+Core collpase a few times larget than half-mass relazation time. Posible energy sources to avoid infinite core density:
+
+\begin{enumerate}
+    \item Increae bining enerygy binaries
+    \item Star mass Loss
+    \item Black HOle
+\end{enumerate}
+\begin{itemize}
+    \item Half-mass realization time.
+\end{itemize}
+
+
+
+\subsubsection{Core Collapse}
+
+\para
+Dead by evapolation inevitable but  then shows core collpase happnes before. 
+
+\begin{itemize}
+    \item Negative Head capacity
+\end{itemize}
+
+\para
+IN the 70 discovered X-rays from capture Neutron Stars. Core collpase seen M51. 
+
+\subsubsection{Post-Collpase Evolution}
+
+\para
+Post-collpase and cluster evapolation. Gravothermal oscillations found
+
+\para
+seeing limited cores == sign of core collapse. 
+
+\para
+Core bounce. $r_h \propto t^{2/3}$ and for velocity dispersion $v \propto t^{-1/3}$. Where r is the hlaf-mass radius and t is time since bounce core. 
+
+\para
+derivation result above
+
+\para
+So regardes the half-mass radius expands steadely and as it expands the galaclactic tidal field removes the outermost stars. THe time is longer by only a few factos thatn core-collpase. 
+
+
+
+\subsubsection{Central Enery Source}
+
+
+
+
+
+
+\end{document}
