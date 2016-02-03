@@ -105,5 +105,5 @@ Can work with up to 24 threads. Computer has 28. Found out that with `nproc`. So
 - [x] Do master BIAS file
 - [ ] Find out what darks to use
 - [ ] Find out what Flats to use
-- [x] Do MASTER Flat. **Did it with only three flats.**
+- [x] ~~Do MASTER Flat.~~ **Did it with only three flats.**
 - [ ] How many threads can use with taskset and OMP_NUM_THREAD?
