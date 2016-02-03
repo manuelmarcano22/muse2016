@@ -56,15 +56,15 @@ Downloaded data taken on 2014-08-02 for NGC 6397.
 
 - [x] ~~How to get the type information from header. Can fit it on the header. How many BIAS are needed?~~ All in *HIERARCH ESO ---*. For example.
 
-- [ ] MUSE cal bias and cal bias linearity?. Only cal_bias in the same day.
+- [x] MUSE cal bias and cal bias linearity?. Only cal_bias in the same day. Can use cal_bias simply
 
 - [x] ~~Problem merging Bias works with max of 10 and min of 3.. When 11 doesnt work.~~ Wrong command to use it in parrallell was missing the `taskset` described in Appendix C.
 
 - [ ] They say "Since thre is only a single detector configuration available for MUSE, there is no real need to verify that the detector parameters of the raw data frames and calibartions mathc. 
 
-- [ ] No Darks that same day. 200 in total for MUSE. Which one to use?. Also different ExpTime for the dakrs frm 1200 to 3600. Object is 60. In the Manueal ut says that the dark current is small so the dark is optional. 
+- [x] ~~No Darks that same day. 200 in total for MUSE. Which one to use?. Also different ExpTime for the dakrs frm 1200 to 3600. Object is 60. In the Manueal ut says that the dark current is small so the dark is optional.~~  No darks for now.
 
-- [ ] Many flats that day but only 3 with to that target RA and DEC. Only those 3?
+- [x] ~~Many flats that day but only 3 with to that target RA and DEC. Only those 3?.~~ All Flats of the night. 
 
 - [x] ~~Got problem *"unable to find recipe muse_bias"*.~~. I created a new config file and included where all the libs where the path is: `/opt/reflex/install/lib/esopipes-plugins/muse-1.0.1`
 
@@ -75,6 +75,9 @@ Downloaded data taken on 2014-08-02 for NGC 6397.
 - [ ] How taskset and OMP_NUM_THREAD work. Different numbers?
 
 - [ ] BADPIX_TABLE in flat? It is optional and says: "The use if a bad pixel table may actually degrade the tracing solution if it contains bad colums. 
+
+- [ ] Where to find DPR TYPE WAVE for the wavelength calibration. They should be in MUSE calibration template. 
+
 
 ### Python
 
@@ -103,7 +106,9 @@ Can work with up to 24 threads. Computer has 28. Found out that with `nproc`. So
 ## To-Dos
 - [x] ~~Bias download data.~~ Downloaded 22 Bias from the day 2014-08-01
 - [x] Do master BIAS file
-- [ ] Find out what darks to use
-- [ ] Find out what Flats to use
+- [x] ~~Find out what darks to use.~~ Dont need the darks. Really low Current.
+- [x] ~~Find out what Flats to use.~~ All the LAMP Flats of that night. 
 - [x] ~~Do MASTER Flat.~~ **Did it with only three flats.**
+- [ ] Python and see max value of flats to see if oversaturated.
+- [ ] Do MASTER Flat with all flats of the night
 - [ ] How many threads can use with taskset and OMP_NUM_THREAD?
