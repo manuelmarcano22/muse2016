@@ -1,0 +1,21 @@
+#!/bin/bash
+
+#It creates a set-of-frames (sof) to use the muse_bias routine from esorex 
+#and create a master merged biaS
+
+#If the mastersof.txt was created by the setype.py take the BIAS.
+export MASTERBIASDIR=/home/detoeuf/Manuel/data/2014-08-02
+cat mastersof.txt | grep BIAS > bias.sof 
+
+
+#Call to esorex
+OMP_NUM_THREADS=24 
+taskset -c 0-5 esorex --config=/home/detoeuf/Manuel/data/2014-08-02/esorex.rc  \
+ --output-dir=$MASTERBIASDIR  muse_bias --nifu=-1 --merge bias.sof
+
+
+#The --nifu -1 means to be procees in Parallel. If 0 process serially. OMP_NUM_THREADS sets number of threads. --merge is to profuce a single master bias. 
+
+#We need the MASTER_BIAS to create the flats.
+echo $MASTERBIASDIR/MASTER_BIAS.fits MASTER_BIAS > flat.sof
+
