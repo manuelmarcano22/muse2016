@@ -166,6 +166,12 @@ ds9 -mecube <file>
 
 ## Summary
 
+### Multiprocessing
+
+#### Questions
+
+- [ ] If it doesnt work try pool.close() and pool.join() after the resutls. Try `pool.map_async`.
+
 
 ## Commits
 
