@@ -11,6 +11,7 @@ vecinos = 10
 datamax = filters.uniform_filter(a[3].data, vecinos)
 
 #Median but very slow
+datamax = filters.median_filter(a[3].data, vecinos)
 #median_filter = functools.partial(filters.generic_filter,function=np.median,size=(100,100))
 #datamax = median_filter(a[3].data)
 
