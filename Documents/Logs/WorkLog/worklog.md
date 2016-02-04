@@ -68,7 +68,7 @@ Downloaded data taken on 2014-08-02 for NGC 6397.
 
 - [x] ~~Got problem *"unable to find recipe muse_bias"*.~~. I created a new config file and included where all the libs where the path is: `/opt/reflex/install/lib/esopipes-plugins/muse-1.0.1`
 
-- [ ] Use muse_bias.rc?
+- [x] ~~Use muse_bias.rc?~~ Not for now. 
 
 - [ ] Appendix D Callibations for Commisioning and Science Verification Data. Use those Geometry and Astrometric table and Solution?
 
@@ -76,7 +76,7 @@ Downloaded data taken on 2014-08-02 for NGC 6397.
 
 - [ ] BADPIX_TABLE in flat? It is optional and says: "The use if a bad pixel table may actually degrade the tracing solution if it contains bad colums. 
 
-- [ ] Where to find DPR TYPE WAVE for the wavelength calibration. They should be in MUSE calibration template. 
+- [x] ~~Where to find DPR TYPE WAVE for the wavelength calibration. They should be in MUSE calibration template~. Will download it from online catalog.  
 
 
 ### Python
@@ -112,3 +112,30 @@ Can work with up to 24 threads. Computer has 28. Found out that with `nproc`. So
 - [ ] Python and see max value of flats to see if oversaturated.
 - [ ] Do MASTER Flat with all flats of the night
 - [ ] How many threads can use with taskset and OMP_NUM_THREAD?
+
+
+
+
+
+# Feb-02-2016 IRAP Roche J042
+
+## Summary
+
+
+## Commits
+
+### Flats
+
+I downloaded all the flats produced the night 2014-08-01. Todos son FLAT,LAMPS.
+
+### Questions and Problems:
+
+
+## To-Dos
+
+- [ ] Python and see max value of flats to see if oversaturated.
+- [ ] Do MASTER Flat with all flats of the night
+- [ ] How many threads can use with taskset and OMP_NUM_THREAD?
+- [ ] Find static calibration data.  
+
+
