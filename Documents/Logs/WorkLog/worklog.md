@@ -132,6 +132,11 @@ I downloaded all the flats produced the night 2014-08-01. Todos son FLAT,LAMPS.
 
 The Static Calibration data seems to be in `/opt/reflex/install/calib/muse-1.0.1/cal` but for this particular first data set since it was taken before December 2014 I need to use the ones mentioned in Appendix D. Downloaded it from (ftp://ftp.eso.org/pub/dfs/pipelines/muse/muse-calib-legacy-2015-10-06.tar.gz).
 
+
+### flatsatur.py
+
+This program takes the average around 10 pixesl for each pixel. If in any is higher than 55000 then dont use that flat.
+
 ### ds9
 
 To load an specific extension do:
@@ -155,10 +160,17 @@ ds9 -mecube <file>
 
 
 ## To-Dos
+- [x] ~~Python and see max value of flats to see if oversaturated.~~ Function called flatsatruthreads using getlist.py
+- [x] ~~Find static calibration data.~~  Used the ones mentioned in Appendix D.
+# Feb-04-2016 IRAP Roche J042
 
-- [ ] Python and see max value of flats to see if oversaturated.
+## Summary
+
+
+## Commits
+
+## To-Dos
 - [ ] Do MASTER Flat with all flats of the night
 - [ ] How many threads can use with taskset and OMP_NUM_THREAD?
-- [x] ~~Find static calibration data.~~  Used the ones mentioned in Appendix D.
-
+- [ ] Automate MASTER_BIAS and FLATS.
 

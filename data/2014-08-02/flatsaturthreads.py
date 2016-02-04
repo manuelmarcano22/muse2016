@@ -5,38 +5,20 @@ import fileinput
 import re
 import sys
 import scipy.ndimage.filters as filters
-import thread
-
+import multiprocessing as mp
+from getlist import getlist
 import time
+
 start = time.time()
-
-#List of min values:
-lista = np.zeros(24)
-#Parameters of the filter
-vecinos = 10 
-
-
-nuthreads = 24
-listathreads = np.zeros(nuthreads)
-
-def getlist(Threadid,fitfile,listat):
-	tempa = fitfile
-	datamax = filters.uniform_filter(tempa[Threadid+1].data, vecinos)
-	difftop = datamax > 55000
-	diff = difftop
-	#	diffbot = datamax < 5000
-	#	diff = difftop | diffbot
-	mask = np.where(diff,0,1)
-	listat[Threadid] = mask.min()
+pool = mp.Pool(processes = 4)
 
 
 for line in fileinput.input('mastersof.txt',inplace=True):
-	global listathreads
 	if str(line.split()[1]) == 'FLAT':
 		tempa=fits.open(str(line.split()[0]))
-		for i in range(len(listathreads)):
-			thread.start_new_thread(getlist,(i, tempa, listathreads,)) 
-		if listathreads.sum() == 24 :
+	        results = [pool.apply(getlist, args=(tempa[x].data,)) for x in range(1,25)]
+	        print 'cpu_count() = %d\n' % mp.cpu_count()
+		if np.array(results).sum() == 24 :
 			sys.stdout.write(line)	
 		else:
 			sys.stdout.write(line.replace(line,'#'+line)) 
