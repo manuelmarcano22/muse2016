@@ -45,7 +45,7 @@ hduheado = hdulist[0].header
 Downloaded data taken on 2014-08-02 for NGC 6397.
 
 
-# Feb-02-2016 IRAP Roche J042
+# Feb-03-2016 IRAP Roche J042
 
 ## Summary
 
@@ -117,7 +117,7 @@ Can work with up to 24 threads. Computer has 28. Found out that with `nproc`. So
 
 
 
-# Feb-02-2016 IRAP Roche J042
+# Feb-04-2016 IRAP Roche J042
 
 ## Summary
 
@@ -128,7 +128,30 @@ Can work with up to 24 threads. Computer has 28. Found out that with `nproc`. So
 
 I downloaded all the flats produced the night 2014-08-01. Todos son FLAT,LAMPS.
 
-### Questions and Problems:
+### Static Calibration
+
+The Static Calibration data seems to be in `/opt/reflex/install/calib/muse-1.0.1/cal` but for this particular first data set since it was taken before December 2014 I need to use the ones mentioned in Appendix D. Downloaded it from (ftp://ftp.eso.org/pub/dfs/pipelines/muse/muse-calib-legacy-2015-10-06.tar.gz).
+
+### ds9
+
+To load an specific extension do:
+
+```bash
+ds9 <file>[#ofextension]
+```
+Open all of them in the same window:
+
+```bash
+ds9 -multiframe <file> opens all the 24 
+```
+
+Open then and can see them individually:
+
+```bash
+ds9 -mecube <file> 
+```
+
+
 
 
 ## To-Dos
@@ -136,6 +159,6 @@ I downloaded all the flats produced the night 2014-08-01. Todos son FLAT,LAMPS.
 - [ ] Python and see max value of flats to see if oversaturated.
 - [ ] Do MASTER Flat with all flats of the night
 - [ ] How many threads can use with taskset and OMP_NUM_THREAD?
-- [ ] Find static calibration data.  
+- [x] ~~Find static calibration data.~~  Used the ones mentioned in Appendix D.
 
 
