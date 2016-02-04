@@ -26,7 +26,7 @@ for line in fileinput.input('mastersof.txt',inplace=True):
 		#	diff = difftop | diffbot
 			mask = np.where(diff,0,1)
 			lista[i-1] = mask.min()
-		if mask.min() == 24 :
+		if lista.sum() == 24 :
 			sys.stdout.write(line)	
 		else:
 			sys.stdout.write(line.replace(line,'#'+line)) 
