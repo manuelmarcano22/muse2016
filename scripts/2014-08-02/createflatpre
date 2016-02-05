@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# It creates varous temporary flats to then create a Master one. Have to do tis because not enough RAM for the total number of flats. 
+#It needs the MASTER_BIAS.fits and BADPIXEL table optional. 
+
+export MASTERFLATDIR=/mnt/data/MUSE/2014-08-02
+cd $MASTERFLATDIR
+
+cat mastersof.txt | grep FLAT > flatpre.sof 
+
+#To know how many lines
+#wc -l flatpre.sof | awk '{ print $1}'
+
+#Split the file
+split flatpre.sof -l 4 --numeric-suffixes=1 --suffix-length=1 --additional-suffix=.sof preflat
+
+
+for i in `ls preflat*`;
+do
+echo $MASTERFLATDIR/cal/cal/badpix_table_2014-09-17.fits BADPIX_TABLE >> $i 
+echo $MASTERFLATDIR/MASTER_BIAS.fits MASTER_BIAS >> $i
+OMP_NUM_THREADS=24 
+taskset -c 0-23 esorex --config=/home/detoeuf/Manuel/scripts/2014-08-02/esorex2014-08-02.rc  \
+ --output-dir=$MASTERFLATDIR --time  muse_flat --nifu=-1 --merge $i
+#For some reason --output-prefix didnt work  so do:
+mv MASTER_FLAT.fits $i'MASTER_FLAT.fits'
+rm TRACE_TABLE.fits 
+done
+
+
