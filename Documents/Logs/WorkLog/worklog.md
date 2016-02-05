@@ -41,8 +41,7 @@ hduheado = hdulist[0].header
 
 
 ## To-Dos
-- [x] ~~Download data to start processing.~~
-Downloaded data taken on 2014-08-02 for NGC 6397.
+- [x] ~~Download data to start processing.~~ Downloaded data taken on 2014-08-02 for NGC 6397.
 
 
 # Feb-03-2016 IRAP Roche J042
@@ -60,7 +59,6 @@ Downloaded data taken on 2014-08-02 for NGC 6397.
 
 - [x] ~~Problem merging Bias works with max of 10 and min of 3.. When 11 doesnt work.~~ Wrong command to use it in parrallell was missing the `taskset` described in Appendix C.
 
-- [ ] They say "Since thre is only a single detector configuration available for MUSE, there is no real need to verify that the detector parameters of the raw data frames and calibartions mathc. 
 
 - [x] ~~No Darks that same day. 200 in total for MUSE. Which one to use?. Also different ExpTime for the dakrs frm 1200 to 3600. Object is 60. In the Manueal ut says that the dark current is small so the dark is optional.~~  No darks for now.
 
@@ -70,14 +68,12 @@ Downloaded data taken on 2014-08-02 for NGC 6397.
 
 - [x] ~~Use muse_bias.rc?~~ Not for now. 
 
-- [ ] Appendix D Callibations for Commisioning and Science Verification Data. Use those Geometry and Astrometric table and Solution?
+- [x] ~~Appendix D Callibations for Commisioning and Science Verification Data. Use those Geometry and Astrometric table and Solution?~~ FOund them online.
 
-- [ ] How taskset and OMP_NUM_THREAD work. Different numbers?
 
-- [ ] BADPIX_TABLE in flat? It is optional and says: "The use if a bad pixel table may actually degrade the tracing solution if it contains bad colums. 
+- [x] ~~BADPIX_TABLE in flat? It is optional and says: "The use if a bad pixel table may actually degrade the tracing solution if it contains bad colums. ~~ Used the one in cal folder.
 
 - [x] ~~Where to find DPR TYPE WAVE for the wavelength calibration. They should be in MUSE calibration template~. Will download it from online catalog.  
-
 
 ### Python
 
@@ -109,10 +105,6 @@ Can work with up to 24 threads. Computer has 28. Found out that with `nproc`. So
 - [x] ~~Find out what darks to use.~~ Dont need the darks. Really low Current.
 - [x] ~~Find out what Flats to use.~~ All the LAMP Flats of that night. 
 - [x] ~~Do MASTER Flat.~~ **Did it with only three flats.**
-- [ ] Python and see max value of flats to see if oversaturated.
-- [ ] Do MASTER Flat with all flats of the night
-- [ ] How many threads can use with taskset and OMP_NUM_THREAD?
-
 
 
 
@@ -166,17 +158,43 @@ ds9 -mecube <file>
 
 ## Summary
 
+
+## Questions
+
+- [ ] How taskset and OMP_NUM_THREAD work. Different numbers?
+- [ ] They say "Since thre is only a single detector configuration available for MUSE, there is no real need to verify that the detector parameters of the raw data frames and calibartions mathc. 
+
+
 ### Multiprocessing
 
-#### Questions
+### Memory Overload RAM
 
-- [ ] If it doesnt work try pool.close() and pool.join() after the resutls. Try `pool.map_async`.
+There is a problem with the 60 flats and ARC that I have. I only have 30 GB of ram so need to run them in part then combine them to get the final one. Can do it with option
+
+`output-prefix`
+
+### task set
+
+found in (https://www.eso.org/sci/activities/santiago/projects/sc-computing.html) should run it like:
+
+`taskset -c 0-23 esorex ...`
+
+
+### Data
+
+The data is now in the path: `/mnt/data/MUSE` 
 
 
 ## Commits
 
 ## To-Dos
+- [ ] Do MASTER Flat with all flats of the night and BADPIXEL Table.
+- [x] Download all the arc-lamp and 
+- [ ] Do the wavelength calibration
+- [ ] How many threads can use with taskset and OMP_NUM_THREAD?
+- [ ] Automate MASTER_BIAS and FLATS. The problem is that it comsumes too much memory. 
+- [ ] Python and see max value of flats to see if oversaturated.
 - [ ] Do MASTER Flat with all flats of the night
 - [ ] How many threads can use with taskset and OMP_NUM_THREAD?
-- [ ] Automate MASTER_BIAS and FLATS.
+
 
