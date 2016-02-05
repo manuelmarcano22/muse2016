@@ -4,6 +4,9 @@ from astropy.io import fits
 import os
 import glob
 
+#Change to where the data is:
+os.chdir('/mnt/data/MUSE/2014-08-02')
+
 files = glob.glob('*.fz')
 dictype = {'BIAS': 'BIAS','DARK': 'DARK','FLAT,LAMP':'FLAT','LAMP,FLAT': 'FLAT','FLAT,SKY':'SKYFLAT','SKY,FLAT': 'SKYFLAT','WAVE':'ARC','WAVE,MASK':'MASK','MASK,WAVE':'MASK','STD':'STD','ASTROMETRY':'ASTROMETRY','SKY':'SKY','OBJECT':'OBJECT','FLAT,LAMP,ILLUM':'ILLUM'}
 mastersof = open('mastersof.txt','w')

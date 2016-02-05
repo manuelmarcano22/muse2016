@@ -1,0 +1,23 @@
+#!/bin/bash
+
+#It creates the sof for the flat and then execute the command to create a master flat.
+#It needs the MASTER_BIAS.fits and BADPIXEL table optional. 
+
+export MASTERFLATDIR=/mnt/data/MUSE/2014-08-02
+cd $MASTERFLATDIR
+
+cat mastersof.txt | grep FLAT > flat.sof 
+#cat mastersof.txt | grep FLAT | head -20  > flat.sof 
+
+# BADPixel table from science verification as said appendix in Muse manual
+echo $MASTERFLATDIR/cal/cal/badpix_table_2014-09-17.fits BADPIX_TABLE >> flat.sof
+echo $MASTERFLATDIR/MASTER_BIAS.fits MASTER_BIAS >> flat.sof
+
+#OMP_NUM_THREADS=24 
+taskset -c 0-5 esorex --config=/home/detoeuf/Manuel/scripts/2014-08-02/esorex2014-08-02.rc  \
+ --output-dir=$MASTERFLATDIR muse_flat --nifu=-1 --merge flat.sof
+
+#We need the TRACE Table to creat the wavelenght calibration and line spread function:
+#echo $MASTERFLATDIR/TRACE_TABLE.fits TRACE_TABLE >> wavecal.sof
+#echo $MASTERFLATDIR/TRACE_TABLE.fits TRACE_TABLE >> lsf.sof
+#echo $MASTERFLATDIR/MASTER_FLAT.fits MASTER_FLAT >> lsf.sof

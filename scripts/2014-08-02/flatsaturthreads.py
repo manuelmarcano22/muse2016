@@ -5,28 +5,19 @@ import fileinput
 import re
 import sys
 import scipy.ndimage.filters as filters
-
+import multiprocessing as mp
+from getlist import getlist
 import time
-start = time.time()
 
-#List of min values:
-lista = np.zeros(24)
-#Parameters of the filter
-vecinos = 10 
+start = time.time()
+pool = mp.Pool(processes = 20)
 
 
 for line in fileinput.input('mastersof.txt',inplace=True):
 	if str(line.split()[1]) == 'FLAT':
 		tempa=fits.open(str(line.split()[0]))
-		for i in range(1,25):
-			datamax = filters.uniform_filter(tempa[i].data, vecinos)
-			difftop = datamax > 55000
-			diff = difftop
-		#	diffbot = datamax < 5000
-		#	diff = difftop | diffbot
-			mask = np.where(diff,0,1)
-			lista[i-1] = mask.min()
-		if lista.sum() == 24 :
+	        results = [pool.apply(getlist, args=(tempa[x].data,)) for x in range(1,25)]
+		if np.array(results).sum() == 24 :
 			sys.stdout.write(line)	
 		else:
 			sys.stdout.write(line.replace(line,'#'+line)) 

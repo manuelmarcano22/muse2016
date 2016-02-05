@@ -50,7 +50,7 @@ esorex.caller.link-dir=/tmp
 # --log-dir
 # Directory where to place the logfile. This option may also be set using the
 # environment variable ESOREX_LOG_DIR.
-esorex.caller.log-dir=/home/detoeuf/Manuel/data/2014-08-02/logs
+esorex.caller.log-dir=/mnt/data/MUSE/2014-08-02/logs
 
 # --log-file
 # Filename of logfile. This option may also be set using the environment

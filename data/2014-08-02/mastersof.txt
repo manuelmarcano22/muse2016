@@ -1,2 +1,0 @@
-/home/detoeuf/Manuel/data/2014-08-02/MUSE.2014-08-02T11:50:26.418.fits.fz FLAT
-/home/detoeuf/Manuel/data/2014-08-02/MUSE.2014-08-02T11:50:53.129.fits.fz FLAT
