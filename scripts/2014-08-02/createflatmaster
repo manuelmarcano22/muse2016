@@ -7,7 +7,7 @@ export MASTERFLATDIR=/mnt/data/MUSE/2014-08-02
 cd $MASTERFLATDIR
 
 > flat.sof
-for i in `ls preflat*`;
+for i in `ls preflat*.sof`;
 do
 echo $MASTERFLATDIR/$i'MASTER_FLAT.fits' FLAT >> flat.sof
 done
