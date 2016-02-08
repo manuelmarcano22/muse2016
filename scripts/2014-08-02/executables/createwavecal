@@ -2,7 +2,6 @@
 
 #It creates the sof for the master wavecal
 # then execute the command to do the wavelenght calibrationa
-#It needs the MASTER_BIAS.fits and BADPIXEL table optional. 
 
 #Source params file
 source /home/detoeuf/Manuel/scripts/2014-08-02/config/params

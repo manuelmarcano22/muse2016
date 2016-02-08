@@ -10,7 +10,7 @@ source /home/detoeuf/Manuel/scripts/2014-08-02/config/params
 cd $ESOREX_OUTPUT_DIR
 
 #If the mastersof.txt was created by the setype.py take the BIAS.
-cat mastersof.txt | grep BIAS > bias.sof 
+cat mastersof.txt | grep BIAS | head -n 5 > bias.sof 
 
 #Call to esorex
 taskset -c 0-23 esorex --recipe-config=$RECIPE_CONFIG/muse_bias.rc muse_bias bias.sof
