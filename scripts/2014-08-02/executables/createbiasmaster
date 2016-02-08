@@ -1,0 +1,16 @@
+#!/bin/bash
+
+#It creates a set-of-frames (sof) to use the muse_bias routine from esorex 
+#and create a master merged biaS
+
+#Souce Params file
+source /home/detoeuf/Manuel/scripts/2014-08-02/config/params 
+
+#Change to data location
+cd $ESOREX_OUTPUT_DIR
+
+#If the mastersof.txt was created by the setype.py take the BIAS.
+cat mastersof.txt | grep BIAS > bias.sof 
+
+#Call to esorex
+taskset -c 0-23 esorex --recipe-config=$RECIPE_CONFIG/muse_bias.rc muse_bias bias.sof

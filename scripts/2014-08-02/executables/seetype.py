@@ -1,3 +1,4 @@
+#!/usr/bin/python2
 # It creates a file with the path and the Frame tag depending on its TYPE as stated in Table 
 # 6.1 in the MUSE PIPELINE MANUAL
 from astropy.io import fits
@@ -5,7 +6,8 @@ import os
 import glob
 
 #Change to where the data is:
-os.chdir('/mnt/data/MUSE/2014-08-02')
+direc = os.environ['ESOREX_OUTPUT_DIR']
+os.chdir(direc)
 
 files = glob.glob('*.fz')
 dictype = {'BIAS': 'BIAS','DARK': 'DARK','FLAT,LAMP':'FLAT','LAMP,FLAT': 'FLAT','FLAT,SKY':'SKYFLAT','SKY,FLAT': 'SKYFLAT','WAVE':'ARC','WAVE,MASK':'MASK','MASK,WAVE':'MASK','STD':'STD','ASTROMETRY':'ASTROMETRY','SKY':'SKY','OBJECT':'OBJECT','FLAT,LAMP,ILLUM':'ILLUM'}

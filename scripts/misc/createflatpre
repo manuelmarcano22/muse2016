@@ -12,7 +12,7 @@ cat mastersof.txt | grep FLAT > flatpre.sof
 #wc -l flatpre.sof | awk '{ print $1}'
 
 #Split the file
-split flatpre.sof -l 4 --numeric-suffixes=1 --suffix-length=1 --additional-suffix=.sof preflat
+split flatpre.sof -l 10 --numeric-suffixes=1 --suffix-length=1 --additional-suffix=.sof preflat
 
 
 for i in `ls preflat*`;

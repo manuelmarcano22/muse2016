@@ -1,0 +1,21 @@
+#!/bin/bash
+
+#It creates the sof for the master flat and then execute the command to create a master flat
+#It needs the MASTER_BIAS.fits and BADPIXEL table optional. 
+
+#Source params file
+source /home/detoeuf/Manuel/scripts/2014-08-02/config/params
+
+cd $ESOREX_OUTPUT_DIR
+
+> flat.sof
+cat mastersof.txt | grep FLAT | head -n 5 > flat.sof
+echo $ESOREX_OUTPUT_DIR/MASTER_BIAS.fits MASTER_BIAS >> flat.sof
+echo $CALIB_FILES/badpix_table.fits BADPIX_TABLE >> flat.sof
+
+taskset -c 0-23 esorex --recipe-config=$RECIPE_CONFIG/muse_flat.rc muse_flat flat.sof
+
+#Update mastersof with product frames
+echo $ESOREX_OUTPUT_DIR/MASTER_FLAT.fits MASTER_FLAT >> mastersof.txt
+echo $ESOREX_OUTPUT_DIR/TRACE_TABLE.fits TRACE_TABLE >> mastersof.txt
+

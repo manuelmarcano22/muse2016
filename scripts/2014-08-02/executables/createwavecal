@@ -1,0 +1,20 @@
+#!/bin/bash
+
+#It creates the sof for the master wavecal
+# then execute the command to do the wavelenght calibrationa
+#It needs the MASTER_BIAS.fits and BADPIXEL table optional. 
+
+#Source params file
+source /home/detoeuf/Manuel/scripts/2014-08-02/config/params
+
+cd $ESOREX_OUTPUT_DIR
+
+> wavecal.sof
+cat mastersof.txt | grep ARC | head -n 10 > wavecal.sof
+echo $ESOREX_OUTPUT_DIR/MASTER_FLAT.fits MASTER_FLAT >> wavecal.sof
+echo $ESOREX_OUTPUT_DIR/MASTER_BIAS.fits MASTER_BIAS >> wavecal.sof
+echo $ESOREX_OUTPUT_DIR/TRACE_TABLE.fits TRACE_TABLE >> wavecal.sof
+echo $CALIB_FILES/line_catalog.fits LINE_CATALOG >> wavecal.sof
+echo $CALIB_FILES/badpix_table.fits BADPIX_TABLE >> wavecal.sof
+
+taskset -c 0-23 esorex --recipe-config=$RECIPE_CONFIG/muse_wavecal.rc muse_wavecal wavecal.sof

@@ -1,3 +1,4 @@
+#!/usr/bin/python2
 from astropy.io import fits
 import numpy as np
 import scipy.ndimage.filters as filters

@@ -1,0 +1,21 @@
+#!/bin/bash
+
+#It creates the sof for the master line spread functiow
+
+#Source params file
+source /home/detoeuf/Manuel/scripts/2014-08-02/config/params
+
+cd $ESOREX_OUTPUT_DIR
+
+filesof=lsf.sof
+> $filesof 
+cat mastersof.txt | grep ARC | head -n 5 > $filesof
+cat mastersof.txt | grep MASTER_BIAS >> $filesof
+cat mastersof.txt | grep TRACE_TABLE >> $filesof 
+cat mastersof.txt | grep WAVECAL_TABLE >> $filesof
+echo $CALIB_FILES/line_catalog.fits LINE_CATALOG >> $filesof
+
+taskset -c 0-23 esorex --recipe-config=$RECIPE_CONFIG/muse_lsf.rc muse_lsf $filesof
+
+#Update mastersof with product frames
+echo $ESOREX_OUTPUT_DIR/LSF_PROFILE.fits LSF_PROFILE >> mastersof.txt
