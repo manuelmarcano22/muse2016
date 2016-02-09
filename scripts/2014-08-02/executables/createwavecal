@@ -1,19 +1,30 @@
 #!/bin/bash
 
 #It creates the sof for the master wavecal
-# then execute the command to do the wavelenght calibrationa
+# then execute the command to do the wavelenght calibrationa. Need to create filearc using the python script arc.py. 
 
 #Source params file
 source /home/detoeuf/Manuel/scripts/2014-08-02/config/params
 
+#Call to Python program
+python arc.py
+
+#cd $DATA_LOCATION
 cd $ESOREX_OUTPUT_DIR
 
-> wavecal.sof
-cat mastersof.txt | grep ARC | head -n 10 > wavecal.sof
-echo $ESOREX_OUTPUT_DIR/MASTER_FLAT.fits MASTER_FLAT >> wavecal.sof
-echo $ESOREX_OUTPUT_DIR/MASTER_BIAS.fits MASTER_BIAS >> wavecal.sof
-echo $ESOREX_OUTPUT_DIR/TRACE_TABLE.fits TRACE_TABLE >> wavecal.sof
-echo $CALIB_FILES/line_catalog.fits LINE_CATALOG >> wavecal.sof
-echo $CALIB_FILES/badpix_table.fits BADPIX_TABLE >> wavecal.sof
+#Variables
+recipe=muse_wavecal.rc
+filesof=wavecal.sof
+numsof=1
 
-taskset -c 0-23 esorex --recipe-config=$RECIPE_CONFIG/muse_wavecal.rc muse_wavecal wavecal.sof
+> $filesof 
+cat filearc.txt | grep '#3' | head -n numsof   > $filesof
+cat filearc.txt | grep '#4' | head -n numsof  >> $filesof
+cat filearc.txt | grep '#5' | head -n numsof  >> $filesof
+echo $ESOREX_OUTPUT_DIR/MASTER_FLAT.fits MASTER_FLAT >> $filesof
+echo $ESOREX_OUTPUT_DIR/MASTER_BIAS.fits MASTER_BIAS >> $file.sof
+echo $ESOREX_OUTPUT_DIR/TRACE_TABLE.fits TRACE_TABLE >> $filesof
+echo $CALIB_FILES/line_catalog.fits LINE_CATALOG >> $filesof
+echo $CALIB_FILES/badpix_table.fits BADPIX_TABLE >> $filesof
+
+taskset -c 0-23 esorex --recipe-config=$RECIPE_CONFIG/$recipe`.rc` $recipe $filesof

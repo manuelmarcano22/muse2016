@@ -1,16 +1,28 @@
 #!/bin/bash
 
 #It creates a set-of-frames (sof) to use the muse_bias routine from esorex 
-#and create a master merged biaS
+#and create a master bias
 
 #Souce Params file
 source /home/detoeuf/Manuel/scripts/2014-08-02/config/params 
 
 #Change to data location
+#cd $DATA_LOCATION
 cd $ESOREX_OUTPUT_DIR
 
-#If the mastersof.txt was created by the setype.py take the BIAS.
-cat mastersof.txt | grep BIAS | head -n 5 > bias.sof 
+#Variables
+recipe=muse_bias
+filesof=bias.sof
+numsof=5
+patterns=(BIAS WFM-NOAO-N) #Patterns to seach in the mastersof. Be careful it needs to be in the right order. The patterns are output of the Python program seetype.py
+
+
+a=`echo ${patterns[*]/%/.*} | rev | cut -c 3- | rev`
+cat mastersof.txt | grep -E "$a" | head -n $numsof > $filesof 
 
 #Call to esorex
-taskset -c 0-23 esorex --recipe-config=$RECIPE_CONFIG/muse_bias.rc muse_bias bias.sof
+taskset -c 0-23 esorex --recipe-config=$RECIPE_CONFIG/$recipe'.rc' $recipe $filesof 
+
+#Create pdoucts sof with product frames
+echo $ESOREX_OUTPUT_DIR/MASTER_BIAS.fits MASTER_BIAS > productsof.txt
+
