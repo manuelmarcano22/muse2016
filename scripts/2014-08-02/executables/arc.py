@@ -5,10 +5,8 @@ from astropy.io import fits
 import os
 import numpy as np
 
-
 direc = os.environ['ESOREX_OUTPUT_DIR']
 os.chdir(direc)
-os.system("cat mastersof.txt | grep ARC | awk '{ print $1 }' > arctodos.txt") 
 
 filearc = open('filearc.txt', 'w')
 
