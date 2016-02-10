@@ -27,6 +27,7 @@ split $filesof -l 4 --numeric-suffixes=1 --suffix-length=1 'pre'$filesof
 
 for i in `ls 'pre'$filesof*`;
 do
+	echo $ESOREX_OUTPUT_DIR/$i'MASTER_BIAS.fits' BIAS > $filesof
 	echo $CALIB_FILES/badpix_table.fits BADPIX_TABLE >> $i #Optional BadPixel data in calibration
 
 	#Call to esorex
@@ -36,31 +37,20 @@ do
 done
 
 #Build a master out of all the preMaster
-
+> $filesof
 for i in `ls prebias.sof*`;
 do
-	echo $ESOREX_OUTPUT_DIR/$i'MASTER_BIAS.fits' BIAS > $filesof
-numsof=11 # The ESO takes by set of 11. We make the master with that set.
-oumsof=11 # The ESO takes by set of 11. We make the master with that set.
+	echo $ESOREX_OUTPUT_DIR/$i'MASTER_FLAT.fits' FLAT >> $filesof
 done
 
 
 echo $CALIB_FILES/badpix_table.fits BADPIX_TABLE >> $filesof #Optional BadPixel data in calibration
+echo $ESOREX_OUTPUT_DIR/$i'MASTER_BIAS.fits' BIAS > $filesof
 
 #Call to esorex
 taskset -c 0-23 esorex --recipe-config=$RECIPE_CONFIG/$recipe'.rc' $recipe $filesof 
 
 
-#Create list of product files to productsof.txt
-test -f productsof.txt || touch productsof.txt   # Test if it does exist
-grep MASTER_BIAS productsof.txt > /dev/null 
-if [ $? -eq 0 ];
-then 
-sed -i "/MASTER_BIAS/c\\$ESOREX_OUTPUT_DIR/MASTER_BIAS.fits MASTER_BIAS" productsof.txt
-else
-echo $ESOREX_OUTPUT_DIR/MASTER_BIAS.fits MASTER_BIAS >> productsof.txt
-fi
-oumouof with product frames
 #Create list of product files to productsof.txt
 test -f productsof.txt || touch productsof.txt   # Test if it does exist
 grep MASTER_FLAT productsof.txt > /dev/null

@@ -34,10 +34,10 @@ do
 done
 
 #Build a master out of all the preMaster
-
+> $filesof
 for i in `ls prebias.sof*`;
 do
-	echo $ESOREX_OUTPUT_DIR/$i'MASTER_BIAS.fits' BIAS > $filesof
+	echo $ESOREX_OUTPUT_DIR/$i'MASTER_BIAS.fits' BIAS >> $filesof
 done
 
 
