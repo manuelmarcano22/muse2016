@@ -189,7 +189,7 @@ The data is now in the path: `/mnt/data/MUSE`
 ## Commits
 
 ## To-Dos
-- [x] Download all the arc-lamp and 
+- [x] Download all the arc-lamp and SKYFLATS 
 
 # Feb-10-2016 IRAP Roche J042
 
