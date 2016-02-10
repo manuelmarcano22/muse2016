@@ -149,18 +149,16 @@ ds9 -mecube <file>
 ```
 
 
-
-
 ## To-Dos
 - [x] ~~Python and see max value of flats to see if oversaturated.~~ Function called flatsatruthreads using getlist.py
 - [x] ~~Find static calibration data.~~  Used the ones mentioned in Appendix D.
+
 # Feb-04-2016 IRAP Roche J042
 
 ## Summary
 
 
 ## Questions
-
 - [ ] How taskset and OMP_NUM_THREAD work. Different numbers?
 - [ ] They say "Since thre is only a single detector configuration available for MUSE, there is no real need to verify that the detector parameters of the raw data frames and calibartions mathc. 
 
@@ -188,13 +186,25 @@ The data is now in the path: `/mnt/data/MUSE`
 ## Commits
 
 ## To-Dos
-- [ ] Do MASTER Flat with all flats of the night and BADPIXEL Table.
 - [x] Download all the arc-lamp and 
+
+# Feb-04-2016 IRAP Roche J042
+
+## Summary
+
+
+## Commits
+
+## Number of Files
+
+I dont have to use all the Flats or BIAS. Take good quality 5 of them and work with them. 
+
+
+## To-Dos
+- [x] ~~Do MASTER Flat with all flats of the night and BADPIXEL Table.~~ Dont do it with all just with good quality 5. 
+- [x] ~~Automate MASTER_BIAS and FLATS. The problem is that it comsumes too much memory.~~ Dont have to use them all.  
+- [x] ~~Python and see max value of flats to see if oversaturated.~~ Using scipy uniform filter 
 - [ ] Do the wavelength calibration
 - [ ] How many threads can use with taskset and OMP_NUM_THREAD?
-- [ ] Automate MASTER_BIAS and FLATS. The problem is that it comsumes too much memory. 
-- [ ] Python and see max value of flats to see if oversaturated.
-- [ ] Do MASTER Flat with all flats of the night
 - [ ] How many threads can use with taskset and OMP_NUM_THREAD?
-
 
