@@ -1,0 +1,42 @@
+#!/bin/bash
+
+#It creates the sof for the master flat and then execute the command to create a master flat
+#It needs the MASTER_BIAS.fits and BADPIXEL table optional. 
+
+#Source params file
+source /home/detoeuf/Manuel/scripts/2014-08-02/config/params
+
+#cd $DATA_LOCATION
+cd $ESOREX_OUTPUT_DIR
+
+#Variables
+recipe=muse_flat
+filesof=flat.sof
+patterns=(FLAT WFM-NOAO-N Calibrations 2014-08-02T12 )  
+#Patterns to seach in the mastersof. Be careful it needs to be in the right order. 
+#The patterns are output of the Python program seetype.py
+#inputs=(MASTER_BIAS BADPIX_TABLE) #The input files for the recipe. 
+#numsof=5  #Like the BIAS the selection above should give me 11 files. 
+
+
+a=`echo ${patterns[*]/%/.*} | rev | cut -c 3- | rev`
+> $filesof
+cat mastersof.txt | grep -Ew "$a" | head -n $numsof > $filesof 
+echo $ESOREX_OUTPUT_DIR/MASTER_BIAS.fits MASTER_BIAS >> $filesof 
+echo $CALIB_FILES/badpix_table.fits BADPIX_TABLE >> $filesof 
+#Do it with input list and search in both master and products and calibration 
+
+taskset -c 0-23 esorex --recipe-config=$RECIPE_CONFIG/$recipe'.rc' $recipe $filesof
+
+#Update products sof with product frames
+#Create list of product files to productsof.txt
+test -f productsof.txt || touch productsof.txt   # Test if it does exist
+grep MASTER_FLAT productsof.txt > /dev/null
+if [ $? -eq 0];
+then
+	sed -i "/MASTER_FLAT/c\\$ESOREX_OUTPUT_DIR/MASTER_FLAT.fits MASTER_FLAT" productsof.txt
+	sed -i "/TRACE_TABLE/c\\$ESOREX_OUTPUT_DIR/TRACE_TABLE.fits TRACE_TABLE" productsof.txt
+else
+	echo $ESOREX_OUTPUT_DIR/MASTER_FLAT.fits MASTER_FLAT >> productsof.txt
+	echo $ESOREX_OUTPUT_DIR/TRACE_TABLE.fits TRACE_TABLE >> productsof.txt
+fi
