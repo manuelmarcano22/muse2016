@@ -19,7 +19,7 @@ numsof=5
 
 a=`echo ${patterns[*]/%/.*} | rev | cut -c 3- | rev`
 > $filesof
-cat mastersof.txt | grep -E "$a" | head -n $numsof > $filesof 
+cat mastersof.txt | grep -Ew "$a" | head -n $numsof > $filesof 
 echo $ESOREX_OUTPUT_DIR/MASTER_BIAS.fits MASTER_BIAS >> $filesof 
 echo $CALIB_FILES/badpix_table.fits BADPIX_TABLE >> $filesof 
 #Do it with input list and search in both master and products and calibration 

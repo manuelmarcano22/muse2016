@@ -51,14 +51,14 @@ esorex.caller.recipe-dir=/opt/reflex/install/lib/esopipes-plugins/muse-1.0.1
 # --link-dir
 #The directory for the symbolic dir
 #Can be set with variable ESOREX_LINK_DIR
-esorex.caller.link-dir=/home/detoeuf/Manuel/scripts/2014-08-02/products
+#esorex.caller.link-dir=/home/detoeuf/Manuel/scripts/2014-08-02/products
 
 # -suppress-link
 # When TRUE, no symbolic link is created to the output product. However, if
 # FALSE, then a symbolic link is created in the directory specified with the
 # option '--link-dir' for each product that is created by the recipe. This
 # option may also be set using the environment variable ESOREX_SUPPRESS_LINK.
-esorex.caller.suppress-link=FALSE
+esorex.caller.suppress-link=TRUE
 
 # --time
 # Measure and show the recipe's execution time. This option may also be set
