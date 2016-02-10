@@ -154,6 +154,7 @@ ds9 -mecube <file>
 ## To-Dos
 - [x] ~~Python and see max value of flats to see if oversaturated.~~ Function called flatsatruthreads using getlist.py
 - [x] ~~Find static calibration data.~~  Used the ones mentioned in Appendix D.
+
 # Feb-04-2016 IRAP Roche J042
 
 ## Summary
@@ -188,13 +189,31 @@ The data is now in the path: `/mnt/data/MUSE`
 ## Commits
 
 ## To-Dos
-- [ ] Do MASTER Flat with all flats of the night and BADPIXEL Table.
 - [x] Download all the arc-lamp and 
-- [ ] Do the wavelength calibration
+
+# Feb-10-2016 IRAP Roche J042
+
+## Summary
+
+### Wavelength calibration
+
+I wasnt able to get it done. The problem might have been two things, either that I didn't have an ARC for each lamp or that I was using two different instrument modes.
+
+### Instruments Mode and OBS Name
+
+In the data I downloaded for the day I had two different instrument mode as can be seen in the header. I had WFM-NOAA-E and WFM-NOAA-N. It stands for  Wide Field Mode with no AO (NOAO) correction in Nominal or Extended. 
+
+### FLATS
+
+I have two types of flats according to the OBS NAME tag in the header "Calibration" and "muocal_nightcalib". I have 22 of one and 5 of the second.  
+
+## Questions
+- [x] ~~Do MASTER Flat with all flats of the night and BADPIXEL Table.~~ but only with the "muocal_nightcalib" 5.
+- [x] ~~Do the wavelength calibration~~ It worked with three Arc one for each lamp.
+- [x] ~~Python and see max value of flats to see if oversaturated.~~ All of them passed the tested. Weird?
+- [x] ~~Do MASTER Flat with all flats of the night~~ Still dont know if need all. 
+- [ ] How many flats to use?
 - [ ] How many threads can use with taskset and OMP_NUM_THREAD?
 - [ ] Automate MASTER_BIAS and FLATS. The problem is that it comsumes too much memory. 
-- [ ] Python and see max value of flats to see if oversaturated.
-- [ ] Do MASTER Flat with all flats of the night
 - [ ] How many threads can use with taskset and OMP_NUM_THREAD?
-
 
