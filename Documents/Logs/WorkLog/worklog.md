@@ -148,9 +148,6 @@ Open then and can see them individually:
 ds9 -mecube <file> 
 ```
 
-
-
-
 ## To-Dos
 - [x] ~~Python and see max value of flats to see if oversaturated.~~ Function called flatsatruthreads using getlist.py
 - [x] ~~Find static calibration data.~~  Used the ones mentioned in Appendix D.
@@ -203,9 +200,25 @@ I wasnt able to get it done. The problem might have been two things, either that
 
 In the data I downloaded for the day I had two different instrument mode as can be seen in the header. I had WFM-NOAA-E and WFM-NOAA-N. It stands for  Wide Field Mode with no AO (NOAO) correction in Nominal or Extended. 
 
+
 ### FLATS
 
 I have two types of flats according to the OBS NAME tag in the header "Calibration" and "muocal_nightcalib". I have 22 of one and 5 of the second.  
+
+### More on FLATS and BIAS from Hayley
+
+ Pay attention to time statmps. ESO takes 11 at a time. Use those eleven for the master bias. Also for the flats. Also look at the temperature difference is no more thatn 0.5 C. 
+
+### ILLUM for recipe muse twilight. 
+
+
+### vim
+
+I installed vim in the home direcctory and folder vimlocal. The .vimrc is also in the home directory. 
+
+### BASH
+
+The .bashrc now have a line to include the path of the vim executable and to use xterm to be able to display colors. Also included the pythonstartup to load astropy fits and numpy as np. 
 
 ## Questions
 - [x] ~~Do MASTER Flat with all flats of the night and BADPIXEL Table.~~ but only with the "muocal_nightcalib" 5.
@@ -214,6 +227,11 @@ I have two types of flats according to the OBS NAME tag in the header "Calibrati
 - [x] ~~Do MASTER Flat with all flats of the night~~ Still dont know if need all. 
 - [ ] How many flats to use?
 - [ ] How many threads can use with taskset and OMP_NUM_THREAD?
+
+
+## TO-DO
 - [ ] Automate MASTER_BIAS and FLATS. The problem is that it comsumes too much memory. 
-- [ ] How many threads can use with taskset and OMP_NUM_THREAD?
+- [ ] See how many arc can use due to memory limitation for the line spread function. 
+
+
 
