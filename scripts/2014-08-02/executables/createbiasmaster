@@ -20,24 +20,24 @@ a=`echo ${patterns[*]/%/.*} | rev | cut -c 3- | rev`
 cat mastersof.txt | grep -Ew "$a" | head -n $numsof > $filesof 
 
 
-#Split the file and create pre
-split $filesof -l 4 --numeric-suffixes=1 --suffix-length=1 'pre'$filesof
-
-
-for i in `ls 'pre'$filesof*`;
-do
-	echo $CALIB_FILES/badpix_table.fits BADPIX_TABLE >> $i #Optional BadPixel data in calibration
-
-	#Call to esorex
-	taskset -c 0-23 esorex --recipe-config=$RECIPE_CONFIG/$recipe'.rc' $recipe $i 
-	mv MASTER_BIAS.fits $i'MASTER_BIAS.fits'
-done
-
-#Build a master out of all the preMaster
+##Split the file and create pre
+#split $filesof -l 4 --numeric-suffixes=1 --suffix-length=1 'pre'$filesof
+#
+#
+#for i in `ls 'pre'$filesof*`;
+#do
+#	echo $CALIB_FILES/badpix_table.fits BADPIX_TABLE >> $i #Optional BadPixel data in calibration
+#
+#	#Call to esorex
+#	taskset -c 0-23 esorex --recipe-config=$RECIPE_CONFIG/$recipe'.rc' $recipe $i 
+#	mv MASTER_BIAS.fits $i'MASTER_BIAS.fits'
+#done
+#
+##Build a master out of all the preMaster
 > $filesof
-for i in `ls prebias.sof*`;
+for i in `ls prebias.sof*.fits`;
 do
-	echo $ESOREX_OUTPUT_DIR/$i'MASTER_BIAS.fits' BIAS >> $filesof
+	echo $ESOREX_OUTPUT_DIR/$i BIAS >> $filesof
 done
 
 

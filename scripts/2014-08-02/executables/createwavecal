@@ -6,8 +6,7 @@
 #Source params file
 source /home/detoeuf/Manuel/scripts/2014-08-02/config/params
 
-#cd $DATA_LOCATION
-cd $ESOREX_OUTPUT_DIR
+cd $DATA_LOCATION
 
 #Creates the list of arcs that the python program needs
 patterns=(ARC WFM-NOAO-N )  #Patterns to seach in the mastersof. Be careful it needs to be in the right order. The patterns are output of the Python program seetype.py
@@ -34,4 +33,4 @@ echo $ESOREX_OUTPUT_DIR/TRACE_TABLE.fits TRACE_TABLE >> $filesof
 echo $CALIB_FILES/line_catalog.fits LINE_CATALOG >> $filesof
 echo $CALIB_FILES/badpix_table.fits BADPIX_TABLE >> $filesof
 
-taskset -c 0-23 esorex --recipe-config=$RECIPE_CONFIG/$recipe'.rc' $recipe $filesof
+#taskset -c 0-23 esorex --recipe-config=$RECIPE_CONFIG/$recipe'.rc' $recipe $filesof

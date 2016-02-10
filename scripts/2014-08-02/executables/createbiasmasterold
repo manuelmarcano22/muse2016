@@ -12,7 +12,7 @@ cd $DATA_LOCATION
 #Variables
 recipe=muse_bias
 filesof=bias.sof
-numsof=8 # The ESO takes by set of 11. We make the master with that set.
+numsof=11 # The ESO takes by set of 11. We make the master with that set.
 patterns=(BIAS WFM-NOAO-N) #Patterns to seach in the mastersof. 
 #WFM is instrument mode and should be the same as object.  Be careful it needs to be in the right order. The patterns are tags output of the Python program seetype.py
 
