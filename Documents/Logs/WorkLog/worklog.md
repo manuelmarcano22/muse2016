@@ -1,7 +1,5 @@
 # Feb-02-2016 IRAP Roche J042
 
-## Summary
-
 
 ## Commits
 
@@ -9,27 +7,28 @@
 
 The HP computer was set up so I can connect to the server via ssh to the computer *kerr.cesr.fr*. 
 
-At first I will begin working with the computer of a previous Dr. Webb student. TO connect use:
+At first I will begin working with the computer of a previous Dr. Webb student. To connect use:
 
 ```bash
 ssh -X detoeuf@kerr.cesr.fr
 ```
 
-The password was given by Dr. Webb. Can use **ds9** to visualize the server.  
+The password was given by Dr. Webb.   
 
 I added the files ~/.vimrc and ~/pythonrc and added the line *export PYTHONSTARTUP* to ~/.bashrc
+
 ### The GitHub Repository
 
 I created a private git repository called *muse2016*. 
 
 ### Data Download from ESO
 
-I downloaded the frim the observation of the Cluster **NGC 6397**. The observation day was *2014-08-02*. The data can be download from the website [ESO Archive](archive.eso.org/eso/eso_archive_main.html).
+I downloaded the observation of the Cluster **NGC 6397**. The observation day was *2014-08-02*. The data can be download from the website [ESO Archive](archive.eso.org/eso/eso_archive_main.html) after creating an account. My username is *mmarcano22*
 
 
 ### Astropy:
 
-The server does have ipython and the module Astropy installed. Useful commands:
+The server does have ipython and the module Astropy installed for python2, but not for python3.  Useful commands:
 
 ```python
 from astropy.io import fits`
@@ -46,38 +45,33 @@ hduheado = hdulist[0].header
 
 # Feb-03-2016 IRAP Roche J042
 
-## Summary
-
-
 ## Commits
 
 ### Questions and Problems:
 
-- [x] ~~How to get the type information from header. Can fit it on the header. How many BIAS are needed?~~ All in *HIERARCH ESO ---*. For example.
+- [x] ~~How to get the type information from header. Can fit it on the header. How many BIAS are needed?~~ All in *HIERARCH ESO ---*. 
 
 - [x] MUSE cal bias and cal bias linearity?. Only cal_bias in the same day. Can use cal_bias simply
 
-- [x] ~~Problem merging Bias works with max of 10 and min of 3.. When 11 doesnt work.~~ Wrong command to use it in parrallell was missing the `taskset` described in Appendix C.
+- [x] ~~Problem merging Bias works with max of 10 and min of 3.. When 11 doesn't work.~~ Wrong command to use it in parallel was missing the `taskset` described in Appendix C.
 
+- [x] ~~No Darks that same day. 200 in total for MUSE. Which one to use?. Also different ExpTime for the darks from 1200 to 3600. Object is 60. In the Manual it says that the dark current is small so the dark is optional.~~  No darks for now.
 
-- [x] ~~No Darks that same day. 200 in total for MUSE. Which one to use?. Also different ExpTime for the dakrs frm 1200 to 3600. Object is 60. In the Manueal ut says that the dark current is small so the dark is optional.~~  No darks for now.
-
-- [x] ~~Many flats that day but only 3 with to that target RA and DEC. Only those 3?.~~ All Flats of the night. 
+- [x] ~~Many flats that day but only 3 with to that target RA and DEC. Only those 3?.~~ Downloaded all Flats of the night. 
 
 - [x] ~~Got problem *"unable to find recipe muse_bias"*.~~. I created a new config file and included where all the libs where the path is: `/opt/reflex/install/lib/esopipes-plugins/muse-1.0.1`
-
 - [x] ~~Use muse_bias.rc?~~ Not for now. 
 
-- [x] ~~Appendix D Callibations for Commisioning and Science Verification Data. Use those Geometry and Astrometric table and Solution?~~ FOund them online.
+- [x] ~~Appendix D Calibrations for Commissioning and Science Verification Data. Use those Geometry and Astrometric table and Solution?~~ Found them online.
 
 
-- [x] ~~BADPIX_TABLE in flat? It is optional and says: "The use if a bad pixel table may actually degrade the tracing solution if it contains bad colums. ~~ Used the one in cal folder.
+- [x] ~~BADPIX_TABLE in flat? It is optional and says: "The use if a bad pixel table may actually degrade the tracing solution if it contains bad columns. ~~ Used the one in cal folder.
 
 - [x] ~~Where to find DPR TYPE WAVE for the wavelength calibration. They should be in MUSE calibration template~. Will download it from online catalog.  
 
 ### Python
 
-Created a little script that writes the full path and frame tag of files
+Created a little script that writes the full path and frame tag of files. *seetype.py*.
 
 ### Bash
 
@@ -95,30 +89,25 @@ Can work with up to 24 threads. Computer has 28. Found out that with `nproc`. So
 
 ### BIAS
 
-~~It works with the first 10 BIAS or the last 10. The moment I go from 10 to 11 it doesnt produced the final MASTER_BIAS.fits.~~. I needed to use to use `taskset` with for example `-c 0-5` with `--nifu=-1` and process them in parrallell. 
+~~It works with the first 10 BIAS or the last 10. The moment I go from 10 to 11 it doesn't produced the final MASTER_BIAS.fits.~~. I needed to use to use `taskset` with for example `-c 0-5` with `--nifu=-1` and process them in parallel. 
 
 
 
 ## To-Dos
 - [x] ~~Bias download data.~~ Downloaded 22 Bias from the day 2014-08-01
-- [x] Do master BIAS file
+- [x] ~~Do master BIAS file~~
 - [x] ~~Find out what darks to use.~~ Dont need the darks. Really low Current.
 - [x] ~~Find out what Flats to use.~~ All the LAMP Flats of that night. 
 - [x] ~~Do MASTER Flat.~~ **Did it with only three flats.**
 
 
-
-
 # Feb-04-2016 IRAP Roche J042
-
-## Summary
-
 
 ## Commits
 
 ### Flats
 
-I downloaded all the flats produced the night 2014-08-01. Todos son FLAT,LAMPS.
+I downloaded all the flats produced the night 2014-08-01. All FLAT,LAMPS.
 
 ### Static Calibration
 
@@ -127,7 +116,7 @@ The Static Calibration data seems to be in `/opt/reflex/install/calib/muse-1.0.1
 
 ### flatsatur.py
 
-This program takes the average around 10 pixesl for each pixel. If in any is higher than 55000 then dont use that flat.
+This program takes the average around 10 pixesl for each pixel. If in any is higher than 55000 then don't use that flat. All the flats passed the test.
 
 ### ds9
 
@@ -150,17 +139,10 @@ ds9 -mecube <file>
 
 ## To-Dos
 - [x] ~~Python and see max value of flats to see if oversaturated.~~ Function called flatsatruthreads using getlist.py
-- [x] ~~Find static calibration data.~~  Used the ones mentioned in Appendix D.
+- [x] ~~Find static calibration data.~~  Used the ones mentioned in Appendix D. See commit above.
 
-# Feb-04-2016 IRAP Roche J042
+# Feb-05-2016 IRAP Roche J042
 
-## Summary
-
-
-## Questions
-
-- [ ] How taskset and OMP_NUM_THREAD work. Different numbers?
-- [ ] They say "Since thre is only a single detector configuration available for MUSE, there is no real need to verify that the detector parameters of the raw data frames and calibartions mathc. 
 
 
 ### Multiprocessing
@@ -183,55 +165,71 @@ found in (https://www.eso.org/sci/activities/santiago/projects/sc-computing.html
 The data is now in the path: `/mnt/data/MUSE` 
 
 
-## Commits
 
 ## To-Dos
 - [x] Download all the arc-lamp and SKYFLATS 
 
 # Feb-10-2016 IRAP Roche J042
 
-## Summary
+## Commits
 
 ### Wavelength calibration
 
-I wasnt able to get it done. The problem might have been two things, either that I didn't have an ARC for each lamp or that I was using two different instrument modes.
+I wasn't able to get it done. The problem might have been two things, either that I didn't have an ARC for each lamp or that I was using two different instrument modes.
 
 ### Instruments Mode and OBS Name
 
-In the data I downloaded for the day I had two different instrument mode as can be seen in the header. I had WFM-NOAA-E and WFM-NOAA-N. It stands for  Wide Field Mode with no AO (NOAO) correction in Nominal or Extended. 
+In the data I downloaded for the day I had two different instrument mode as can be seen in the header. I had WFM-NOAA-E and WFM-NOAA-N. It stands for  Wide Field Mode with no AO (NOAO) correction in Nominal or Extended. The object is in WFM-NOAA-N. Only keep calibration files with this mode.
 
 
 ### FLATS
 
-I have two types of flats according to the OBS NAME tag in the header "Calibration" and "muocal_nightcalib". I have 22 of one and 5 of the second.  
+I have two types of flats according to the OBS NAME tag in the header "Calibration" and "muocal_nightcalib". I have 22 of one and 5 of the second. The "muocal_nightcalib" are the so called **ILLUM** in the manual and are the optional input flat for the muse_twilight recipe. According to Hayley use the one closes in temp and time to the SKYFLAT use for the twilight recipe.  
 
 ### More on FLATS and BIAS from Hayley
 
- Pay attention to time statmps. ESO takes 11 at a time. Use those eleven for the master bias. Also for the flats. Also look at the temperature difference is no more thatn 0.5 C. 
+ Pay attention to time stamp. ESO takes 11 at a time. Use those eleven for the master bias and also for the flats. Also look at the temperature difference is no more than 0.5 C for the skyflat and the optional ILLUM to use. 
 
 ### ILLUM for recipe muse twilight. 
 
+See FLATS commit above. 
+
+### ARC (WAVE)
+
+They seem to be taken in groups of 15. So three exposures per lamp. I have one with 14 probably because it was taken at 11:59 so the next one is at a later day. 
 
 ### vim
 
-I installed vim in the home direcctory and folder vimlocal. The .vimrc is also in the home directory. 
+I installed vim in the home directory. It is in the folder vimlocal. The .vimrc is also in the home directory. But still haven't been able to get vim with xterm_clipboard support. 
 
 ### BASH
 
-The .bashrc now have a line to include the path of the vim executable and to use xterm to be able to display colors. Also included the pythonstartup to load astropy fits and numpy as np. 
+The .bashrc now have a line to include the path of the vim executable and to use xterm to be able to display colors. Also included the pythonstartup as was mentioned before.  
 
 ## Questions
-- [x] ~~Do MASTER Flat with all flats of the night and BADPIXEL Table.~~ but only with the "muocal_nightcalib" 5.
+- [x] ~~Do MASTER Flat with all flats of the night and BADPIXEL Table.~~ ~~but only with the "muocal_nightcalib" 5~. Wrong redo this. 
 - [x] ~~Do the wavelength calibration~~ It worked with three Arc one for each lamp.
 - [x] ~~Python and see max value of flats to see if oversaturated.~~ All of them passed the tested. Weird?
-- [x] ~~Do MASTER Flat with all flats of the night~~ Still dont know if need all. 
-- [ ] How many flats to use?
-- [ ] How many threads can use with taskset and OMP_NUM_THREAD?
+- [x] ~~Do MASTER Flat with all flats of the night~~ Still don't know if need all. 
+
+# Feb-11-2016 IRAP Roche J042
 
 
-## TO-DO
-- [ ] Automate MASTER_BIAS and FLATS. The problem is that it comsumes too much memory. 
-- [ ] See how many arc can use due to memory limitation for the line spread function. 
+## Commits
 
+## Questions
+
+- [ ] How taskset and OMP_NUM_THREAD work. Different numbers?
+- [ ] They say "Since there is only a single detector configuration available for MUSE, there is no real need to verify that the detector parameters of the raw data frames and calibrations match. 
+- [x] ~~How many flats to use?~~ Use a set of 11. The closest to your object. TO process the 11 can't do it in parallel have to do it serially. 
+
+
+## To-Dos
+- [x] ~~BIAS with a set of 11.~~
+- [ ] Flat with a set of 11
+- [ ] Wavelengt_calibration with a set of 15. 
+- [ ] muse_twilight with one ILLUM. 
+- [x] ~~Automate MASTER_BIAS and FLATS. The problem is that it consumes too much memory.~~ DO it in series not parallel. Longer but can fit in memory. 
+- [x] ~~See how many arc can use due to memory limitation for the line spread function. ~~ They appear to be taken in set of 15. 5 for each lamp. See how many can process. 
 
 
