@@ -20,10 +20,10 @@ for f in files:
     temppath = os.path.realpath(f)
     typetemp = temp[0].header['*DPR TYPE*'][0]
     mastersof.write(temppath   +' '+  dictype[typetemp] + ' # ' + temp[0].header["*INS MODE"][0] 
-            +' '+ temp[0].header['*OBS NAME'][0]  +' '+ temp[0].header['*DATE-OBS*'][0] +' '+  str(temp[0].header['*TEMP11 VAL'][0])   + '\n')
-    print temp[0].header['*DPR TYPE*'][0] , temp[0].header['*INS MODE'][0], temp[0].header['*OBS NAME'][0], temp[0].header['*DATE-OBS*'][0], temp[0].header['*TEMP11 VAL'][0]  
+            +' '+ temp[0].header['*OBS NAME'][0]  +' '+ temp[0].header['*DATE-OBS*'][0] +' '+  str(temp[0].header['*TEMP11 VAL'][0]) + ' '+ temp[0].header['*READ CURNAME*'][0]   + '\n')
+    print temp[0].header['*DPR TYPE*'][0] , temp[0].header['*INS MODE'][0], temp[0].header['*OBS NAME'][0], temp[0].header['*DATE-OBS*'][0], temp[0].header['*TEMP11 VAL'][0],temp[0].header['*READ CURNAME*'][0]  
     temp.close()
 mastersof.close()
-os.system('sort -k2 -k3 -k5 -k6 mastersof.txt > temp.txt')
+os.system('sort -k5 -k2 -k3  -k6 mastersof.txt > temp.txt')
 os.system('cp temp.txt mastersof.txt')
 os.system('rm temp.txt')
