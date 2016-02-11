@@ -3,4 +3,3 @@ Repo for the Research Project done during Spring 2016 at IRAP under the supervis
 
 ## Work Log
 [Work log](Documents/Logs/WorkLog/worklog.md)
-
