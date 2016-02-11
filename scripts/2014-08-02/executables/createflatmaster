@@ -12,7 +12,7 @@ cd $ESOREX_OUTPUT_DIR
 #Variables
 recipe=muse_flat
 filesof=flat.sof
-patterns=(FLAT WFM-NOAO-N Calibrations)  
+patterns=(FLAT WFM-NOAO-N Calibrations SCI1.0)  
 #Patterns to seach in the mastersof. Be careful it needs to be in the right order. 
 #The patterns are output of the Python program seetype.py
 #inputs=(MASTER_BIAS BADPIX_TABLE) #The input files for the recipe. 
