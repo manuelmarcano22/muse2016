@@ -214,22 +214,82 @@ The .bashrc now have a line to include the path of the vim executable and to use
 
 # Feb-11-2016 IRAP Roche J042
 
-
 ## Commits
 
 ## Questions
 
 - [ ] How taskset and OMP_NUM_THREAD work. Different numbers?
-- [ ] They say "Since there is only a single detector configuration available for MUSE, there is no real need to verify that the detector parameters of the raw data frames and calibrations match. 
 - [x] ~~How many flats to use?~~ Use a set of 11. The closest to your object. TO process the 11 can't do it in parallel have to do it serially. 
 
 
 ## To-Dos
-- [x] ~~BIAS with a set of 11.~~
-- [ ] Flat with a set of 11
-- [ ] Wavelengt_calibration with a set of 15. 
-- [ ] muse_twilight with one ILLUM. 
+- [x] ~~BIAS with a set of 11.~~Make sure is 11 in SCI mode read out. 
+- [x] ~~Flat with a set of 11~~
+- [x] Wavelengt_calibration with a set of 15. 
+- [x] muse_twilight with one ILLUM. 
 - [x] ~~Automate MASTER_BIAS and FLATS. The problem is that it consumes too much memory.~~ DO it in series not parallel. Longer but can fit in memory. 
-- [x] ~~See how many arc can use due to memory limitation for the line spread function. ~~ They appear to be taken in set of 15. 5 for each lamp. See how many can process. 
+- [x] ~~See how many arc can use due to memory limitation for the line spread function. ~~ They appear to be taken in set of 15. 5 for each lamp. See how many can process. Can process all 15.  
+
+# Feb-12-2016 IRAP Roche J042
+
+## Commits
+
+### Read-out Modes
+
+There are two read-out modes. SC1.0 and FAST. FAST is only used in engineering mode and it is used for fast processing with 1x4 binning. That is why the set of flats and BIAS is a set of 22. 11 in FAST and 11 in SCI1, at least this dataset for August. Also object had some FAST mode. 
+
+### MUSE NGC 6397 Article
+
+There are two articles from the people that took the data of the cluster using MUSE and the VLT. The first one *MUSE crowded field 3D spectroscopy of over 12 000 stars in the globular cluster NGC 6397*. First author Tim-Oliver HUsser (http://arxiv.org/abs/1602.01649). For the second the first author is Sebastian Kamann (http://arxiv.org/abs/1602.01643).
+
+
+### Python 
+
+To write the header to a file can do:
+
+```python
+f = open('file.txt', 'w')
+f.write(repr(tempfit[0].header[0:810]))
+f.close
+```
+To append to the file change the 'w' for a 'a'. 
+
+
+
+### SKY
+
+Are (almost) empty sky fields. We could find for our dataset Maybe not needed in the Sky Creation section the manual reads: "It is only needed if the observed object fills the field-of-view to such an extent that a reasonable sky spectrum cannot obtained directly on the observation itself." Maybe that is why they didn't do it. 
+
+
+### Twilight
+
+I could the whole 7 SKYFLATs I downloaded because of lack of memory. I could only process 5 with the muse_twilight recipe. There is no way to process them in series like the other recipes with the option --nifu=0.
+
+
+### Astrometry
+
+Which one to use? No one taken by then maybe. 
+
+### STD
+
+
+Which one to use? 
+
+
+
+
+## Questions
+- [ ] The flat with OBS name "muocal_nightcalib" and not "Calibration" is a ILLUM even if it doesnt say ILLUM in DPR TYPE?
+- [ ] Could do twilight in series. No option nifu=0 so due to lack of memory only could do 5 not with the 7 available. Any way to do it ?
+- [ ] Why doesnt work to include TWILIGHT_CUBE as input in the sof for muse_scibasic for objets. 
+- [ ] What Astrometry to use? Use the calibration files? 
+- [ ] What STD to use? Use the ones given in the calibration files? 
+
+## To-Do
+- [ ] Make a CUBE from the object using the astrometry_wcs solution and std given in the calibration file. 
+- [ ] Make a CUBE from the object creating the astrometry_wcs solution and std from the downloaded std and astrometry data for around those days. 
+
+
+
 
 
