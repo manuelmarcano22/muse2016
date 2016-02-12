@@ -19,18 +19,19 @@ python /home/detoeuf/Manuel/scripts/2014-08-02/executables/arc.py
 
 
 #Variables
-recipe=muse_wavecal
-filesof=wavecal.sof
+recipe=muse_lsf
+filesof=lsf.sof
 numsof=5
 
 > $filesof 
 cat filearc.txt | grep '#3' | head -n $numsof   > $filesof
 cat filearc.txt | grep '#4' | head -n $numsof  >> $filesof
 cat filearc.txt | grep '#5' | head -n $numsof  >> $filesof
-echo $ESOREX_OUTPUT_DIR/MASTER_FLAT.fits MASTER_FLAT >> $filesof
 echo $ESOREX_OUTPUT_DIR/MASTER_BIAS.fits MASTER_BIAS >> $filesof
+echo $ESOREX_OUTPUT_DIR/MASTER_FLAT.fits MASTER_FLAT >> $filesof
 echo $ESOREX_OUTPUT_DIR/TRACE_TABLE.fits TRACE_TABLE >> $filesof
-echo $CALIB_FILES/line_catalog.fits LINE_CATALOG >> $filesof
+echo $ESOREX_OUTPUT_DIR/WAVECAL_TABLE.fits WAVECAL_TABLE >> $filesof
 echo $CALIB_FILES/badpix_table.fits BADPIX_TABLE >> $filesof
+echo $CALIB_FILES/line_catalog.fits LINE_CATALOG >> $filesof
 
 taskset -c 0-23 esorex --recipe-config=$RECIPE_CONFIG/$recipe'.rc' $recipe $filesof
