@@ -1,0 +1,18 @@
+#!/usr/bin/bash
+
+#ESOREX
+export ESOREX_OUTPUT_DIR=/mnt/data/MUSE/2014-07-27
+export ESOREX_LOG_DIR=$ESOREX_OUTPUT_DIR/logs
+export ESOREX_CONFIG=/home/detoeuf/Manuel/scripts/2014-07-27/config/esorex.rc
+
+#Recipecongif files
+export RECIPE_CONFIG=/home/detoeuf/Manuel/scripts/2014-07-27/config
+
+#Calibration files
+export CALIB_FILES=$ESOREX_OUTPUT_DIR/cal
+
+#OMP
+export OMP_NUM_THREADS=24
+
+#Data Location
+export DATA_LOCATION=$ESOREX_OUTPUT_DIR

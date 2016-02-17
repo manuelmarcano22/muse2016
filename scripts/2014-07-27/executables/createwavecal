@@ -1,0 +1,36 @@
+#!/bin/bash
+
+#It creates the sof for the master wavecal
+# then execute the command to do the wavelenght calibrationa. Need to create filearc using the python script arc.py. 
+
+#Source params file
+source /home/detoeuf/Manuel/scripts/2014-08-02/config/params
+
+cd $DATA_LOCATION
+
+#Creates the list of arcs that the python program needs
+patterns=(ARC WFM-NOAO-N )  #Patterns to seach in the mastersof. Be careful it needs to be in the right order. The patterns are output of the Python program seetype.py
+a=`echo ${patterns[*]/%/.*} | rev | cut -c 3- | rev`
+> arctodos.txt
+cat cleanmastersof.txt | grep -Ew "$a"  > arctodos.txt
+
+#Call to Python program that get the lamp number for the list of arcs in the file arctodos created above. 
+python /home/detoeuf/Manuel/scripts/2014-08-02/executables/arc.py
+
+
+#Variables
+recipe=muse_wavecal
+filesof=wavecal.sof
+numsof=5
+
+> $filesof 
+cat filearc.txt | grep '#3' | head -n $numsof   > $filesof
+cat filearc.txt | grep '#4' | head -n $numsof  >> $filesof
+cat filearc.txt | grep '#5' | head -n $numsof  >> $filesof
+echo $ESOREX_OUTPUT_DIR/MASTER_FLAT.fits MASTER_FLAT >> $filesof
+echo $ESOREX_OUTPUT_DIR/MASTER_BIAS.fits MASTER_BIAS >> $filesof
+echo $ESOREX_OUTPUT_DIR/TRACE_TABLE.fits TRACE_TABLE >> $filesof
+echo $CALIB_FILES/line_catalog.fits LINE_CATALOG >> $filesof
+echo $CALIB_FILES/badpix_table.fits BADPIX_TABLE >> $filesof
+
+taskset -c 0-23 esorex --recipe-config=$RECIPE_CONFIG/$recipe'.rc' $recipe $filesof
