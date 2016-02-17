@@ -1,7 +1,10 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage{mparhack} 
 
-\title{Summaries}
+
+\title{Binaries in Globular Clusters}
 \author{Manuel Pichardo}
 \date{February 2016}
 
@@ -10,12 +13,25 @@
 
 
 \newcommand{\para}{
-\vspace{.3cm}
 \addtocounter{para}{1}
+\vspace{.3cm}
 \arabic{para}
 \vspace{.3cm}\\
 }
 
+\newcommand{\parnum}{(\arabic{parcount})}
+
+\newcounter{parcount}
+\newcommand\p{%
+    \stepcounter{parcount}%
+    \parnum \hspace{1em}%
+}
+
+\newenvironment{parnumbers}{%
+	\setcounter{parcount}{0}
+   \par%
+   \everypar{\noindent \stepcounter{parcount}\parnum \hspace{1em}}%
+}{}
 
 
 
@@ -33,9 +49,73 @@
 
 \maketitle
 
-\chapter{Binaries in Globular Clusters}
 
 \section{Chapter 1}
+
+
+\section{Chapter 2 Observations}
+
+\setcounter{para}{1}
+
+\subsection{Radial-Velocity Variables}
+\subsubsection{Radial velocity Searches}
+
+\begin{parnumbers}
+
+Radial velocity variables to answer freq., correlation of freq. of binaries, destruction and radial distribution of binaries. \\ 
+
+Giants have V=12-13 \\
+
+Use from group magnituded limited surveys to get HR diagram, radial velocity. \\
+
+Radial-vel observation determine period and eccentricity. This have info on dynamics since wider system tend to get lost. Also period help you know if capture and primordial ($\square$ How?) as well as mass constraint. \\
+
+They are big stars with .1 AU radii. So no less 40 days binaries (.25 AU). Due to mass transfer and lower luminosity. So \textbf{Bias long periods}.\\
+
+Need years of observationfor longer periods. \\ 
+
+Look at giants\\
+
+Binaries should be concentrated and many destroyed \\
+
+Formula foro destruction. Looking gives us a lower limit. \\
+
+\end{parnumbers}
+
+\subsubsection{Implementing A Survey}
+
+\begin{parnumbers}
+	How with few observations and convert to true frequency. Use $\chi ^2$ for variablility.  ($\square$ Still used?). But should use F (variance ratio). \\
+
+Other none normal errors like guiding and lose some in cluster. \\
+
+Giant vary more than other stars. So variability maybe not binary. \\
+
+So to avoid "atmospheric variables" velocit change of 10 km/s at least. Reduced to fainter stars. They give some limits $\chi ^2$. \\
+
+Of course will miss some due to face-on, long periods and low amplitudes vel. Best determine Monte-Carlo. \\
+
+Show montecarlo. Also remove those Red Giants that grow too much and pass ROche lobe. \\
+
+Also for eccentric. Taken if pass ROche ar periastron. \\
+
+Conclude that: 1- Circular easier since elliptical spend time in slow away. 2- Big obseration bias observing big ones. 3- 25-50 $\%$ if 0.2 to 10 yers period. and mass ratio larger 0.25.\\
+
+If lower to 4 km/s add 0.2 efficiency. \\
+
+How to calculate true freq. If assume they are all inside there. GIve you average \\
+
+More sofisticated 
+
+
+
+
+
+
+
+
+\end{parnumbers}
+
 
 
 
@@ -101,7 +181,6 @@ Core bounce. $r_h \propto t^{2/3}$ and for velocity dispersion $v \propto t^{-1/
 
 \para
 derivation result above
-
 \para
 So regardes the half-mass radius expands steadely and as it expands the galaclactic tidal field removes the outermost stars. THe time is longer by only a few factos thatn core-collpase. 
 
