@@ -1,0 +1,6 @@
+#!/bin/bash
+line=badpix_table.fits
+
+for i in `ls *`; do sed -i "/$line/s/^/#/" $i; done
+
+
