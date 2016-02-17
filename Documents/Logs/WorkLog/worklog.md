@@ -26,6 +26,10 @@ I created a private git repository called *muse2016*.
 I downloaded the observation of the Cluster **NGC 6397**. The observation day was *2014-08-02*. The data can be download from the website [ESO Archive](archive.eso.org/eso/eso_archive_main.html) after creating an account. My username is *mmarcano22*
 
 
+### My IRAP account
+
+My username is `mpichardo` and webmail is `mpichardo@irap.omp.eu`
+
 ### Astropy:
 
 The server does have ipython and the module Astropy installed for python2, but not for python3.  Useful commands:
@@ -269,21 +273,70 @@ I could the whole 7 SKYFLATs I downloaded because of lack of memory. I could onl
 ### STD and Astrometry.
 
 
-Which one to use? I downloaded a few from around those days. The closes std is at RA: 290 DEC -45. THe obhect is at RA: 265 DEC: -22. For astrometry colest is RA: 283 DEC: -22 .
+Which one to use? I downloaded a few from around those days. The closes std is at RA: 290 DEC -45. The object is at RA: 265 DEC: -22. For astrometry closest is RA: 283 DEC: -22 .
 
-
-
-
-## Questions
-- [ ] The flat with OBS name "muocal_nightcalib" and not "Calibration" is a ILLUM even if it doesn't say ILLUM in DPR TYPE?
-- [ ] Could do twilight in series. No option nifu=0 so due to lack of memory only could do 5 not with the 7 available. Any way to do it ?
-- [ ] Why doesn't work to include TWILIGHT_CUBE as input in the sof for muse_scibasic for objects. 
+#### Questions
 - [ ] What Astrometry to use? Use the calibration files?. Downloaded close to that day.  
 - [ ] What STD to use? Use the ones given in the calibration files? Downloaded close to that day.  
 
+
 ## To-Do
-- [ ] Make a CUBE from the object using the astrometry_wcs solution and std given in the calibration file. 
+- [x] ~~Download all STD and ASTROMETRY for near the date.~~ 17 Astrometry and 39 STD. 
+
+# Feb-15-2016 Paul Sabatier
+
+## Journee Scientific
+
+### MUSE carfantan Galpack3D
+
+# Feb-16-2016 Paul Sabatier
+
+## Journee Scientific
+
+### MUSE carfantan Galpack3D 
+
+Talk about .... Paper ....
+
+
+# Feb-17-2016 IRAP Roche J042
+
+## Commits
+
+### Results of muse_scibasic
+
+
+Apparently I have 19 exposures. Produced also 19 OBJECT_RED. Each with Data, DQ and STAT. Data, Data quality and statistics. Need to search for the middle one. 
+
+#### Questions
+- [x] ~~Take a look at Object Reds. Good or Bad?~~ I guess bad. Have the same ugly feature that the final CUBE obtained. 
+
+
+### Creating the DataCube
+
+I tried to created it but got a really bad ones with a lot of empty black spaces with 'nan'. It might be due to the bad_pixel table. It will try to do it again without the bad pixel table from the calibration files. This was done only for the first exposure "0001".  
+
+In the article they say:
+
+> To combine the pixtables from the individual exposures of each pointing into a single datacube, we had to account for the small offsets that occur during position angle changes, because the rotation centre is not perfectly aligned with the optical axis of the instrument (“derotator wobble”). We did so by creating a broadband image from each pixtable, measuring the coordinates of the brighter stars in the field of view, and feeding the measured average offsets to the pipeline when creating the final datacube for each pointing
+
+#### Questions
+- [ ] What does this mean?
+- [ ]  Can see that in OBJECT_RED or where? 
+
+
+
+
+## Other Questions
+- [ ] The flat with OBS name "muocal_nightcalib" and not "Calibration" is a ILLUM even if it doesn't say ILLUM in DPR TYPE?
+- [ ] Could do twilight in series. No option nifu=0 so due to lack of memory only could do 5 not with the 7 available. Any way to do it ?
+- [ ] Why doesn't work to include TWILIGHT_CUBE as input in the sof for muse_scibasic for objects. 
+
+## To-Do
+- [x] ~~Make a CUBE from the object using the astrometry_wcs solution and std given in the calibration file.~~ Very bad quality one.
+- [x] ~~Downloaded the data for another day.~~ This time 2014-July-27
+- [ ] Do a CUBE without using the bad pixel table. 
 - [ ] Make a CUBE from the object creating the astrometry_wcs solution and std from the downloaded std and astrometry data for around those days. 
+
 
 
 

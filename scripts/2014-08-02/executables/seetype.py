@@ -37,8 +37,10 @@ for f in files:
             +' '+ temp[0].header['*OBS NAME'][0]  +' '+ temp[0].header['*DATE-OBS*'][0] +' '
             +  str(temp[0].header['*TEMP11 VAL'][0]) + ' '+ temp[0].header['*READ CURNAME*'][0]   
             +  (' lamp: #'+str(getlamp(temp)) if typetemp == 'ARC' else '')  
-            + (' RA:'+ str(temp[0].header['RA']) if typetemp=='ASTROMETRY' or typetemp=='STD' or typetemp=='OBJECT' else '')   
-            + (' DEC:'+ str(temp[0].header['DEC']) if typetemp=='ASTROMETRY' or typetemp=='STD' or typetemp=='OBJECT'  else '' )    
+#            + (' RA:'+ str(temp[0].header['RA']) if typetemp=='ASTROMETRY' or typetemp=='STD' or typetemp=='OBJECT' else '')   
+#            + (' DEC:'+ str(temp[0].header['DEC']) if typetemp=='ASTROMETRY' or typetemp=='STD' or typetemp=='OBJECT'  else '' )    
++ (temp[0].header.comments['RA'][5:20] if typetemp=='ASTROMETRY' or typetemp=='STD' or typetemp=='OBJECT' else '')   
++ (temp[0].header.comments['DEC'][6:29] if typetemp=='ASTROMETRY' or typetemp=='STD' or typetemp=='OBJECT'  else '' )    
             + '\n')
     print temp[0].header['*DPR TYPE*'][0] , temp[0].header['*INS MODE'][0] \
         , temp[0].header['*OBS NAME'][0], temp[0].header['*DATE-OBS*'][0], temp[0].header['*TEMP11 VAL'][0],temp[0].header['*READ CURNAME*'][0] \

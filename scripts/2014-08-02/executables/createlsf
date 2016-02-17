@@ -21,7 +21,7 @@ python /home/detoeuf/Manuel/scripts/2014-08-02/executables/arc.py
 #Variables
 recipe=muse_lsf
 filesof=lsf.sof
-numsof=5
+numsof=5 #There should be 5 per lamp for a total of 15 ARCs taken as a set. 
 
 > $filesof 
 cat filearc.txt | grep '#3' | head -n $numsof   > $filesof

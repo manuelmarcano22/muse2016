@@ -17,7 +17,7 @@ patterns=(BIAS WFM-NOAO-N) #Patterns to seach in the mastersof.
 #WFM is instrument mode and should be the same as object.  Be careful it needs to be in the right order. The patterns are tags output of the Python program seetype.py
 
 a=`echo ${patterns[*]/%/.*} | rev | cut -c 3- | rev`
-cat mastersof.txt | grep -Ew "$a" | head -n $numsof > $filesof 
+cat cleanmastersof.txt | grep -Ew "$a" | head -n $numsof > $filesof 
 echo $CALIB_FILES/badpix_table.fits BADPIX_TABLE >> $filesof #Optional BadPixel data in calibration
 
 #Call to esorex
