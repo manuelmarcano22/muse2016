@@ -15,7 +15,7 @@ filesof=scipost.sof
 
 
 #a=`echo ${patterns[*]/%/.*} | rev | cut -c 3- | rev`
-a=0001 #Exposure to process. 
+a=0002 #Exposure to process. 
 > $filesof
 for i in `ls PIXTABLE*$a*.fits`
 do 
