@@ -2,7 +2,7 @@
 
 
 #Source params file
-source /home/detoeuf/Manuel/scripts/2014-08-02/config/params
+source /home/detoeuf/Manuel/scripts/2014-07-27/config/params
 
 cd $DATA_LOCATION
 
