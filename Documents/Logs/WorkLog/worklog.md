@@ -308,7 +308,7 @@ Talk about .... Paper ....
 Apparently I have 19 exposures. Produced also 19 OBJECT_RED. Each with Data, DQ and STAT. Data, Data quality and statistics. Need to search for the middle one. 
 
 #### Questions
-- [x] ~~Take a look at Object Reds. Good or Bad?~~ I guess bad. Have the same ugly feature that the final CUBE obtained. 
+- [x] ~~Take a look at Object Reds. Good or Bad?~~ I guess bad. ~~Have the same ugly feature that the final CUBE obtained.~~ It was ds9 displaying it. Works with QFitsViewer
 
 
 ### Creating the DataCube
@@ -325,20 +325,38 @@ In the article they say:
 
 
 
+## To-Do
+- [x] ~~Make a CUBE from the object using the astrometry_wcs solution and std given in the calibration file.~~ ~~Very bad quality one.~~ It was ds9. Display with QFits Viewer. 
+- [x] ~~Downloaded the data for another day.~~ This time 2014-July-27
+
+
+# Feb-18-2016 IRAP Roche J042
+
+## Commits
+
+### QFitsView
+
+I wasn't able to display the datacube in ds9. In QFitsView  the problem was how I was loading the fits. You have to make sure to click the checkbox "All extensions" when opening a datacube. This translate to the command `readfitsall` in **DPUSER**. Also check the scale, how much % is showing. 
+
+### "white light" image. 
+
+This can be done in QFitsView by clicking on *Options*, then *Cube Display* then instead of Single select *Average*.
+
+
+### New Data ILLUM
+
+The new data does not include an ILLUM Flat. Apperently. Is this normal? Maybe because the temperature didnt change much that day. 
+
+#### Questions
+- [ ]  Process without ILLUM?
 
 ## Other Questions
-- [ ] The flat with OBS name "muocal_nightcalib" and not "Calibration" is a ILLUM even if it doesn't say ILLUM in DPR TYPE?
+- [ ] The flat with OBS name "muocal_nightcalib" and not "Calibration" is a ILLUM even if it doesn't say ILLUM in DPR TYPE?. I dont have one for the new dataset 2014-July-27
 - [ ] Could do twilight in series. No option nifu=0 so due to lack of memory only could do 5 not with the 7 available. Any way to do it ?
-- [ ] Why doesn't work to include TWILIGHT_CUBE as input in the sof for muse_scibasic for objects. 
+- [x] ~~Why doesn't work to include TWILIGHT_CUBE as input in the sof for muse_scibasic for objects.~~ Apparently it did work. I checked looking the header of a PIXOBJECT ['*PRO REC*'] and it has the TWILIGHT CUBE as input.  
 
 ## To-Do
-- [x] ~~Make a CUBE from the object using the astrometry_wcs solution and std given in the calibration file.~~ Very bad quality one.
-- [x] ~~Downloaded the data for another day.~~ This time 2014-July-27
-- [ ] Do a CUBE without using the bad pixel table. 
 - [ ] Make a CUBE from the object creating the astrometry_wcs solution and std from the downloaded std and astrometry data for around those days. 
-
-
-
-
-
+- [ ] Do a CUBE with and without using the bad pixel table.
+- [ ] Make CUBE with lsf from calibration and created one. 
 
