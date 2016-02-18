@@ -347,6 +347,10 @@ This can be done in QFitsView by clicking on *Options*, then *Cube Display* then
 
 The new data does not include an ILLUM Flat. Apperently. Is this normal? Maybe because the temperature didnt change much that day. 
 
+### Header information
+
+To see with what routine and with what files a certain fits file  was created using an ESORex recipe look in the header the information with Python with the tag:  `fitsfile[0].header['*PRO REC*']`
+
 #### Questions
 - [ ]  Process without ILLUM?
 
