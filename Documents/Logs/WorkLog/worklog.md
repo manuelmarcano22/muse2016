@@ -351,6 +351,14 @@ The new data does not include an ILLUM Flat. Apperently. Is this normal? Maybe b
 
 To see with what routine and with what files a certain fits file  was created using an ESORex recipe look in the header the information with Python with the tag:  `fitsfile[0].header['*PRO REC*']`
 
+
+### Literature Review
+
+ Dr. Webb mentioned a study about the two population of CV for the particular cluster. Also look for the Hubble optical study after the Chandra paper done. Also search information for the distinction between CV and double degenerated. This can't be distinguished in X-Rays. 
+
+ 
+
+
 #### Questions
 - [ ]  Process without ILLUM?
 
@@ -360,7 +368,9 @@ To see with what routine and with what files a certain fits file  was created us
 - [x] ~~Why doesn't work to include TWILIGHT_CUBE as input in the sof for muse_scibasic for objects.~~ Apparently it did work. I checked looking the header of a PIXOBJECT ['*PRO REC*'] and it has the TWILIGHT CUBE as input.  
 
 ## To-Do
+- [ ] Install IRAF and Pyraf with Ureka from the STScI
 - [ ] Make a CUBE from the object creating the astrometry_wcs solution and std from the downloaded std and astrometry data for around those days. 
 - [ ] Do a CUBE with and without using the bad pixel table.
 - [ ] Make CUBE with lsf from calibration and created one. 
+- [ ] Papers about Pupolation CV, Optical observation of cluster and double degeneated in optical 
 
