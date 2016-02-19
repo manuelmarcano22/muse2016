@@ -2,22 +2,31 @@
 
 #Create mastersof. This is not use in the routines we need the "clean" one with just one set of data and one ILLUM close to the data. 
 bash createmastersof
-
-#create BIAS
+#
+##create BIAS
 bash createbiasmaster
-
-#create FLATS
+#
+##create FLATS
 bash createflatmaster
-
-#create ARC
+#
+##create ARC
 bash createwavecal
+#
+##create lsf
+bash createlsf
 
-#create lsf
-bash cratelsf
+#create twilight
+bash createtwilight
 
-#create pixelobjects
+##create pixelobjects
 bash createscibasicobject
 
-#create Cube
-bash createscipost
+##Create std object
+bash createscibasicstd
 
+
+##Create standard STD response
+bash createstandard
+
+##create Cube
+bash createscipost

@@ -14,9 +14,19 @@ bash createwavecal
 #
 ##create lsf
 bash createlsf
-#
+
+#create twilight
+bash createtwilight
+
 ##create pixelobjects
 bash createscibasicobject
-#
+
+##Create std object
+bash createscibasicstd
+
+
+##Create standard STD response
+bash createstandard
+
 ##create Cube
 bash createscipost

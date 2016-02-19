@@ -8,8 +8,8 @@ cd $DATA_LOCATION
 
 
 #Variables
-recipe=muse_scipost
-filesof=scipost.sof
+recipe=muse_standard
+filesof=standard.sof
 #patterns=(OBJECT WFM-NOAO-N )  #Patterns to seach in the mastersof. Be careful it needs to be in the right order. The patterns are output of the Python program seetype.py
 #numsof=7 
 
@@ -17,7 +17,7 @@ filesof=scipost.sof
 #a=`echo ${patterns[*]/%/.*} | rev | cut -c 3- | rev`
 a=0001 #Exposure to process. 
 > $filesof
-for i in `ls PIXTABLE_OBJECT*$a*.fits`
+for i in `ls PIXTABLE_STD*$a*.fits`
 do 
 	echo `readlink -f $i` PIXTABLE_OBJECT >> $filesof
 done
@@ -25,16 +25,9 @@ done
 
 
 # Using all the cal from the program or download online for this science verification run
-#echo $ESOREX_OUTPUT_DIR/LSF_PROFILE.fits LSF_PROFILE >> $filesof #Also have one from the calibration
-echo $CALIB_FILES/lsf_profile_slow_wfm-n.fits LSF_PROFILE   >> $filesof # The one made by the ESORex recipe with data. 
-echo $CALIB_FILES/astrometry_wcs_wfm_comm2b.fits ASTROMETRY_WCS   >> $filesof
-echo $CALIB_FILES/sky_lines.fits SKY_LINES   >> $filesof
 echo $CALIB_FILES/extinct_table.fits EXTINCT_TABLE   >> $filesof
+echo $CALIB_FILES/std_fulx_table.fits
 echo $CALIB_FILES/filter_list.fits FILTER_LIST   >> $filesof
-# STD can be from calibration or from Data
-#echo $CALIB_FILES/std_response_wfm-n.fits STD_RESPONSE   >> $filesof #Calibration
-echo $ESOREX_OUTPUTDIR/STD_RESPONSE_$a.fits STD_RESPONSE >> $filesof
-echo $ESOREX_OUTPUTDIR/STD_TELLURIC_$a.fits STD_TELLURIC >> $filesof
 
 
 
