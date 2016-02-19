@@ -3,8 +3,11 @@
 #It creates the sof for the master wavecal
 # then execute the command to do the wavelenght calibrationa. Need to create filearc using the python script arc.py. 
 
-#Source params file
-source /home/detoeuf/Manuel/scripts/2014-08-02/config/params
+ 
+#Souce Params file with enviroment variables
+scripts=/home/detoeuf/Manuel/scripts/2014-08-02
+source $scripts/config/params 
+
 
 cd $DATA_LOCATION
 
@@ -30,3 +33,24 @@ echo $CALIB_FILES/vignetting_mask.fits VIGNETTING_MASK >> $filesof
 
 
 taskset -c 0-23 esorex --recipe-config=$RECIPE_CONFIG/$recipe'.rc' $recipe $filesof
+
+#Create list of product files to productsof.txt
+product=(TWILIGHT_CUBE.fits)
+for i in "${product[@]}"
+do
+	if [ -f $i ]; 
+	then 
+		grep $i productsof.txt > /dev/null 
+		if [ $? -eq 0 ];
+		then 
+			sed -i "/$i/c\\$ESOREX_OUTPUT_DIR/$i `stat -c %y $i`" productsof.txt
+		else
+			echo $ESOREX_OUTPUT_DIR/$i `stat -c %y $i` >> productsof.txt
+		fi
+	else
+		echo $i " Has not been created yet" >> productsof.txt 
+	fi
+done
+#Update product in script
+cp productsof.txt $scripts/products/
+cp $filesof $scripts/products/

@@ -4,7 +4,8 @@
 #and create a master bias
 
 #Souce Params file with enviroment variables
-source /home/detoeuf/Manuel/scripts/2014-08-02/config/params 
+scripts=/home/detoeuf/Manuel/scripts/2014-08-02
+source $scripts/config/params 
 
 #Change to data location
 cd $DATA_LOCATION
@@ -36,3 +37,24 @@ sed -i "/MASTER_BIAS/c\\$ESOREX_OUTPUT_DIR/MASTER_BIAS.fits MASTER_BIAS" product
 else
 echo $ESOREX_OUTPUT_DIR/MASTER_BIAS.fits MASTER_BIAS >> productsof.txt
 fi
+
+#Create list of product files to productsof.txt
+product=(MASTER_BIAS.fits)
+for i in "${product[@]}"
+do
+	if [ -f $i ]; 
+	then 
+		grep $i productsof.txt > /dev/null 
+		if [ $? -eq 0 ];
+		then 
+			sed -i "/$i/c\\$ESOREX_OUTPUT_DIR/$i `stat -c %y $i`" productsof.txt
+		else
+			echo $ESOREX_OUTPUT_DIR/$i `stat -c %y $i` >> productsof.txt
+		fi
+	else
+		echo $i " Has not been created yet" >> productsof.txt 
+	fi
+done
+#Update product in script
+cp productsof.txt $scripts/products/
+cp $filesof $scripts/products/

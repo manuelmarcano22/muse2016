@@ -3,8 +3,9 @@
 #It creates the sof for the master flat and then execute the command to create a master flat
 #It needs the MASTER_BIAS.fits and BADPIXEL table optional. 
 
-#Source params file
-source /home/detoeuf/Manuel/scripts/2014-07-27/config/params
+#Souce Params file with enviroment variables
+scripts=/home/detoeuf/Manuel/scripts/2014-07-27
+source $scripts/config/params 
 
 #cd $DATA_LOCATION
 cd $ESOREX_OUTPUT_DIR
@@ -28,15 +29,23 @@ echo $CALIB_FILES/badpix_table.fits BADPIX_TABLE >> $filesof
 
 taskset -c 0-23 esorex --recipe-config=$RECIPE_CONFIG/$recipe'.rc' $recipe $filesof
 
-#Update products sof with product frames
 #Create list of product files to productsof.txt
-test -f productsof.txt || touch productsof.txt   # Test if it does exist
-grep MASTER_FLAT productsof.txt > /dev/null
-if [ $? -eq 0];
-then
-	sed -i "/MASTER_FLAT/c\\$ESOREX_OUTPUT_DIR/MASTER_FLAT.fits MASTER_FLAT" productsof.txt
-	sed -i "/TRACE_TABLE/c\\$ESOREX_OUTPUT_DIR/TRACE_TABLE.fits TRACE_TABLE" productsof.txt
-else
-	echo $ESOREX_OUTPUT_DIR/MASTER_FLAT.fits MASTER_FLAT >> productsof.txt
-	echo $ESOREX_OUTPUT_DIR/TRACE_TABLE.fits TRACE_TABLE >> productsof.txt
-fi
+product=(MASTER_FLAT.fits TRACE_TABLE.fits)
+for i in "${product[@]}"
+do
+	if [ -f $i ]; 
+	then 
+		grep $i productsof.txt > /dev/null 
+		if [ $? -eq 0 ];
+		then 
+			sed  -i "/$i/c\\$ESOREX_OUTPUT_DIR/$i `stat -c %y $i`" productsof.txt
+		else
+			echo $ESOREX_OUTPUT_DIR/$i `stat -c %y $i` >> productsof.txt
+		fi
+	else
+		echo $i " Has not been created yet" >> productsof.txt 
+	fi
+done
+#Update product in script
+cp productsof.txt $scripts/products/
+cp $filesof $scripts/products/

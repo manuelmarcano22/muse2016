@@ -1,19 +1,19 @@
 #!/bin/bash
 
 #Create mastersof. This is not use in the routines we need the "clean" one with just one set of data and one ILLUM close to the data. 
-bash createmastersof
-#
-##create BIAS
-bash createbiasmaster
-#
-##create FLATS
-bash createflatmaster
-#
-##create ARC
-bash createwavecal
-#
-##create lsf
-bash createlsf
+#bash createmastersof
+##
+###create BIAS
+#bash createbiasmaster
+##
+###create FLATS
+#bash createflatmaster
+##
+###create ARC
+#bash createwavecal
+##
+###create lsf
+#bash createlsf
 
 #create twilight
 bash createtwilight
@@ -30,3 +30,4 @@ bash createstandard
 
 ##create Cube
 bash createscipost
+
