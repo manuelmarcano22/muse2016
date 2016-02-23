@@ -390,7 +390,7 @@ En [@lomio] esta esto.
 
 Aui en [@lomio] tambien esta
 
-[@lomio]: Husser T-O, Kamann S, Dreizler S, Wendt M, Wulff N, Bacon R, et al. MUSE crowded field 3D spectroscopy of over 12,000 stars in the globular cluster NGC 6397 - I. The first comprehensive spectroscopic HRD of a globular cluster. ArXiv e-prints [Internet]. 2016 Feb 1 [cited 2016 Feb 23];1602:arXiv:1602.01649. Available from: http://adsabs.harvard.edu/abs/2016arXiv160201649H
+[@lomio]: http://dx.doi.org/10.1002/aris.201 "Husser T-O, Kamann S, Dreizler S, Wendt M, Wulff N, Bacon R, et al. MUSE crowded field 3D spectroscopy of over 12,000 stars in the globular cluster NGC 6397 - I. The first comprehensive spectroscopic HRD of a globular cluster. ArXiv e-prints [Internet]. 2016 Feb 1 [cited 2016 Feb 23];1602:arXiv:1602.01649. Available from: http://adsabs.harvard.edu/abs/2016arXiv160201649H"
 
 
 
