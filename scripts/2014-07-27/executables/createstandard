@@ -19,14 +19,14 @@ a=0001 #Exposure to process.
 > $filesof
 for i in `ls PIXTABLE_STD*$a*.fits`
 do 
-	echo `readlink -f $i` PIXTABLE_OBJECT >> $filesof
+	echo `readlink -f $i` PIXTABLE_STD >> $filesof
 done
 
 
 
 # Using all the cal from the program or download online for this science verification run
 echo $CALIB_FILES/extinct_table.fits EXTINCT_TABLE   >> $filesof
-echo $CALIB_FILES/std_fulx_table.fits
+echo $CALIB_FILES/std_flux_table.fits STD_FLUX_TABLE >> $filesof
 echo $CALIB_FILES/filter_list.fits FILTER_LIST   >> $filesof
 
 

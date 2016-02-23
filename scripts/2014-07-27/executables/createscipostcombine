@@ -9,21 +9,18 @@ cd $DATA_LOCATION
 
 #Variables
 recipe=muse_scipost
-filesof=scipost.sof
-#patterns=(OBJECT WFM-NOAO-N )  #Patterns to seach in the mastersof. Be careful it needs to be in the right order. The patterns are output of the Python program seetype.py
-#numsof=7 
-
-
-#a=`echo ${patterns[*]/%/.*} | rev | cut -c 3- | rev`
-a=0001 #Exposure to process OBJECt
 stdexp=0001 #In case there are several exposures of STD processed. 
-> $filesof
-for i in `ls PIXTABLE_OBJECT*$a*.fits`
-do 
-	echo `readlink -f $i` PIXTABLE_OBJECT >> $filesof
-done
+expnum="$(echo `ls PIXTABLE_OBJECT_* | wc -l`"/24" | bc)" #Create a DATACUBE for each exposure
 
-
+for i in $(eval echo "{1..$expnum}")
+do
+	echo $i
+	filesof=scipost$i.sof
+	> $filesof
+	for l in `ls PIXTABLE_OBJECT_*0$i-*.fits`
+	do 
+		echo `readlink -f $l` PIXTABLE_OBJECT >> $filesof
+	done
 
 # Using all the cal from the program or download online for this science verification run
 #echo $ESOREX_OUTPUT_DIR/LSF_PROFILE.fits LSF_PROFILE >> $filesof #Also have one from the calibration
@@ -37,28 +34,40 @@ echo $CALIB_FILES/filter_list.fits FILTER_LIST   >> $filesof
 echo $ESOREX_OUTPUT_DIR/STD_RESPONSE_$stdexp.fits STD_RESPONSE >> $filesof
 echo $ESOREX_OUTPUT_DIR/STD_TELLURIC_$stdexp.fits STD_TELLURIC >> $filesof
 
-
-
-
 taskset -c 0-23 esorex --recipe-config=$RECIPE_CONFIG/$recipe'.rc' $recipe $filesof
 
+mv DATACUBE_FINAL.fits DATACUBE_FINAL_EXP0$i.fits
+for j in `ls IMAGE_FOV_*`
+do 
+	newname=$(echo $j | cut -d "." -f1)
+	mv $j "EXP0"$i$newname
+done
+
+for k in `ls PIXTABLE_REDUCED_*`
+do 
+	newname=$(echo $k | cut -d "." -f1)
+	mv $k "EXP0"$i$newname
+done
+
 #Create list of product files to productsof.txt
-product=(DATACUBE_FINAL.fits)
-for i in "${product[@]}"
+product=(DATACUBE_FINAL_EXP0$i.fits)
+for h in "${product[@]}"
 do
-	if [ -f $i ]; 
+	if [ -f $h ]; 
 	then 
-		grep $i productsof.txt > /dev/null 
+		grep $h productsof.txt > /dev/null 
 		if [ $? -eq 0 ];
 		then 
-			sed -i "/$i/c\\$ESOREX_OUTPUT_DIR/$i `stat -c %y $i`" productsof.txt
+			sed -i "/$h/c\\$ESOREX_OUTPUT_DIR/$h `stat -c %y $h`" productsof.txt
 		else
-			echo $ESOREX_OUTPUT_DIR/$i `stat -c %y $i` >> productsof.txt
+			echo $ESOREX_OUTPUT_DIR/$h `stat -c %y $h` >> productsof.txt
 		fi
 	else
-		echo $i " Has not been created yet" >> productsof.txt 
+		echo $h " Has not been created yet" >> productsof.txt 
 	fi
 done
 #Update product in script
 cp productsof.txt $scripts/products/
 cp $filesof $scripts/products/
+
+done

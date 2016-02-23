@@ -27,5 +27,5 @@
 /mnt/data/MUSE/2014-07-27/cal/sky_lines.fits SKY_LINES
 /mnt/data/MUSE/2014-07-27/cal/extinct_table.fits EXTINCT_TABLE
 /mnt/data/MUSE/2014-07-27/cal/filter_list.fits FILTER_LIST
-/STD_RESPONSE_0001.fits STD_RESPONSE
-/STD_TELLURIC_0001.fits STD_TELLURIC
+/mnt/data/MUSE/2014-07-27/STD_RESPONSE_0001.fits STD_RESPONSE
+/mnt/data/MUSE/2014-07-27/STD_TELLURIC_0001.fits STD_TELLURIC

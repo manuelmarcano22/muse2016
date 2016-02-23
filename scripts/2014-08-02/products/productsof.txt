@@ -1,21 +1,24 @@
 /mnt/data/MUSE/2014-08-02/MASTER_BIAS.fits MASTER_BIAS
-/mnt/data/MUSE/2014-08-02/MASTER_BIAS.fits MASTER_BIAS
-/mnt/data/MUSE/2014-08-02/MASTER_BIAS.fits MASTER_BIAS
-/mnt/data/MUSE/2014-08-02/MASTER_BIAS.fits MASTER_BIAS
-/mnt/data/MUSE/2014-08-02/MASTER_FLAT.fits MASTER_FLAT
-/mnt/data/MUSE/2014-08-02/TRACE_TABLE.fits TRACE_TABLE
-/mnt/data/MUSE/2014-08-02/MASTER_FLAT.fits MASTER_FLAT
-/mnt/data/MUSE/2014-08-02/TRACE_TABLE.fits TRACE_TABLE
-/mnt/data/MUSE/2014-08-02/MASTER_FLAT.fits MASTER_FLAT
-/mnt/data/MUSE/2014-08-02/TRACE_TABLE.fits TRACE_TABLE
-/mnt/data/MUSE/2014-08-02/MASTER_FLAT.fits MASTER_FLAT
-/mnt/data/MUSE/2014-08-02/TRACE_TABLE.fits TRACE_TABLE
-/mnt/data/MUSE/2014-08-02/MASTER_FLAT.fits MASTER_FLAT
-/mnt/data/MUSE/2014-08-02/TRACE_TABLE.fits TRACE_TABLE
-/mnt/data/MUSE/2014-08-02/MASTER_FLAT.fits MASTER_FLAT
-/mnt/data/MUSE/2014-08-02/TRACE_TABLE.fits TRACE_TABLE
-/mnt/data/MUSE/2014-08-02/MASTER_FLAT.fits MASTER_FLAT
-/mnt/data/MUSE/2014-08-02/TRACE_TABLE.fits TRACE_TABLE
 /mnt/data/MUSE/2014-08-02/MASTER_FLAT.fits MASTER_FLAT
 /mnt/data/MUSE/2014-08-02/TRACE_TABLE.fits TRACE_TABLE
 DATACUBE_FINAL.fits  Has not been created yet
+PIXTABLE_STD_001-01.fits  Has not been created yet
+DATACUBE_FINAL_EXP01.fits  Has not been created yet
+DATACUBE_FINAL_EXP02.fits  Has not been created yet
+DATACUBE_FINAL_EXP03.fits  Has not been created yet
+DATACUBE_FINAL_EXP04.fits  Has not been created yet
+DATACUBE_FINAL_EXP05.fits  Has not been created yet
+DATACUBE_FINAL_EXP06.fits  Has not been created yet
+DATACUBE_FINAL_EXP07.fits  Has not been created yet
+DATACUBE_FINAL_EXP08.fits  Has not been created yet
+DATACUBE_FINAL_EXP09.fits  Has not been created yet
+DATACUBE_FINAL_EXP010.fits  Has not been created yet
+DATACUBE_FINAL_EXP011.fits  Has not been created yet
+DATACUBE_FINAL_EXP012.fits  Has not been created yet
+DATACUBE_FINAL_EXP013.fits  Has not been created yet
+DATACUBE_FINAL_EXP014.fits  Has not been created yet
+DATACUBE_FINAL_EXP015.fits  Has not been created yet
+DATACUBE_FINAL_EXP016.fits  Has not been created yet
+DATACUBE_FINAL_EXP017.fits  Has not been created yet
+DATACUBE_FINAL_EXP018.fits  Has not been created yet
+DATACUBE_FINAL_EXP019.fits  Has not been created yet

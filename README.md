@@ -14,7 +14,7 @@ This work was done using version 1.0.1. The pipeline distribution kit includes s
 -  The [Common Pipeline Library](http://www.eso.org/sci/software/cpl/download.html) version 6.5.1
 -  The [ESO Recipe Execution Tool](http://www.eso.org/sci/software/cpl/esorex.html) (EsoRex) version 3.11.1. 
 
-All the data reduction was done calling EsoRex to exexute the MUSE DRS recipes from a bash (version 4.3.11) scripts.  The configuration files for each of the called MUSE recipes used, the bash scripts,, useful python (Python 2.7.6)  scripts and other text files can be found in the *scripts* folder. 
+All the data reduction was done calling EsoRex to exexute the MUSE DRS recipes from a bash (version 4.3.11) script.  The configuration files for each of the called MUSE recipes used, the bash scripts, useful python (Python 2.7.6) scripts and other text files can be found in the *scripts* folder. 
 
 ## In the Repo:
 
@@ -22,7 +22,7 @@ All the data reduction was done calling EsoRex to exexute the MUSE DRS recipes f
 
 The *Documents* folder contains several subfolders:
 
-- The *Summaries* subfolder includes  brief personal summaries of relevant research papers. (Created a Mendeley account?)
+- The *Summaries* subfolder includes  brief personal summaries of relevant research papers. (Create a Mendeley account?)
 
 - The *Logs* subfolder contains my personal daily [research log](Documents/Logs/WorkLog/worklog.md).  It includes (at least should)  my daily tasks, any questions (answered and unanswered), useful information and my current to-do list. This might move to another repo following the idea to have it in a webserver with jekyll. For more info (https://github.com/fdschneider/jekyll-lablog).  A cool example can be found here (https://github.com/cboettig/labnotebook). 
 

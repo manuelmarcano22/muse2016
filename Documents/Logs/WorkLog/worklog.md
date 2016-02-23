@@ -356,7 +356,17 @@ To see with what routine and with what files a certain fits file  was created us
 
  Dr. Webb mentioned a study about the two population of CV for the particular cluster. Also look for the Hubble optical study after the Chandra paper done. Also search information for the distinction between CV and double degenerated. This can't be distinguished in X-Rays. 
 
- 
+## Other Questions
+- [x] ~~Why doesn't work to include TWILIGHT_CUBE as input in the sof for muse_scibasic for objects.~~ Apparently it did work. I checked looking the header of a PIXOBJECT ['*PRO REC*'] and it has the TWILIGHT CUBE as input.  
+
+
+# Feb-18-2016 IRAP Roche J042
+
+## Commits
+
+### DATA_CUBE
+
+Using a standard STD nearby (only one exposure) and all the optional input like "badpixel tables", but without any darks or ILLUM. 
 
 
 #### Questions
@@ -365,12 +375,27 @@ To see with what routine and with what files a certain fits file  was created us
 ## Other Questions
 - [ ] The flat with OBS name "muocal_nightcalib" and not "Calibration" is a ILLUM even if it doesn't say ILLUM in DPR TYPE?. I dont have one for the new dataset 2014-July-27
 - [ ] Could do twilight in series. No option nifu=0 so due to lack of memory only could do 5 not with the 7 available. Any way to do it ?
-- [x] ~~Why doesn't work to include TWILIGHT_CUBE as input in the sof for muse_scibasic for objects.~~ Apparently it did work. I checked looking the header of a PIXOBJECT ['*PRO REC*'] and it has the TWILIGHT CUBE as input.  
+- [ ] How many exposures of STD?
 
 ## To-Do
 - [ ] Install IRAF and Pyraf with Ureka from the STScI
 - [ ] Make a CUBE from the object creating the astrometry_wcs solution and std from the downloaded std and astrometry data for around those days. 
 - [ ] Do a CUBE with and without using the bad pixel table.
 - [ ] Make CUBE with lsf from calibration and created one. 
-- [ ] Papers about Pupolation CV, Optical observation of cluster and double degeneated in optical 
+- [ ] Papers about Population CV, Optical observation of cluster and double degeneated in optical.
+- [ ] Create Mendeley Account
+
+
+[@Ioannidis2005]fdafafa
+
+
+[@Ioannidis2005]: http://dx.doi.org/10.1371/journal.pmed.0020124 "Ioannidis JPA. Why Most Published Research Findings Are False. PLoS Medicine. Public Library of Science; 2005;2(8):e124. Available from: http://dx.doi.org/10.1371/journal.pmed.0020124"
+
+
+
+
+
+
+
+
 

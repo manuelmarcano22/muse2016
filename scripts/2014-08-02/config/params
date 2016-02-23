@@ -12,7 +12,7 @@ export RECIPE_CONFIG=/home/detoeuf/Manuel/scripts/2014-08-02/config
 export CALIB_FILES=$ESOREX_OUTPUT_DIR/cal
 
 #OMP
-export OMP_NUM_THREADS=24
+export OMP_NUM_THREADS=10 #24
 
 #Data Location
 export DATA_LOCATION=$ESOREX_OUTPUT_DIR
