@@ -1,2 +1,2 @@
 muse.muse_scipost.filter=white,Johnson_V,Cousins_R,Cousins_I
-muse.muse_scipost.save=individual
+#muse.muse_scipost.save=individual

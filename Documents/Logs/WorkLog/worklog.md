@@ -372,26 +372,66 @@ Using a standard STD nearby (only one exposure) and all the optional input like 
 #### Questions
 - [ ]  Process without ILLUM?
 
+
+# Feb-22-2016 IRAP Roche J042
+
+## Commits
+
+### Literature Review
+
+
 ## Other Questions
 - [ ] The flat with OBS name "muocal_nightcalib" and not "Calibration" is a ILLUM even if it doesn't say ILLUM in DPR TYPE?. I dont have one for the new dataset 2014-July-27
 - [ ] Could do twilight in series. No option nifu=0 so due to lack of memory only could do 5 not with the 7 available. Any way to do it ?
-- [ ] How many exposures of STD?
+- [ ] How many exposures of STD?. Currently using the closest one. 
 
 ## To-Do
 - [ ] Install IRAF and Pyraf with Ureka from the STScI
-- [ ] Make a CUBE from the object creating the astrometry_wcs solution and std from the downloaded std and astrometry data for around those days. 
+- [x] ~~Make a CUBE from the object creating the astrometry_wcs solution and std from the downloaded std and astrometry data for around those days.~~ Created one with astrometry from lacibration file, but STD from observation taken around that day for the data set of July 27 2014.  
 - [ ] Do a CUBE with and without using the bad pixel table.
 - [ ] Make CUBE with lsf from calibration and created one. 
-- [ ] Papers about Population CV, Optical observation of cluster and double degeneated in optical.
-- [ ] Create Mendeley Account
+- [x] ~~Papers about Population CV, Optical observation of cluster and double degeneated in optical.~~ See Lit Review sections. 
+- [x] ~~Create Mendeley Account~~ Created a Zotero account. Zotero is open-source and Mendeley is propietary and owned by Elsevier. 
+
+# Feb-23-2016 IRAP Roche J042
+
+## Commits
 
 
-En [@lomio] esta esto. 
 
-Aui en [@lomio] tambien esta
 
-[@lomio]: http://dx.doi.org/10.1002/aris.201 "Husser T-O, Kamann S, Dreizler S, Wendt M, Wulff N, Bacon R, et al. MUSE crowded field 3D spectroscopy of over 12,000 stars in the globular cluster NGC 6397 - I. The first comprehensive spectroscopic HRD of a globular cluster. ArXiv e-prints [Internet]. 2016 Feb 1 [cited 2016 Feb 23];1602:arXiv:1602.01649. Available from: http://adsabs.harvard.edu/abs/2016arXiv160201649H"
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# References
+
+[@musecluster1]: http://dx.doi.org/10.1002/aris.201 "Husser T-O, Kamann S, Dreizler S, Wendt M, Wulff N, Bacon R, et al. MUSE crowded field 3D spectroscopy of over 12,000 stars in the globular cluster NGC 6397 - I. The first comprehensive spectroscopic HRD of a globular cluster. ArXiv e-prints [Internet]. 2016 Feb 1 [cited 2016 Feb 23];1602:arXiv:1602.01649. Available from: http://adsabs.harvard.edu/abs/2016arXiv160201649H"
+
+[@musecluster2]: http://adsabs.harvard.edu/abs/2016arXiv160201643K "Kamann S, Husser T-O, Brinchmann J, Emsellem E, Weilbacher PM, Wisotzki L, et al. MUSE crowded field 3D spectroscopy of over 12,000 stars in the globular cluster NGC 6397 - II. Probing the internal dynamics and the presence of a central black hole. ArXiv e-prints [Internet]. 2016 Feb 1 [cited 2016 Feb 23];1602:arXiv:1602.01643. Available from: http://adsabs.harvard.edu/abs/2016arXiv160201643K"
 
 
 
