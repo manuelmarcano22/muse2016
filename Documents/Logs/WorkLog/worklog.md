@@ -404,23 +404,88 @@ I created a IMAGEFOV, Datacube, PIXTABLE_REDUCED and PIXTABLE_COMBINED for all t
 - [x] ~~All the Datacubes and extra fits for the 45 exposures.~~ Did it with reduced wavelenght from 4000 to 5000 to reduce computing time and try to get the offsets.
 
 
-# Feb-24-2016 IRAP Roche J042
+
+# Feb-25-2016 IRAP Roche J042
 
 ## Commits
 
+### Combining the data from 2014-07-27
+
+The data from the first night of observation (2014-07-27) consist of 5 60 seconds exposures of 9 different central regions (except for the very central one. Only 4 exposures and an extra one of the NE region). This gives a total of 45 different exposures. 
+
+The distribution goes like this:
+
+- Central region exposures 1-4 (only 4 of this region)
+- North of Central Region 20-24
+- Sourh  of Central Region 15-19
+- East of Central Region 10-14
+- West of Central Region 5-9
+- NE of Central Region 40-45  (notice there are 6 of this region) 
+- NW of Central Region 30-34
+- SE of Central Region 35-39
+- SW of Central REgion 25-29
+
+To combine them Dr. Webb suggested, as a first try, to manually find the offsets (using ds9, for example) for a given group of 5. Then the combination can be done by setting the environment variables `MUSE_XCOMBINE_RA_OFFSETS` and `MUSE_XCOMBINE_DEC_OFFSETS` and using the recipe *muse_scipost* and the PIXTABLE_OBJECT or combining the *PIXTABLE_REDUCED* with the *muse_exp_combine* recipe. This is described in section 6.6 of the MUSE Pipeline User Manual Issue 9 Date 2015-04-28. 
+
+From the manual about the offsets:
+
+>The coordinate offsets are given by setting the environment variables MUSE_XCOMBINE_RA_OFFSETS
+>and MUSE_XCOMBINE_DEC_OFFSETS. Each of these variables has to contain as many floating-point
+>numbers, separated by commas, as exposures to combine are involved.
+>Each number is the direct difference of the measured position to the reference position (no cosδ!), the
+>values are interpreted in units of degrees:
+>RA_OFFSET = RAmeasured − RAreference
+>DEC_OFFSET = DECmeasured − DECreference
+>It is important that the offsets are given in the order of increasing DATE-OBS of the exposures involved.
+>If one of the exposures has been chosen as the reference the offsets of 0 for this exposure have to be
+>explicitly given when setting the environment variables
+
+
+### Second night of observation (2014-07-28)
+
+On the second night of observation (2014-07-28) they also observed the central region of the cluster (from the header "HIERARCH ESO OBS NAME = 'NGC6397-center-cross_obs2' / OB name"). There are 21 different Objects, and also no STD or ILLUM. 
+
+
+### MUSE Pipeline Version 1.2.1
+
+There is a new version of the Pipeline. This new version is will be installed locally in `detoeuf/musepipeline1.2.1`. The problem installing it was having to upgrade to a version of 6.6.1 for the [CPL](https://www.eso.org/sci/software/cpl/). The things to remember are the following:
+
+- configure cpl with the flags `--with-wcs` and `with-fftw`. For this computer there were in `/usr/local` not in `/usr/include`. Only normal precision and not single. 
+
+- CPL was installed in `/usr/local/lib`. This is were the configure of muse-1.2.1 was looking first. We couldn't configure the installation without installing the new version there, I don't know why it was so picky. 
+
+- Need to rebuild [EsoRex](http://www.eso.org/sci/software/cpl/esorex.html) after installing CPL. 
+
+
+### Meeting with Hayley Finley OMP B144
+
+Things to remember. Use STD of the night and ILLUM. Use vigneting is important. For the ILLUM chack when using it for the STD scibasic and for the object scibasic. Choose the closest one in time and temperature. 
+
+Filtering list in the calibration.
+
+##### How to do the combination:
+
+First use the *align* recipe from the new 
+One way is using the PIXTABLE_REDUCED produced by scipost and produced DATACUBE with limited wavelegnth (for example a BLUE and a RED one). Also important to produced an image for the shape. produce with exp_combine a IMAGEFOV in white with **all**. This white IMAGEFOV will be the OUTPUT_WCS.
+
+
+##  Questions
+- [ ] How to deal with different kind of data. STD for first night only for example. Can I combine them into one for both nights?
+- [ ] 4 different channels of IMAGEFOV?
+- [ ] The flat with OBS name "muocal_nightcalib" and not "Calibration" is a ILLUM even if it doesn't say ILLUM in DPR TYPE?. I dont have one for the new dataset 2014-July-27 or 2014-July-28
+- [ ] Could do twilight in series. No option nifu=0 so due to lack of memory only could do 5 not with the 7 available. Any way to do it ?
+- [ ] How many exposures of STD?. Currently using the closest one. No STD for second night.  
+
+
 ## To-Do
-- [ ] Install IRAF and Pyraf with Ureka from the STScI.
-- [ ] Python routines to update productssof.txt and use this for routines. 
-- [ ] Figure out how to use ZAP.
+- [ ] Download data from the second observation of the center. 
 - [ ] Get all the offsets to combine the datasets. 
+- [ ] Figure out how to use ZAP.
+- [ ] Python routines to update productssof.txt and use this for routines. 
+- [ ] Install IRAF and Pyraf with Ureka from the STScI.
 - [ ] Do a CUBE with and without using the bad pixel table.
 - [ ] Make CUBE with lsf from calibration and created one. 
 
-
-## Other Questions
-- [ ] The flat with OBS name "muocal_nightcalib" and not "Calibration" is a ILLUM even if it doesn't say ILLUM in DPR TYPE?. I dont have one for the new dataset 2014-July-27
-- [ ] Could do twilight in series. No option nifu=0 so due to lack of memory only could do 5 not with the 7 available. Any way to do it ?
-- [ ] How many exposures of STD?. Currently using the closest one. 
 
 
 

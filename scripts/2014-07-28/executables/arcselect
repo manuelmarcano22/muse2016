@@ -1,0 +1,3 @@
+#!/bin/bash
+source ../config/params
+python arc.py
