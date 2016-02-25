@@ -4,6 +4,7 @@
 scripts=/home/detoeuf/Manuel/scripts/2014-07-27
 source $scripts/config/params 
 
+
 cd $DATA_LOCATION
 
 
@@ -34,20 +35,33 @@ echo $CALIB_FILES/filter_list.fits FILTER_LIST   >> $filesof
 echo $ESOREX_OUTPUT_DIR/STD_RESPONSE_$stdexp.fits STD_RESPONSE >> $filesof
 echo $ESOREX_OUTPUT_DIR/STD_TELLURIC_$stdexp.fits STD_TELLURIC >> $filesof
 
+
 taskset -c 0-23 esorex --recipe-config=$RECIPE_CONFIG/$recipe'.rc' $recipe $filesof
 
+
+
+##Change the name of the products. The number of products depend on the option muse.muse_scipost.save= . The default is cube,skymodel and produces 9 fits including a DATACUBE.
+
+#for flag cube. It is the default
 mv DATACUBE_FINAL.fits DATACUBE_FINAL_EXP0$i.fits
+
+#for flags combined, positioned and individual
+mv PIXTABLE_COMBINED.fits PIXTABLE_COMBINED_EXP0$i.fits
+mv PIXTABLE_POSITIONED_0001.fits PIXTABLE_POSITIONED_0001_EXP0$i.fits
+mv PIXTABLE_REDUCED_0001.fits  PIXTABLE_REDUCED_0001_EXP0$i.fits
+
+#For default creation og skymodel
+mv SKY_SPECTRUM_0001.fits SKY_SPECTRUM_0001_EXP0$i.fits
+mv SKY_MASK_0001.fits SKY_MASK_0001_EXP0$i.fits
+mv SKY_LINES_0001.fits SKY_LINES_0001_EXP0$i.fits
+mv SKY_CONTINUUM_0001.fits SKY_CONTINUUM_0001_EXP0$i.fits
+
 for j in `ls IMAGE_FOV_*`
 do 
 	newname=$(echo $j | cut -d "." -f1)
-	mv $j "EXP0"$i$newname
+	mv $j EXP0$i$newname".fits"
 done
 
-for k in `ls PIXTABLE_REDUCED_*`
-do 
-	newname=$(echo $k | cut -d "." -f1)
-	mv $k "EXP0"$i$newname
-done
 
 #Create list of product files to productsof.txt
 product=(DATACUBE_FINAL_EXP0$i.fits)
