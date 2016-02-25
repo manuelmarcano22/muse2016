@@ -55,7 +55,7 @@ hduheado = hdulist[0].header
 
 - [x] ~~How to get the type information from header. Can fit it on the header. How many BIAS are needed?~~ All in *HIERARCH ESO ---*. 
 
-- [x] MUSE cal bias and cal bias linearity?. Only cal_bias in the same day. Can use cal_bias simply
+- [x] ~~MUSE cal bias and cal bias linearity?.~~ Only cal_bias in the same day. Can use cal_bias simply
 
 - [x] ~~Problem merging Bias works with max of 10 and min of 3.. When 11 doesn't work.~~ Wrong command to use it in parallel was missing the `taskset` described in Appendix C.
 
@@ -293,9 +293,9 @@ Which one to use? I downloaded a few from around those days. The closes std is a
 
 ## Journee Scientific
 
-### MUSE carfantan Galpack3D 
+### Relevant talk for MUSE
 
-Talk about .... Paper ....
+MUSE Carfantan and Nicholas Bouche talikng about Galpack3D 
 
 
 # Feb-17-2016 IRAP Roche J042
@@ -370,7 +370,7 @@ Using a standard STD nearby (only one exposure) and all the optional input like 
 
 
 #### Questions
-- [ ]  Process without ILLUM?
+- [x]  ~~Process without ILLUM?~~ I dont have any for that night apparently. 
 
 
 # Feb-22-2016 IRAP Roche J042
@@ -380,49 +380,47 @@ Using a standard STD nearby (only one exposure) and all the optional input like 
 ### Literature Review
 
 
+
+## To-Do
+- [x] ~~Install [ZAP](http://zap.readthedocs.org/en/latest/).~~  
+- [x] ~~Make a CUBE from the object creating the astrometry_wcs solution and std from the downloaded std and astrometry data for around those days.~~ Created one with astrometry from lacibration file, but STD from observation taken around that day for the data set of July 27 2014.  
+- [x] ~~Papers about Population CV, Optical observation of cluster and double degeneated in optical.~~ See Lit Review sections. 
+- [x] ~~Create Mendeley Account~~ Created a Zotero account. Zotero is open-source and Mendeley is propietary and owned by Elsevier. 
+
+# Feb-24-2016 IRAP Roche J042
+
+## Commits
+
+### Limited Wavelength DATACUBES
+
+I created a IMAGEFOV, Datacube, PIXTABLE_REDUCED and PIXTABLE_COMBINED for all the 45 different exposures. Now to do is to try to see how to combine them
+
+### MUSE Pipeline Version 1.2.1
+
+ Until this point I am currently using version 1.0.1 of the muse software pipeline. There is version 1.2.1 that was released. This included a new recipe for easy aligment.
+
+
+## To-Do
+- [x] ~~All the Datacubes and extra fits for the 45 exposures.~~ Did it with reduced wavelenght from 4000 to 5000 to reduce computing time and try to get the offsets.
+
+
+# Feb-24-2016 IRAP Roche J042
+
+## Commits
+
+## To-Do
+- [ ] Install IRAF and Pyraf with Ureka from the STScI.
+- [ ] Python routines to update productssof.txt and use this for routines. 
+- [ ] Figure out how to use ZAP.
+- [ ] Get all the offsets to combine the datasets. 
+- [ ] Do a CUBE with and without using the bad pixel table.
+- [ ] Make CUBE with lsf from calibration and created one. 
+
+
 ## Other Questions
 - [ ] The flat with OBS name "muocal_nightcalib" and not "Calibration" is a ILLUM even if it doesn't say ILLUM in DPR TYPE?. I dont have one for the new dataset 2014-July-27
 - [ ] Could do twilight in series. No option nifu=0 so due to lack of memory only could do 5 not with the 7 available. Any way to do it ?
 - [ ] How many exposures of STD?. Currently using the closest one. 
-
-## To-Do
-- [ ] Install IRAF and Pyraf with Ureka from the STScI
-- [x] ~~Make a CUBE from the object creating the astrometry_wcs solution and std from the downloaded std and astrometry data for around those days.~~ Created one with astrometry from lacibration file, but STD from observation taken around that day for the data set of July 27 2014.  
-- [ ] Do a CUBE with and without using the bad pixel table.
-- [ ] Make CUBE with lsf from calibration and created one. 
-- [x] ~~Papers about Population CV, Optical observation of cluster and double degeneated in optical.~~ See Lit Review sections. 
-- [x] ~~Create Mendeley Account~~ Created a Zotero account. Zotero is open-source and Mendeley is propietary and owned by Elsevier. 
-
-# Feb-23-2016 IRAP Roche J042
-
-## Commits
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -432,9 +430,6 @@ Using a standard STD nearby (only one exposure) and all the optional input like 
 [@musecluster1]: http://dx.doi.org/10.1002/aris.201 "Husser T-O, Kamann S, Dreizler S, Wendt M, Wulff N, Bacon R, et al. MUSE crowded field 3D spectroscopy of over 12,000 stars in the globular cluster NGC 6397 - I. The first comprehensive spectroscopic HRD of a globular cluster. ArXiv e-prints [Internet]. 2016 Feb 1 [cited 2016 Feb 23];1602:arXiv:1602.01649. Available from: http://adsabs.harvard.edu/abs/2016arXiv160201649H"
 
 [@musecluster2]: http://adsabs.harvard.edu/abs/2016arXiv160201643K "Kamann S, Husser T-O, Brinchmann J, Emsellem E, Weilbacher PM, Wisotzki L, et al. MUSE crowded field 3D spectroscopy of over 12,000 stars in the globular cluster NGC 6397 - II. Probing the internal dynamics and the presence of a central black hole. ArXiv e-prints [Internet]. 2016 Feb 1 [cited 2016 Feb 23];1602:arXiv:1602.01643. Available from: http://adsabs.harvard.edu/abs/2016arXiv160201643K"
-
-
-
 
 
 
