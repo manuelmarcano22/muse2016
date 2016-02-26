@@ -27,7 +27,7 @@ The *Documents* folder contains several subfolders:
 
 ### *scripts*
 
-This folder contains the scripts used to reduce the download from [MUSE](https://www.eso.org/sci/facilities/develop/instruments/muse.html). Each subfolder (corresponding to a given night of observation, YYYY-MM-DD) corresponds to a given set of data download and contains three subfolders:
+This folder contains the scripts used to reduce the download from [MUSE](https://www.eso.org/sci/facilities/develop/instruments/muse.html). Each subfolder (corresponding to a given night of observation, YYYY-MM-DD)  contains three subfolders:
 
 -  config: contains all the configuration files for the scripts called to reduce the data.
 
