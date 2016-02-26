@@ -45,7 +45,10 @@ esorex.caller.mem-check=TRUE
 # as well. Multiple directory heads may be specified, by separating the
 # starting paths with colons (:). This option may also be set using the
 # environment variable ESOREX_PLUGIN_DIR.
-esorex.caller.recipe-dir=/opt/reflex/install/lib/esopipes-plugins/muse-1.0.1
+#new
+esorex.caller.recipe-dir=/home/detoeuf/musepipeline1.2.1/lib/esopipes-plugins
+#old one
+#esorex.caller.recipe-dir=/opt/reflex/install/lib/esopipes-plugins/muse-1.0.1
 
 
 # --link-dir
@@ -64,5 +67,8 @@ esorex.caller.suppress-link=TRUE
 # Measure and show the recipe's execution time. This option may also be set
 # using the environment variable ESOREX_TIME.
 esorex.caller.time=TRUE
+
+
+esorex.caller.unload-plugin=TRUE
 
 # End of file
