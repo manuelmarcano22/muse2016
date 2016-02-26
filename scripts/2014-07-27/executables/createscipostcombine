@@ -23,8 +23,8 @@ do
 	done
 
 # Using all the cal from the program or download online for this science verification run
-#echo $ESOREX_OUTPUT_DIR/LSF_PROFILE.fits LSF_PROFILE >> $filesof #Also have one from the calibration
-echo $CALIB_FILES/lsf_profile_slow_wfm-n.fits LSF_PROFILE   >> $filesof # The one made by the ESORex recipe with data. 
+echo $ESOREX_OUTPUT_DIR/LSF_PROFILE.fits LSF_PROFILE >> $filesof #Also have one from the calibration
+#echo $CALIB_FILES/lsf_profile_slow_wfm-n.fits LSF_PROFILE   >> $filesof # The one made by the ESORex recipe with data. 
 echo $CALIB_FILES/astrometry_wcs_wfm_comm2b.fits ASTROMETRY_WCS   >> $filesof
 echo $CALIB_FILES/sky_lines.fits SKY_LINES   >> $filesof
 echo $CALIB_FILES/extinct_table.fits EXTINCT_TABLE   >> $filesof

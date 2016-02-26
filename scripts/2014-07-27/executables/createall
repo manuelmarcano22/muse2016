@@ -29,5 +29,5 @@ bash createscibasicstd
 bash createstandard
 
 ##create Cube
-bash createscipost
+bash createscipostcombine
 
