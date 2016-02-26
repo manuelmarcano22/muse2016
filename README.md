@@ -23,7 +23,7 @@ The *Documents* folder contains several subfolders:
 
 - The *Summaries* subfolder includes (will) brief personal summaries of relevant research papers. (In [Zotero](https://www.zotero.org/manuelmarcano22/items/collectionKey/ABUIC59V) )
 
-- The *Logs* subfolder contains my personal daily [research log](Documents/Logs/WorkLog/worklog.md).  It includes (at least should)  my daily tasks, any questions (answered and unanswered), useful information and my current to-do list. This might move to another repo following the idea to have it with jekyll. For more info (https://github.com/fdschneider/jekyll-lablog). A cool example can be found here (https://github.com/cboettig/labnotebook) and (http://notebook.madsenlab.org/labnotebook.html). 
+- The *Logs* subfolder contains my personal daily [research log](Documents/Logs/WorkLog/worklog.md).  It includes (at least should)  my daily tasks, any questions (answered and unanswered), useful information and my current to-do list. This might move to another repo following the idea to have it with jekyll. For more info [Jekyll-lablog](https://github.com/fdschneider/jekyll-lablog). A cool example can be found here [labnotebook](https://github.com/cboettig/labnotebook) and [labnotebookmadsenlab](http://notebook.madsenlab.org/labnotebook.html). 
 
 ### *scripts*
 

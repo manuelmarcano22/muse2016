@@ -519,11 +519,15 @@ Maybe because I tried to run the recipe *muse_align* with data created with an o
 
 
 
-##  Questions
+###  Questions
 - [x] ~~How to deal with different kind of data. STD for first night only for example. Can I combine them into one for both nights?~~ I also have STD for the second night. Can combine them after reducing both data separately. 
 - [x] ~~The flat with OBS name "muocal_nightcalib" and not "Calibration" is a ILLUM even if it doesn't say ILLUM in DPR TYPE?. I dont have one for the new dataset 2014-July-27 or 2014-July-28~~ I should have one and maybe it is because the data was taking during science verification and the header wasn't standardized as it says in the current version of the Manual. This will be checked when new data arrives. 
 - [x] ~~Could do twilight in series. No option nifu=0 so due to lack of memory only could do 5 not with the 7 available. Any way to do it ?~~ She haven't tried it but since the recipe creates a CUBE can create two and then add them running *muse_cube_combine*.
 - [x] ~~How many exposures of STD?. Currently using the closest one. No STD for second night.~~ I do have for the second night. Use at least one. There should be at least one per night.   
+
+
+
+##  Questions
 
 
 ## To-Do
