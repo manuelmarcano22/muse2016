@@ -27,7 +27,7 @@ echo $CALIB_FILES/badpix_table.fits BADPIX_TABLE >> $filesof
 echo $ESOREX_OUTPUT_DIR/TWILIGHT_CUBE.fits TWILIGHT_CUBE >> $filesof
 
 
-taskset -c 0-23 esorex --recipe-config=$RECIPE_CONFIG/$recipe'.rc' $recipe $filesof
+taskset -c 0-23 /home/detoeuf/musepipeline1.2.1/bin/esorex --recipe-config=$RECIPE_CONFIG/$recipe'.rc' $recipe $filesof
 
 #Create list of product files to productsof.txt
 product=(PIXTABLE_OBJECT_0001-01.fits)

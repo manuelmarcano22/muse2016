@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-#It creates a set-of-frames (sof) to use the muse_bias routine from esorex 
+#It creates a set-of-frames (sof) to use the muse_bias routine from /home/detoeuf/musepipeline1.2.1/bin/esorex 
 #and create a master bias
 
 #Souce Params file with enviroment variables
@@ -24,8 +24,8 @@ do
 	done
 
 
-#Call to esorex
-taskset -c 0-23 $HOME/musepipeline1.2.1/bin/esorex --recipe-config=$RECIPE_CONFIG/$recipe'.rc' $recipe $filesof 
+#Call to /home/detoeuf/musepipeline1.2.1/bin/esorex
+taskset -c 0-23 $HOME/musepipeline1.2.1/bin//home/detoeuf/musepipeline1.2.1/bin/esorex --recipe-config=$RECIPE_CONFIG/$recipe'.rc' $recipe $filesof 
 
 
 test -f productsof.txt || touch productsof.txt   # Test if it does exist

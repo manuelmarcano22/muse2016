@@ -92,3 +92,4 @@ OFFSET_LIST.fits  Has not been created yet
 OFFSET_LIST.fits  Has not been created yet
 OFFSET_LIST.fits  Has not been created yet
 OFFSET_LIST.fits  Has not been created yet
+DATACUBE_FINAL_EXP04.fits  Has not been created yet
