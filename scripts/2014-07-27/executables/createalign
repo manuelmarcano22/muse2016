@@ -1,0 +1,52 @@
+#!/bin/bash
+
+
+#It creates a set-of-frames (sof) to use the muse_bias routine from esorex 
+#and create a master bias
+
+#Souce Params file with enviroment variables
+scripts=/home/detoeuf/Manuel/scripts/2014-07-27
+source $scripts/config/params 
+
+#Change to data location
+cd $DATA_LOCATION
+
+#Variables
+recipe=muse_exp_align
+filesof=align.sof
+initexp=1
+endexp=4 # This is the number of expo of the same region
+
+> $filesof
+for i in $(eval echo "{$initexp..$endexp}")
+do
+	        echo `readlink -f "EXP0"$i"IMAGE_FOV_0001.fits"` IMAGE_FOV >> $filesof
+	done
+
+
+#Call to esorex
+taskset -c 0-23 $HOME/musepipeline1.2.1/bin/esorex --recipe-config=$RECIPE_CONFIG/$recipe'.rc' $recipe $filesof 
+
+
+test -f productsof.txt || touch productsof.txt   # Test if it does exist
+
+#Create list of product files to productsof.txt
+product=(OFFSET_LIST.fits)
+for i in "${product[@]}"
+do
+	if [ -f $i ]; 
+	then 
+		grep $i productsof.txt > /dev/null 
+		if [ $? -eq 0 ];
+		then 
+			sed -i "/$i/c\\$ESOREX_OUTPUT_DIR/$i `stat -c %y $i`" productsof.txt
+		else
+			echo $ESOREX_OUTPUT_DIR/$i `stat -c %y $i` >> productsof.txt
+		fi
+	else
+		echo $i " Has not been created yet" >> productsof.txt 
+	fi
+done
+#Update product in script
+cp productsof.txt $scripts/products/
+cp $filesof $scripts/products/

@@ -5,9 +5,9 @@
 /mnt/data/MUSE/2014-07-27/TWILIGHT_CUBE.fits 2016-02-19 16:34:34.268037398 +0100
 /mnt/data/MUSE/2014-07-27/PIXTABLE_OBJECT_0001-01.fits 2016-02-23 00:13:28.279206575 +0100
 /mnt/data/MUSE/2014-07-27/DATACUBE_STD_0001.fits 2016-02-22 10:22:30.672742088 +0100
-/mnt/data/MUSE/2014-07-27/DATACUBE_FINAL_EXP01.fits 2016-02-24 17:47:48.650597341 +0100
-/mnt/data/MUSE/2014-07-27/DATACUBE_FINAL_EXP02.fits 2016-02-24 17:58:37.662577353 +0100
-/mnt/data/MUSE/2014-07-27/DATACUBE_FINAL_EXP03.fits 2016-02-24 18:09:10.566557861 +0100
+/mnt/data/MUSE/2014-07-27/DATACUBE_FINAL_EXP01.fits 2016-02-26 10:03:44.642132993 +0100
+/mnt/data/MUSE/2014-07-27/DATACUBE_FINAL_EXP02.fits 2016-02-26 10:14:33.518113009 +0100
+/mnt/data/MUSE/2014-07-27/DATACUBE_FINAL_EXP03.fits 2016-02-26 10:24:25.890094765 +0100
 /mnt/data/MUSE/2014-07-27/DATACUBE_FINAL_EXP04.fits 2016-02-24 18:18:35.598540459 +0100
 /mnt/data/MUSE/2014-07-27/DATACUBE_FINAL_EXP05.fits 2016-02-24 18:28:27.866522218 +0100
 /mnt/data/MUSE/2014-07-27/DATACUBE_FINAL_EXP06.fits 2016-02-24 18:38:17.386504062 +0100
@@ -55,3 +55,40 @@
 /mnt/data/MUSE/2014-07-27/DATACUBE_FINAL_EXP043.fits 2016-02-25 09:59:07.320802477 +0100
 /mnt/data/MUSE/2014-07-27/DATACUBE_FINAL_EXP044.fits 2016-02-25 10:49:10.768709977 +0100
 /mnt/data/MUSE/2014-07-27/DATACUBE_FINAL_EXP045.fits 2016-02-25 11:39:49.536616389 +0100
+OFFSET_LIST.fits  Has not been created yet
+OFFSET_LIST.fits  Has not been created yet
+OFFSET_LIST.fits  Has not been created yet
+OFFSET_LIST.fits  Has not been created yet
+OFFSET_LIST.fits  Has not been created yet
+OFFSET_LIST.fits  Has not been created yet
+OFFSET_LIST.fits  Has not been created yet
+OFFSET_LIST.fits  Has not been created yet
+OFFSET_LIST.fits  Has not been created yet
+OFFSET_LIST.fits  Has not been created yet
+OFFSET_LIST.fits  Has not been created yet
+OFFSET_LIST.fits  Has not been created yet
+OFFSET_LIST.fits  Has not been created yet
+OFFSET_LIST.fits  Has not been created yet
+OFFSET_LIST.fits  Has not been created yet
+OFFSET_LIST.fits  Has not been created yet
+OFFSET_LIST.fits  Has not been created yet
+OFFSET_LIST.fits  Has not been created yet
+OFFSET_LIST.fits  Has not been created yet
+OFFSET_LIST.fits  Has not been created yet
+OFFSET_LIST.fits  Has not been created yet
+OFFSET_LIST.fits  Has not been created yet
+OFFSET_LIST.fits  Has not been created yet
+OFFSET_LIST.fits  Has not been created yet
+OFFSET_LIST.fits  Has not been created yet
+OFFSET_LIST.fits  Has not been created yet
+OFFSET_LIST.fits  Has not been created yet
+OFFSET_LIST.fits  Has not been created yet
+OFFSET_LIST.fits  Has not been created yet
+OFFSET_LIST.fits  Has not been created yet
+OFFSET_LIST.fits  Has not been created yet
+OFFSET_LIST.fits  Has not been created yet
+OFFSET_LIST.fits  Has not been created yet
+OFFSET_LIST.fits  Has not been created yet
+OFFSET_LIST.fits  Has not been created yet
+OFFSET_LIST.fits  Has not been created yet
+OFFSET_LIST.fits  Has not been created yet
