@@ -19,7 +19,7 @@ I added the files ~/.vimrc and ~/pythonrc and added the line *export PYTHONSTART
 
 ### The GitHub Repository
 
-I created a private git repository called *muse2016*. 
+I created a private git repository called *muse2016* (https://github.com/manuelmarcano22/muse2016). 
 
 ### Data Download from ESO
 
@@ -169,7 +169,6 @@ found in (https://www.eso.org/sci/activities/santiago/projects/sc-computing.html
 The data is now in the path: `/mnt/data/MUSE` 
 
 
-
 ## To-Dos
 - [x] Download all the arc-lamp and SKYFLATS 
 
@@ -276,8 +275,8 @@ I could the whole 7 SKYFLATs I downloaded because of lack of memory. I could onl
 Which one to use? I downloaded a few from around those days. The closes std is at RA: 290 DEC -45. The object is at RA: 265 DEC: -22. For astrometry closest is RA: 283 DEC: -22 .
 
 #### Questions
-- [ ] What Astrometry to use? Use the calibration files?. Downloaded close to that day.  
-- [ ] What STD to use? Use the ones given in the calibration files? Downloaded close to that day.  
+- [x] ~~What Astrometry to use? Use the calibration files?. Downloaded close to that day.~~ Hayley on Feb-25-16 suggested not to do Astrometry. Use the one from the calibration file but do the STD.  
+- [x] ~~What STD to use? Use the ones given in the calibration files? Downloaded close to that day.~~ There should always be at least one that day. Use it. When possible avoid having to use the one from the calibration file. Advice given by Dr. Hayley Finley on Feb-25-16.   
 
 
 ## To-Do
@@ -308,7 +307,7 @@ MUSE Carfantan and Nicholas Bouche talikng about Galpack3D
 Apparently I have 19 exposures. Produced also 19 OBJECT_RED. Each with Data, DQ and STAT. Data, Data quality and statistics. Need to search for the middle one. 
 
 #### Questions
-- [x] ~~Take a look at Object Reds. Good or Bad?~~ I guess bad. ~~Have the same ugly feature that the final CUBE obtained.~~ It was ds9 displaying it. Works with QFitsViewer
+- [x] ~~Take a look at Object Reds. Good or Bad?~~ I guess bad.~~ Have the same ugly feature that the final CUBE obtained.~~ It was ds9 displaying it. Works with QFitsViewer
 
 
 ### Creating the DataCube
@@ -320,8 +319,8 @@ In the article they say:
 > To combine the pixtables from the individual exposures of each pointing into a single datacube, we had to account for the small offsets that occur during position angle changes, because the rotation centre is not perfectly aligned with the optical axis of the instrument (“derotator wobble”). We did so by creating a broadband image from each pixtable, measuring the coordinates of the brighter stars in the field of view, and feeding the measured average offsets to the pipeline when creating the final datacube for each pointing
 
 #### Questions
-- [ ] What does this mean?
-- [ ]  Can see that in OBJECT_RED or where? 
+- [x] ~~What does this mean?~~ Look at the Header "HIERARCH ESO INS DROT POSANG". It changes from exposure to exposure. It seems to "wobble". [Derotator](https://www.eso.org/sci/facilities/paranal/instruments/muse/inst.html). The derotator compensates for the field rotation happening at the VLT Nasmyth focus. It is a classical derotator based on two prisms: when rotated by an angle α, the image plane rotates by the angle 2α.
+- [x] ~~Can see that in OBJECT_RED or where?~~  Can see it in IMAGEFOV for sure. 
 
 
 
@@ -345,7 +344,7 @@ This can be done in QFitsView by clicking on *Options*, then *Cube Display* then
 
 ### New Data ILLUM
 
-The new data does not include an ILLUM Flat. Apperently. Is this normal? Maybe because the temperature didnt change much that day. 
+The new data does not include an ILLUM Flat. Apperently. Is this normal? Maybe because the temperature didnt change much that day. *It is a proceddure of ESO at VLT according to De. Finley so there should be one and I should use it.* Just pay attention on which one to use for the scibasic STD and scibasic OBJECT. 
 
 ### Header information
 
@@ -380,12 +379,11 @@ Using a standard STD nearby (only one exposure) and all the optional input like 
 ### Literature Review
 
 
-
 ## To-Do
-- [x] ~~Install [ZAP](http://zap.readthedocs.org/en/latest/).~~  
+- [x] ~~Install [ZAP](http://zap.readthedocs.org/en/latest/).~~ Did it with pip install --user zap 
 - [x] ~~Make a CUBE from the object creating the astrometry_wcs solution and std from the downloaded std and astrometry data for around those days.~~ Created one with astrometry from lacibration file, but STD from observation taken around that day for the data set of July 27 2014.  
 - [x] ~~Papers about Population CV, Optical observation of cluster and double degeneated in optical.~~ See Lit Review sections. 
-- [x] ~~Create Mendeley Account~~ Created a Zotero account. Zotero is open-source and Mendeley is propietary and owned by Elsevier. 
+- [x] ~~Create Mendeley Account~~ Created a Zotero account. Zotero is open-source and Mendeley is propietary and owned by Elsevier (:thumbsdown:). 
 
 # Feb-24-2016 IRAP Roche J042
 
@@ -393,7 +391,7 @@ Using a standard STD nearby (only one exposure) and all the optional input like 
 
 ### Limited Wavelength DATACUBES
 
-I created a IMAGEFOV, Datacube, PIXTABLE_REDUCED and PIXTABLE_COMBINED for all the 45 different exposures. Now to do is to try to see how to combine them
+I created a IMAGEFOV, Datacube, PIXTABLE_REDUCED and PIXTABLE_COMBINED for all the 45 different exposures. Now to do is to try to see how to combine them. I will meet with Dr. Finley to learn how to do this. 
 
 ### MUSE Pipeline Version 1.2.1
 
@@ -454,38 +452,89 @@ There is a new version of the Pipeline. This new version is will be installed lo
 
 - CPL was installed in `/usr/local/lib`. This is were the configure of muse-1.2.1 was looking first. We couldn't configure the installation without installing the new version there, I don't know why it was so picky. 
 
-- Need to rebuild [EsoRex](http://www.eso.org/sci/software/cpl/esorex.html) after installing CPL. 
-
+- Need to rebuild [EsoRex](http://www.eso.org/sci/software/cpl/esorex.html) after installing CPL. This is still a problem. For now I am using the one installed at *$HOME/musepipeline1.2.1*
 
 ### Meeting with Hayley Finley OMP B144
 
-Things to remember. Use STD of the night and ILLUM. Use vigneting is important. For the ILLUM chack when using it for the STD scibasic and for the object scibasic. Choose the closest one in time and temperature. 
+Things to remember from the meeting:
 
-Filtering list in the calibration.
+- Use STD of the night when possible. There should be one every night and I should favor the use of it instead of the calibration one. This is not true for the SKY and Astrometry. At least for this data set were is a globular cluster. 
 
-##### How to do the combination:
+- Use the ILLUM closest in temperature and time for the scipost OBJECT and scipost STD. There should be several per night taking as a protocol for the instrument. Maybe not necessary in the science verification run. For example the tag for the ILLUM is FLAT,LAMP but should be different according to the Manual (VLT-MAN-ESO-14670-6186). 
 
-First use the *align* recipe from the new 
-One way is using the PIXTABLE_REDUCED produced by scipost and produced DATACUBE with limited wavelegnth (for example a BLUE and a RED one). Also important to produced an image for the shape. produce with exp_combine a IMAGEFOV in white with **all**. This white IMAGEFOV will be the OUTPUT_WCS.
+- Based on her previous experience reducing the data the use of the optional fits from the calibration file "vignetting_mask" is very important. It is noticeable specially in the borders. 
+
+- Include filter list from the calibration.
+
+### How to do the combination:
+
+First, use the *align* recipe with all the images "IMAGE_FOV" from the same region you want to combine together. You can work with just the white one if that was one of the filters that was used as input for the recipe. The recipe *align* will produced a fits table called "OFFSET_LIST". Then there are two ways to combine the data. One way is using the PIXTABLE_REDUCED produced by scipost and then with the recipe "muse_exp_combine" using the produced "OFFSET_LIST". This approach is explain in more detail in section 7.3.3 "Working with Data Cubes" of the MUSE Pipeline Manual version 1.2.1 (ftp://ftp.eso.org/pub/dfs/pipelines/muse/muse-pipeline-manual-1.2.1.pdf)". The basic idea is to create with *muse_exp_combine* different datacubes with different lambdamin and lambdamax and then merging them together using the too *muse_cube_combine*. It has to be done this way due to limited RAM memory. 
+
+The first step after obtaining the offset list is to create with *exp_combine* an image with **all** the different exposures you want to combine and the offsetlist. This can be created by limiting the wavelength range. It is necessary to choose a small enough range using the options --lambdamax and --lambdamin to be able to process in memory all of them. The recipe will produce a DATACUBE and IMAGE_FOV. The datacube won't be used for anything but the IMAGE_FOV created will be use as the "OUTPUT_WCS" input frame in subsequent calls to the recipe *exp_combine* to create all the datacubes in different wavelength that later will be combined. This is a recommendation from Dr. Hayley Finley to avoid getting a weird distorted incomplete final merged datacube. 
+
+With our "OUTPUT_WCS" the next step is to create different datacubes with different range of wavelength (for example a BLUE and a RED one). It is important to remember that **they need to overlap in at least about 2 wavelength**. This is again done with the options --lambdamin and --lambdamax for the recipe "exp_combine". The input files in the sof for each call of *exp_combine* will be:
+
+1. All the PIXTABLE_REDUCED from the different exposures to merge.
+2. The OFFSET_LIST created by the *align* recipe.
+3. The filter list from the calibrations file
+4. The first IMAGE_FOV that was also created with *exp_combine*. This will be our shape and will have the tag "OUTPUT_WCS". This seems a bit redundant but if this image with the tag  "OUTPUT_WCS" is not provided in the sof, the default for the function *muse_cube_combine* is to use the first file of the list as our "shape".
+
+The function will be called to created as many datacubes as needed in different wavelength overlapping in about 2 wavelenght. Then the combination is done calling the tool *muse_cube_combine*.
+
+```
+muse_cube_combine CUBE_COMBINED.fits CUBE_blue.fits CUBE_green.fits CUBE_red.fits 
+```
 
 
 ##  Questions
-- [ ] How to deal with different kind of data. STD for first night only for example. Can I combine them into one for both nights?
-- [ ] 4 different channels of IMAGEFOV?
-- [ ] The flat with OBS name "muocal_nightcalib" and not "Calibration" is a ILLUM even if it doesn't say ILLUM in DPR TYPE?. I dont have one for the new dataset 2014-July-27 or 2014-July-28
-- [ ] Could do twilight in series. No option nifu=0 so due to lack of memory only could do 5 not with the 7 available. Any way to do it ?
-- [ ] How many exposures of STD?. Currently using the closest one. No STD for second night.  
+- [x] ~~4 different channels of IMAGEFOV?~~ This are the 4 different filters I specified. This change depending on the filters I chose when running the recipe. 
 
 
 ## To-Do
-- [ ] Download data from the second observation of the center. 
+- [x] ~~Download data from the second observation of the center.~~ Downloaded all data from 2014-07-28 observation. Now have to create cleanmaster.txt 
+
+
+# Feb-26-2016 IRAP Roche J042
+
+## Commits
+
+### Readline
+
+I created the file `~/.inputrc` to enable vi edit mode in bash and python. To the file I added the lines:
+
+'''
+set editing-mode vi
+
+$if mode=vi
+  set keymap vi-command
+    set keymap vi-insert
+'''
+
+To source the file in the current bash session use `bind -f ~/.inputrc`
+
+
+### MUSE Pipeline Version 1.2.1
+
+Maybe because I tried to run the recipe *muse_align* with data created with an older version of cpl or fftw the script cpl_fft_image was complaining. Maybe this is not the reason but hopefully. The old data is in the folder oldata and I will create new data. This will run over the weekend. I am running the EsoRex, CPL and musepipeline installed locally at `/home/detoeuf/musepipeline1.2.1/`.
+
+
+
+##  Questions
+- [x] ~~How to deal with different kind of data. STD for first night only for example. Can I combine them into one for both nights?~~ I also have STD for the second night. Can combine them after reducing both data separately. 
+- [x] ~~The flat with OBS name "muocal_nightcalib" and not "Calibration" is a ILLUM even if it doesn't say ILLUM in DPR TYPE?. I dont have one for the new dataset 2014-July-27 or 2014-July-28~~ I should have one and maybe it is because the data was taking during science verification and the header wasn't standardized as it says in the current version of the Manual. This will be checked when new data arrives. 
+- [x] ~~Could do twilight in series. No option nifu=0 so due to lack of memory only could do 5 not with the 7 available. Any way to do it ?~~ She haven't tried it but since the recipe creates a CUBE can create two and then add them running *muse_cube_combine*.
+- [x] ~~How many exposures of STD?. Currently using the closest one. No STD for second night.~~ I do have for the second night. Use at least one. There should be at least one per night.   
+
+
+## To-Do
+- [ ] Re-run everything with new recipe.
+- [ ] Create cleanmastersof with new data from second day of observation.
 - [ ] Get all the offsets to combine the datasets. 
 - [ ] Figure out how to use ZAP.
 - [ ] Python routines to update productssof.txt and use this for routines. 
 - [ ] Install IRAF and Pyraf with Ureka from the STScI.
 - [ ] Do a CUBE with and without using the bad pixel table.
 - [ ] Make CUBE with lsf from calibration and created one. 
-
 
 
 
