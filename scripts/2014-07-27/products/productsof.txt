@@ -6,12 +6,3 @@
 /mnt/data/MUSE/2014-07-27/WAVECAL_RESIDUALS.fits 2016-02-26 17:27:22.277313224 +0100
 /mnt/data/MUSE/2014-07-27/LSF_PROFILE.fits 2016-02-26 19:37:04.089073560 +0100
 /mnt/data/MUSE/2014-07-27/TWILIGHT_CUBE.fits 2016-02-29 09:35:06.774203068 +0100
-PIXTABLE_OBJECT_0001-01.fits  Has not been created yet
-PIXTABLE_STD_001-01.fits  Has not been created yet
-DATACUBE_STD_0001.fits  Has not been created yet
-DATACUBE_FINAL_EXP01.fits  Has not been created yet
-DATACUBE_FINAL_EXP00.fits  Has not been created yet
-/mnt/data/MUSE/2014-07-27/TWILIGHT_CUBE.fits 2016-02-29 09:35:06.774203068 +0100
-PIXTABLE_STD_001-01.fits  Has not been created yet
-PIXTABLE_STD_001-01.fits  Has not been created yet
-PIXTABLE_STD_001-01.fits  Has not been created yet
