@@ -32,7 +32,8 @@ echo $CALIB_FILES/filter_list.fits FILTER_LIST   >> $filesof
 
 
 
-taskset -c 0-23 /home/detoeuf/musepipeline1.2.1/bin/esorex --recipe-config=$RECIPE_CONFIG/$recipe'.rc' $recipe $filesof
+export ESOREX_LOG_FILE=${0##*/}
+taskset -c 0-23 /home/detoeuf/muse1.2.1/bin/esorex --recipe-config=$RECIPE_CONFIG/$recipe'.rc' $recipe $filesof
 
 #Create list of product files to productsof.txt
 product=(DATACUBE_STD_$a.fits)

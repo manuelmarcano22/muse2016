@@ -27,7 +27,8 @@ echo $CALIB_FILES/geometry_table_wfm_comm2b.fits GEOMETRY_TABLE >> $filesof
 echo $CALIB_FILES/vignetting_mask.fits VIGNETTING_MASK >> $filesof
 
 
-taskset -c 0-23 /home/detoeuf/musepipeline1.2.1/bin//home/detoeuf/musepipeline1.2.1/bin/esorex --recipe-config=$RECIPE_CONFIG/$recipe'.rc' $recipe $filesof
+export ESOREX_LOG_FILE=${0##*/}
+taskset -c 0-23 /home/detoeuf/muse1.2.1/bin/esorex --recipe-config=$RECIPE_CONFIG/$recipe'.rc' $recipe $filesof
 
 #Create list of product files to productsof.txt
 product=(TWILIGHT_CUBE.fits)

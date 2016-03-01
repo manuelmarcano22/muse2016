@@ -40,7 +40,8 @@ echo $ESOREX_OUTPUT_DIR/STD_TELLURIC_$stdexp.fits STD_TELLURIC >> $filesof
 
 
 
-taskset -c 0-23 /home/detoeuf/musepipeline1.2.1/bin/esorex --recipe-config=$RECIPE_CONFIG/$recipe'.rc' $recipe $filesof
+export ESOREX_LOG_FILE=${0##*/}
+taskset -c 0-23 /home/detoeuf/muse1.2.1/bin/esorex --recipe-config=$RECIPE_CONFIG/$recipe'.rc' $recipe $filesof
 
 #Create list of product files to productsof.txt
 product=(DATACUBE_FINAL.fits)

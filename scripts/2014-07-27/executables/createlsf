@@ -35,7 +35,8 @@ echo $ESOREX_OUTPUT_DIR/WAVECAL_TABLE.fits WAVECAL_TABLE >> $filesof
 echo $CALIB_FILES/badpix_table.fits BADPIX_TABLE >> $filesof
 echo $CALIB_FILES/line_catalog.fits LINE_CATALOG >> $filesof
 
-taskset -c 0-23 /home/detoeuf/musepipeline1.2.1/bin/esorex --recipe-config=$RECIPE_CONFIG/$recipe'.rc' $recipe $filesof
+export ESOREX_LOG_FILE=${0##*/}
+taskset -c 0-23 /home/detoeuf/muse1.2.1/bin/esorex --recipe-config=$RECIPE_CONFIG/$recipe'.rc' $recipe $filesof
 
 #Create list of product files to productsof.txt
 product=(LSF_PROFILE.fits)

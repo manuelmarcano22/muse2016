@@ -11,11 +11,11 @@ cd $DATA_LOCATION
 recipe=muse_scibasic
 filesof=scibasicstd.sof
 patterns=(STD WFM-NOAO-N )  #Patterns to seach in the mastersof. Be careful it needs to be in the right order. The patterns are output of the Python program seetype.py
-#numsof=7 #Check this
+numsof=1 #Check this
 
 
 a=`echo ${patterns[*]/%/.*} | rev | cut -c 3- | rev`
-cat cleanmastersof.txt | grep -Ew "$a"  > $filesof
+cat cleanmastersof.txt | grep -Ew "$a" | head -n $numsof > $filesof
 cat cleanmastersof.txt | grep ILLUM >> $filesof
 
 echo $ESOREX_OUTPUT_DIR/MASTER_BIAS.fits MASTER_BIAS >> $filesof
@@ -26,8 +26,9 @@ echo $CALIB_FILES/geometry_table_wfm_comm2b.fits GEOMETRY_TABLE >> $filesof
 echo $CALIB_FILES/badpix_table.fits BADPIX_TABLE >> $filesof
 echo $ESOREX_OUTPUT_DIR/TWILIGHT_CUBE.fits TWILIGHT_CUBE >> $filesof
 
-
-taskset -c 0-23 /home/detoeuf/musepipeline1.2.1/bin/esorex --recipe-config=$RECIPE_CONFIG/$recipe'.rc' $recipe $filesof
+export ESOREX_LOG_FILE=${0##*/}
+export ESOREX_LOG_FILE=${0##*/}
+taskset -c 0-23 /home/detoeuf/muse1.2.1/bin/esorex --recipe-config=$RECIPE_CONFIG/$recipe'.rc' $recipe $filesof
 
 #Create list of product files to productsof.txt
 product=(PIXTABLE_STD_001-01.fits)
