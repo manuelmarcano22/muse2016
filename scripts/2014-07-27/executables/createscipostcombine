@@ -85,3 +85,4 @@ cp productsof.txt $scripts/products/
 cp $filesof $scripts/products/
 
 done
+cp $ESOREX__CONFIG/$ESOREX_LOG_FILE $scripts/products/
