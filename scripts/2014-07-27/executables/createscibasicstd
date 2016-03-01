@@ -27,11 +27,10 @@ echo $CALIB_FILES/badpix_table.fits BADPIX_TABLE >> $filesof
 echo $ESOREX_OUTPUT_DIR/TWILIGHT_CUBE.fits TWILIGHT_CUBE >> $filesof
 
 export ESOREX_LOG_FILE=${0##*/}
-export ESOREX_LOG_FILE=${0##*/}
 taskset -c 0-23 /home/detoeuf/muse1.2.1/bin/esorex --recipe-config=$RECIPE_CONFIG/$recipe'.rc' $recipe $filesof
 
 #Create list of product files to productsof.txt
-product=(PIXTABLE_STD_001-01.fits)
+product=(PIXTABLE_STD_0001-01.fits)
 for i in "${product[@]}"
 do
 	if [ -f $i ]; 
