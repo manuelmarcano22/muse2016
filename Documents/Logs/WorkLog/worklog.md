@@ -502,13 +502,13 @@ muse_cube_combine CUBE_COMBINED.fits CUBE_blue.fits CUBE_green.fits CUBE_red.fit
 
 I created the file `~/.inputrc` to enable vi edit mode in bash and python. To the file I added the lines:
 
-'''
+```bash
 set editing-mode vi
 
 $if mode=vi
   set keymap vi-command
     set keymap vi-insert
-'''
+```
 
 To source the file in the current bash session use `bind -f ~/.inputrc`
 
@@ -526,15 +526,40 @@ Maybe because I tried to run the recipe *muse_align* with data created with an o
 - [x] ~~How many exposures of STD?. Currently using the closest one. No STD for second night.~~ I do have for the second night. Use at least one. There should be at least one per night.   
 
 
+# Feb-29-2016 IRAP Roche J042
+
+## Commits
+
+### GitHub wiki
+
+I started to write a wiki for the GitHub repository. It can be found in (https://github.com/manuelmarcano22/muse2016/wiki).
+
+
+# Mar-01-2016 IRAP Roche J042
+
+## Commits
+
+### Problems with scibasic "recipe"
+
+If I run with esorex in $HOME/musepipeline1.2.1/bin/esorex it doesn't work. The process freezes and the checksum doesn't work. This is the same for both creating OBJECT and STD. It doesn't give me the same error with the one installed in /usr/local/bin. The only difference is the CPL version, 6.6 vs 6.6.1, but with both the checksums doesn't work.
+
+I try putting the option to check the checksum to FALSE in esorexrc to see if this was the problem. It works like that. I will try creating the objects with `esorex.caller.no-checksum=TRUE` 
+
+
+### New recipe dir
+
+I change the local installation of the muse pipeline to `/home/detoeuf/muse1.2.1` and now it includes the version 6.6.1 of CPL and not the 6.6. This was to try to fix the problem when executing the recipe *muse_scibasic* for objects and standards, but it didn't work. 
+
 
 ##  Questions
-
+- [ ] Can run without checksum?
 
 ## To-Do
-- [ ] Re-run everything with new recipe.
+- [ ]  Update params of other days with correct recipe directory and maybe that it doesnt do the checksum. 
+- [ ] Re-run everything with new recipe version.
 - [ ] Create cleanmastersof with new data from second day of observation.
 - [ ] Get all the offsets to combine the datasets. 
-- [ ] Figure out how to use ZAP.
+- [ ] Figure out how to use [ZAP][@zap].
 - [ ] Python routines to update productssof.txt and use this for routines. 
 - [ ] Install IRAF and Pyraf with Ureka from the STScI.
 - [ ] Do a CUBE with and without using the bad pixel table.
@@ -549,6 +574,8 @@ Maybe because I tried to run the recipe *muse_align* with data created with an o
 
 [@musecluster2]: http://adsabs.harvard.edu/abs/2016arXiv160201643K "Kamann S, Husser T-O, Brinchmann J, Emsellem E, Weilbacher PM, Wisotzki L, et al. MUSE crowded field 3D spectroscopy of over 12,000 stars in the globular cluster NGC 6397 - II. Probing the internal dynamics and the presence of a central black hole. ArXiv e-prints [Internet]. 2016 Feb 1 [cited 2016 Feb 23];1602:arXiv:1602.01643. Available from: http://adsabs.harvard.edu/abs/2016arXiv160201643K"
 
+
+[@zap]: http://adsabs.harvard.edu/abs/2016arXiv160208037S "Soto KT, Lilly SJ, Bacon R, Richard J, Conseil S. ZAP -- Enhanced PCA Sky Subtraction for Integral Field Spectroscopy. ArXiv e-prints [Internet]. 2016 Feb 1 [cited 2016 Feb 29];1602:arXiv:1602.08037. Available from: http://adsabs.harvard.edu/abs/2016arXiv160208037S"
 
 
 
