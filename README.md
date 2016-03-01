@@ -35,7 +35,7 @@ This folder contains the scripts used to reduce the download from [MUSE](https:/
 
 -  products:  contains several text files with the names of the data files that are produced or are used as inputs by the scripts to reduce the data. 
 
-**For more information information on how the scripts and call to MUSE recipes refer to the wiki**
+**For more information information on how the scripts and call to MUSE recipes refer to the [wiki](https://github.com/manuelmarcano22/muse2016/wiki)**
 
 ## In the Future
 
