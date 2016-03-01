@@ -1,0 +1,28 @@
+
+Start time     : 2016-03-01T17:54:52
+Program name   : esorex
+Severity level : [ DEBUG ] 
+
+17:54:52 [ INFO  ] : [tid=000] Esorex, version 3.12
+17:54:52 [ INFO  ] : [tid=000] using the libraries: CPL = 6.6.1, CFITSIO = 3.36, WCSLIB = 4.24, FFTW (double and single precision), OPENMP = 201107
+
+17:54:52 [ INFO  ] muse_processing_recipeinfo: [tid=000] MUSE Instrument Pipeline v1.2.1
+17:54:52 [ DEBUG ] muse_processing_recipeinfo: [tid=000] 7 input frames:
+17:54:52 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-07-27/MASTER_BIAS.fits	MASTER_BIAS
+17:54:52 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-07-27/MASTER_FLAT.fits	MASTER_FLAT
+17:54:52 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-07-27/TRACE_TABLE.fits	TRACE_TABLE
+17:54:52 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-07-27/WAVECAL_TABLE.fits	WAVECAL_TABLE
+17:54:52 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-07-27/cal/geometry_table_wfm_comm2b.fits	GEOMETRY_TABLE
+17:54:52 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-07-27/cal/badpix_table.fits	BADPIX_TABLE
+17:54:52 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-07-27/TWILIGHT_CUBE.fits	TWILIGHT_CUBE
+17:54:52 [ DEBUG ] muse_processing_recipeinfo: [tid=000] non-default parameters:
+17:54:52 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   --merge = true [false]
+17:54:52 [ DEBUG ] muse_processing_recipeinfo: [tid=000] relevant environment variables:
+17:54:52 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   OMP_NUM_THREADS=24
+17:54:52 [ ERROR ] muse_processing_get_rawtags: [tid=000] No valid raw tag(s) found!
+17:54:52 [ DEBUG ] muse_frameset_check_raw: [tid=000] Determine properties of all 0 raw frames of IFU 1
+17:54:52 [ ERROR ] muse_basicproc_load_raw: [tid=000] No raw images loaded for IFU 1
+17:54:52 [ ERROR ] muse_cplerrorstate_dump_some: [tid=000] Dumping the 2 most recent error(s) out of a total of 2 errors:
+17:54:52 [ ERROR ] muse_cplerrorstate_dump_some: [tid=000]   [1/2] 'Illegal output' (15) at muse_basicproc_load_raw:muse_basicproc.c:1469
+17:54:52 [ ERROR ] muse_cplerrorstate_dump_some: [tid=000]   [2/2] 'Illegal output' (15) at muse_scibasic_compute:muse_scibasic.c:179
+17:54:52 [ ERROR ] : [tid=000] Execution of recipe 'muse_scibasic' failed, status = -1

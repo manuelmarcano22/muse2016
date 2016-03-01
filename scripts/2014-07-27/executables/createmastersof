@@ -2,4 +2,5 @@
 source ../config/params
 python seetype.py
 cp $ESOREX_OUTPUT_DIR/*mastersof.txt ../products/
-cp $ESOREX__CONFIG/$ESOREX_LOG_FILE $scripts/products/
+
+
