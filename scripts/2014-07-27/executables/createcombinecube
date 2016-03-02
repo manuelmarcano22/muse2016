@@ -1,0 +1,100 @@
+#!/bin/bash
+
+
+#It creates a set-of-frames (sof) to use the muse_bias routine from /home/detoeuf/muse1.2.1/bin/esorex 
+#and create a master bias
+
+#Souce Params file with enviroment variables
+scripts=/home/detoeuf/Manuel/scripts/2014-07-27
+source $scripts/config/params 
+
+#Change to data location
+cd $DATA_LOCATION
+
+#Variables
+recipe=muse_exp_combine
+filesof=expcombine.sof
+initexp=2
+endexp=3 # This is the number of expo of the same region
+
+> $filesof
+for i in $(eval echo "{$initexp..$endexp}")
+do
+	        echo `readlink -f PIXTABLE_REDUCED_*EXP0$i.fits` PIXTABLE_REDUCED >> $filesof
+	done
+
+echo `readlink -f OFFSET_LIST.fits` OFFSET_LIST >> $filesof
+echo $CALIB_FILES/filter_list.fits FILTER_LIST   >> $filesof
+
+#Call to /home/detoeuf/muse1.2.1/bin/esorex
+#run four times. One for shape and three colors.
+export ESOREX_LOG_FILE=${0##*/}
+lista=(shape red green blue)
+for item in ${lista[*]}
+	do 
+		if [ $item = red ]; 
+		then
+			[[ ! -e EXP$initexp'to'$endexp'shape'*"1.fits" ]] && echo `readlink -f EXP$initexp'to'$endexp"shapeIMAGE_FOV"*"1.fits" ` OUTPUT_WCS >> $filesof
+			
+		fi
+
+		taskset -c 0-23 $HOME/muse1.2.1/bin/esorex --recipe-config=$RECIPE_CONFIG/$recipe$item'.rc' $recipe $filesof 
+		
+		#Rename	Products
+		mv DATACUBE_FINAL.fits CUBEEXP$initexp'to'$endexp$item'.fits' 
+		for j in `ls IMAGE_FOV_*`
+			do
+				newname=$(echo $j | cut -d "." -f1)
+				mv $j EXP$initexp'to'$endexp$item$newname".fits"
+			done
+
+test -f productsof.txt || touch productsof.txt   # Test if it does exist
+
+#Create list of product files to productsof.txt
+product=(CUBEEXP$initexp'to'$endexp$item'.fits')
+for i in "${product[@]}"
+do
+	if [ -f $i ]; 
+	then 
+		grep $i productsof.txt > /dev/null 
+		if [ $? -eq 0 ];
+		then 
+			sed -i "/$i/c\\$ESOREX_OUTPUT_DIR/$i `stat -c %y $i`" productsof.txt
+		else
+			echo $ESOREX_OUTPUT_DIR/$i `stat -c %y $i` >> productsof.txt
+		fi
+	else
+		echo $i " Has not been created yet" >> productsof.txt 
+	fi
+done
+done
+
+
+
+#Combine them
+
+$HOME/muse1.2.1/bin/muse_cube_combine CUBEEXP$initexp'to'$endexp'FINAL.fits' CUBEEXP$initexp'to'$endexp'blue.fits' CUBEEXP$initexp'to'$endexp'green.fits' CUBEEXP$initexp'to'$endexp'red.fits'
+
+
+#Create list of product files to productsof.txt
+product=(CUBEEXP$initexp'to'$endexp'FINAL.fits')
+for i in "${product[@]}"
+do
+        if [ -f $i ];
+        then
+                grep $i productsof.txt > /dev/null
+                if [ $? -eq 0 ];
+                then
+                        sed -i "/$i/c\\$ESOREX_OUTPUT_DIR/$i `stat -c %y $i`" productsof.txt
+                else
+                        echo $ESOREX_OUTPUT_DIR/$i `stat -c %y $i` >> productsof.txt
+                fi
+        else
+                echo $i " Has not been created yet" >> productsof.txt
+        fi
+done
+
+#Update product in script
+cp productsof.txt $scripts/products/
+cp $filesof $scripts/products/
+cp $ESOREX_LOG_DIR/$ESOREX_LOG_FILE $scripts/products/

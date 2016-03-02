@@ -15,7 +15,7 @@ cd $DATA_LOCATION
 recipe=muse_exp_align
 filesof=align.sof
 initexp=1
-endexp=4 # This is the number of expo of the same region
+endexp=2 # This is the number of expo of the same region
 
 > $filesof
 for i in $(eval echo "{$initexp..$endexp}")

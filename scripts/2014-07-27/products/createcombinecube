@@ -1,11 +1,92 @@
 
-Start time     : 2016-03-02T11:10:42
+Start time     : 2016-03-02T15:54:03
 Program name   : esorex
 Severity level : [ DEBUG ] 
 
-11:10:42 [ INFO  ] : [tid=000] Esorex, version 3.12
-11:10:42 [ INFO  ] : [tid=000] using the libraries: CPL = 6.6.1, CFITSIO = 3.36, WCSLIB = 4.24, FFTW (double and single precision), OPENMP = 201107
+15:54:03 [ INFO  ] : [tid=000] Esorex, version 3.12
+15:54:03 [ INFO  ] : [tid=000] using the libraries: CPL = 6.6.1, CFITSIO = 3.36, WCSLIB = 4.24, FFTW (double and single precision), OPENMP = 201107
 
-11:10:42 [ ERROR ] : [tid=000] The input data file '/mnt/data/MUSE/2014-07-27/EXP1to2IMAGE_FOV*1.fits', in line 4 of the SOF file does not exist...
-11:10:42 [ ERROR ] : [tid=000] Problem occurred loading frameset from the SOF file 'expcombine.sof'.
-If you want to ignore errors of missing files in the sof, set '--check-sof-exist=false'.
+15:54:03 [ INFO  ] muse_processing_recipeinfo: [tid=000] MUSE Instrument Pipeline v1.2.1
+15:54:03 [ DEBUG ] muse_processing_recipeinfo: [tid=000] 5 input frames:
+15:54:03 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-07-27/PIXTABLE_REDUCED_0001_EXP02.fits	PIXTABLE_REDUCED
+15:54:03 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-07-27/PIXTABLE_REDUCED_0001_EXP03.fits	PIXTABLE_REDUCED
+15:54:03 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-07-27/OFFSET_LIST.fits	OFFSET_LIST
+15:54:03 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-07-27/cal/filter_list.fits	FILTER_LIST
+15:54:03 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-07-27/EXP2to3shapeIMAGE_FOV_0001.fits	OUTPUT_WCS
+15:54:03 [ DEBUG ] muse_processing_recipeinfo: [tid=000] non-default parameters:
+15:54:03 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   --filter = white,Johnson_V,Cousins_R,Cousins_I [white]
+15:54:03 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   --lambdamax = 6285 [10000]
+15:54:03 [ DEBUG ] muse_processing_recipeinfo: [tid=000] relevant environment variables:
+15:54:03 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   OMP_NUM_THREADS=24
+15:54:03 [ DEBUG ] muse_processing_sort_exposures: [tid=000] "/mnt/data/MUSE/2014-07-27/PIXTABLE_REDUCED_0001_EXP02.fits" seems to contain merged data (no EXTNAME=CHANnn)
+15:54:03 [ DEBUG ] muse_processing_sort_exposures: [tid=000] "/mnt/data/MUSE/2014-07-27/PIXTABLE_REDUCED_0001_EXP03.fits" seems to contain merged data (no EXTNAME=CHANnn)
+15:54:03 [ DEBUG ] muse_processing_sort_exposures: [tid=000] Data from exposure  1 is contained in  0 IFUs/1 merged file
+15:54:03 [ DEBUG ] muse_processing_sort_exposures: [tid=000] Data from exposure  2 is contained in  0 IFUs/1 merged file
+15:54:03 [ INFO  ] muse_table_load: [tid=000] loaded OFFSET_LIST from file "/mnt/data/MUSE/2014-07-27/OFFSET_LIST.fits" (ext 1)
+15:54:03 [ INFO  ] muse_pixtable_load_window: [tid=000] Loading pixel table "/mnt/data/MUSE/2014-07-27/PIXTABLE_REDUCED_0001_EXP02.fits" (image format)
+15:54:37 [ INFO  ] muse_pixtable_load_window: [tid=000] Loading pixel table "/mnt/data/MUSE/2014-07-27/PIXTABLE_REDUCED_0001_EXP03.fits" (image format)
+15:55:11 [ INFO  ] muse_xcombine_weights: [tid=000] 2 tables to be weighted using EXPTIME.
+15:55:11 [ DEBUG ] muse_xcombine_weights: [tid=000] Table 1, weight = 1.000000 (EXPTIME = 25.000000)
+15:55:11 [ DEBUG ] muse_xcombine_weights: [tid=000] Table 2, weight = 1.000000 (EXPTIME = 25.000000)
+15:55:11 [ INFO  ] muse_xcombine_tables: [tid=000] 2 tables to be combined
+15:55:11 [ DEBUG ] muse_xcombine_tables: [tid=000] Applying coordinate offsets to exposure 1: 0.000000e+00/0.000000e+00 deg
+15:55:11 [ INFO  ] muse_wcs_position_celestial: [tid=000] Adapting WCS to RA/DEC=265.175380/-53.674490 deg
+15:55:14 [ INFO  ] muse_wcs_position_celestial: [tid=000] Adapting WCS to RA/DEC=265.175890/-53.674480 deg
+15:55:17 [ INFO  ] muse_xcombine_tables: [tid=000] Approx. offset of exposure 2: 3.021e-04,1.000e-05 deg
+15:55:24 [ DEBUG ] muse_xcombine_tables: [tid=000] Combining 2 tables took 12.7294s (wall-clock) and 107.09s (CPU)
+15:55:24 [ DEBUG ] muse_postproc_cube_load_output_wcs: [tid=000] Apparently valid header OUTPUT_WCS found in extension 1 of "/mnt/data/MUSE/2014-07-27/EXP2to3shapeIMAGE_FOV_0001.fits"
+15:55:24 [ INFO  ] muse_postproc_cube_resample_and_collapse: [tid=000] Resampling to final cube follows, output format "FITS cube"
+15:55:24 [ DEBUG ] muse_resampling_cube: [tid=000]   steps from parameters: 0.200000 arcsec, 0.200000 arcsec, 1.250 Angstrom
+15:55:24 [ INFO  ] muse_resampling_cube: [tid=000]   Output cube size 419 x 421 x 1230 (fit to data)
+15:55:24 [ INFO  ] muse_resampling_cube: [tid=000]   Overriding NAXIS1=419 (was 419)
+15:55:24 [ INFO  ] muse_resampling_cube: [tid=000]   Overriding NAXIS2=420 (was 421)
+15:55:24 [ INFO  ] muse_resampling_cube: [tid=000]   Overriding CRVAL1=265.175 (was 265.175)
+15:55:24 [ INFO  ] muse_resampling_cube: [tid=000]   Overriding CRVAL2=-53.6745 (was -53.6745)
+15:55:24 [ INFO  ] muse_resampling_cube: [tid=000]   Overriding CRPIX1=215.219 (was 208.137)
+15:55:24 [ INFO  ] muse_resampling_cube: [tid=000]   Overriding CRPIX2=216.531 (was 209.589)
+15:55:24 [ INFO  ] muse_resampling_cube: [tid=000]   Overriding CD1_1=-5.55556e-05 (was -5.55556e-05)
+15:55:24 [ INFO  ] muse_resampling_cube: [tid=000]   Overriding CD1_2=0.00000 (was 0.00000)
+15:55:24 [ INFO  ] muse_resampling_cube: [tid=000]   Overriding CD2_1=0.00000 (was 0.00000)
+15:55:24 [ INFO  ] muse_resampling_cube: [tid=000]   Overriding CD2_2=5.55556e-05 (was 5.55556e-05)
+15:55:24 [ DEBUG ] muse_resampling_cube: [tid=000]   Output WCS was forced, won't update CRPIX[12]!
+15:55:57 [ INFO  ] muse_pixgrid_create: [tid=000]   pixel grid creation is 14.1% complete, 30.7687s elapsed, ~188.17s remaining
+15:56:27 [ INFO  ] muse_pixgrid_create: [tid=000]   pixel grid creation is 29.5% complete, 61.3115s elapsed, ~146.437s remaining
+15:56:58 [ INFO  ] muse_pixgrid_create: [tid=000]   pixel grid creation is 45.4% complete, 92.0534s elapsed, ~110.53s remaining
+15:57:29 [ INFO  ] muse_pixgrid_create: [tid=000]   pixel grid creation is 59.5% complete, 123.049s elapsed, ~83.7791s remaining
+15:57:59 [ INFO  ] muse_pixgrid_create: [tid=000]   pixel grid creation is 72.1% complete, 153.129s elapsed, ~59.1331s remaining
+15:58:30 [ INFO  ] muse_pixgrid_create: [tid=000]   pixel grid creation is 85.3% complete, 184.006s elapsed, ~31.8163s remaining
+15:59:01 [ INFO  ] muse_pixgrid_create: [tid=000]   pixel grid creation is 97.9% complete, 214.747s elapsed, ~4.59236s remaining
+15:59:08 [ DEBUG ] muse_pixgrid_create: [tid=000]   pixel grid: 419x420x1230, 213469458 pixels total, 83120115 (38.9%) in extension map; took 222.16s (wall-clock) and 217.01s (CPU) to create
+15:59:08 [ INFO  ] muse_resampling_cube: [tid=000]   Using median statistics (10.000 sigma level) for cosmic-ray rejection
+15:59:08 [ DEBUG ] muse_resampling_cube: [tid=000]   CR rejection: posang = -148.600000 deg --> DIR_NONE (yes / false / false / false / false / false)
+16:01:46 [ INFO  ] muse_resampling_cube: [tid=000]   Starting resampling, using method "drizzle" (pixfrac f=0.600,0.600,0.600, loop distance ld=1)
+16:02:28 [ DEBUG ] muse_resampling_cube: [tid=000]   resampling took 424.154s (wall-clock) and 42.326s (918.330s CPU, 24 CPUs) for muse_resampling_cube*() alone
+16:02:28 [ INFO  ] muse_postproc_qc_fwhm: [tid=000] Computed FWHM QC parameters for 79 of 81 sources found down to the 5.0 sigma threshold on plane 616
+16:02:28 [ DEBUG ] muse_table_load_filter: [tid=000] White-light integration wanted (filter "white")
+16:02:28 [ DEBUG ] muse_datacube_collapse_filter_buffer: [tid=000] filter wavelength range 4749.8..6287.3A (planes 0..1230)
+16:02:31 [ INFO  ] muse_processing_save_image: [tid=000] Saving image as IMAGE_FOV_0001.fits
+16:02:31 [ INFO  ] muse_table_load_filter: [tid=000] loaded filter "Johnson_V" from file "/mnt/data/MUSE/2014-07-27/cal/filter_list.fits" (ext 2)
+16:02:31 [ DEBUG ] muse_datacube_collapse_filter_buffer: [tid=000] filter wavelength range 4749.8..6287.3A (planes 0..1230)
+16:02:34 [ INFO  ] muse_processing_save_image: [tid=000] Saving image as IMAGE_FOV_0002.fits
+16:02:34 [ INFO  ] muse_table_load_filter: [tid=000] loaded filter "Cousins_R" from file "/mnt/data/MUSE/2014-07-27/cal/filter_list.fits" (ext 3)
+16:02:34 [ DEBUG ] muse_datacube_collapse_filter_buffer: [tid=000] filter wavelength range 5499.8..6287.3A (planes 600..1230)
+16:02:36 [ INFO  ] muse_processing_save_image: [tid=000] Saving image as IMAGE_FOV_0003.fits
+16:02:36 [ INFO  ] muse_table_load_filter: [tid=000] loaded filter "Cousins_I" from file "/mnt/data/MUSE/2014-07-27/cal/filter_list.fits" (ext 4)
+16:02:36 [ DEBUG ] muse_datacube_collapse_filter_buffer: [tid=000] filter wavelength range 6286.0..6287.3A (planes 1229..1230)
+16:02:36 [ INFO  ] muse_processing_save_image: [tid=000] Saving image as IMAGE_FOV_0004.fits
+16:02:46 [ INFO  ] muse_processing_save_cube: [tid=000] Saving FITS cube as "DATACUBE_FINAL.fits"
+16:03:04 [ ERROR ] muse_cplerrorstate_dump_some: [tid=000] Dumping the 2 most recent error(s) out of a total of 2 errors:
+16:03:04 [ ERROR ] muse_cplerrorstate_dump_some: [tid=000]   [1/2] 'Access beyond boundaries' (11) at cpl_column_get_string_const:cpl_column.c:4990
+16:03:04 [ ERROR ] muse_cplerrorstate_dump_some: [tid=000]   [2/2] 'Access beyond boundaries' (11) at cpl_array_get_string:cpl_array.c:2295
+16:03:04 [ INFO  ] : [tid=000] Calculating product checksums
+16:03:12 [ INFO  ] : [tid=000] Created product DATACUBE_FINAL.fits (in place)
+16:03:12 [ INFO  ] : [tid=000] Created product IMAGE_FOV_0001.fits (in place)
+16:03:12 [ INFO  ] : [tid=000] Created product IMAGE_FOV_0002.fits (in place)
+16:03:12 [ INFO  ] : [tid=000] Created product IMAGE_FOV_0003.fits (in place)
+16:03:12 [ INFO  ] : [tid=000] Created product IMAGE_FOV_0004.fits (in place)
+16:03:12 [ INFO  ] : [tid=000] 5 products created
+16:03:12 [ INFO  ] : [tid=000] Recipe operation(s) took            549 seconds to complete.
+16:03:12 [ INFO  ] : [tid=000] Total size of 2 raw input frames  = 18136.62 MB
+
+16:03:12 [ INFO  ] : [tid=000] => processing rate of    33.03 MB/sec 
+
