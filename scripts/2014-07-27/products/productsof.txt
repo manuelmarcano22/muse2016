@@ -6,4 +6,28 @@
 /mnt/data/MUSE/2014-07-27/WAVECAL_RESIDUALS.fits 2016-02-26 17:27:22.277313224 +0100
 /mnt/data/MUSE/2014-07-27/LSF_PROFILE.fits 2016-02-26 19:37:04.089073560 +0100
 /mnt/data/MUSE/2014-07-27/TWILIGHT_CUBE.fits 2016-02-29 09:35:06.774203068 +0100
-/mnt/data/MUSE/2014-07-27/PIXTABLE_STD_0001-01.fits 2016-03-01 17:48:23.434630608 +0100
+/mnt/data/MUSE/2014-07-27/PIXTABLE_STD_0001-01.fits 2016-03-02 08:13:31.797031936 +0100
+/mnt/data/MUSE/2014-07-27/PIXTABLE_OBJECT_0001-01.fits 2016-03-02 06:59:03.025169565 +0100
+/mnt/data/MUSE/2014-07-27/DATACUBE_STD_0001.fits 2016-03-02 08:27:52.337005433 +0100
+/mnt/data/MUSE/2014-07-27/DATACUBE_FINAL_EXP01.fits 2016-03-02 09:07:53.024931497 +0100
+/mnt/data/MUSE/2014-07-27/DATACUBE_FINAL_EXP02.fits 2016-03-02 09:49:55.988853795 +0100
+/mnt/data/MUSE/2014-07-27/OFFSET_LIST.fits 2016-03-02 09:59:11.588836684 +0100
+/mnt/data/MUSE/2014-07-27/DATACUBE_FINAL_EXP03.fits 2016-03-02 10:32:06.312775866 +0100
+CUBEEXP1to2.fits  Has not been created yet
+CUBEEXP1to2.fits  Has not been created yet
+CUBEEXP1to2.fits  Has not been created yet
+CUBEEXP1to2.fits  Has not been created yet
+CUBEEXP1to2.fits  Has not been created yet
+CUBEEXP2to3.fits  Has not been created yet
+CUBEEXP2to3.fits  Has not been created yet
+CUBEEXP2to3.fits  Has not been created yet
+CUBEEXP2to3.fits  Has not been created yet
+CUBEEXP2to3.fits  Has not been created yet
+CUBEEXP2to3.fits  Has not been created yet
+CUBEEXP2to3.fits  Has not been created yet
+/mnt/data/MUSE/2014-07-27/CUBEEXP2to3shape.fits 2016-03-02 13:31:02.912445201 +0100
+/mnt/data/MUSE/2014-07-27/CUBEEXP2to3red.fits 2016-03-02 13:51:11.780407970 +0100
+/mnt/data/MUSE/2014-07-27/CUBEEXP2to3green.fits 2016-03-02 14:11:14.420370931 +0100
+/mnt/data/MUSE/2014-07-27/CUBEEXP2to3blue.fits 2016-03-02 14:30:21.084335616 +0100
+CUBEEXP2to3FINAL.fits  Has not been created yet
+CUBEEXP2to3FINAL.fits  Has not been created yet

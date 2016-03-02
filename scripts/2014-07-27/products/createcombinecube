@@ -1,0 +1,11 @@
+
+Start time     : 2016-03-02T11:10:42
+Program name   : esorex
+Severity level : [ DEBUG ] 
+
+11:10:42 [ INFO  ] : [tid=000] Esorex, version 3.12
+11:10:42 [ INFO  ] : [tid=000] using the libraries: CPL = 6.6.1, CFITSIO = 3.36, WCSLIB = 4.24, FFTW (double and single precision), OPENMP = 201107
+
+11:10:42 [ ERROR ] : [tid=000] The input data file '/mnt/data/MUSE/2014-07-27/EXP1to2IMAGE_FOV*1.fits', in line 4 of the SOF file does not exist...
+11:10:42 [ ERROR ] : [tid=000] Problem occurred loading frameset from the SOF file 'expcombine.sof'.
+If you want to ignore errors of missing files in the sof, set '--check-sof-exist=false'.
