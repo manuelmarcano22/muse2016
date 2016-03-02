@@ -45,16 +45,16 @@ taskset -c 0-23 /home/detoeuf/muse1.2.1/bin/esorex --recipe-config=$RECIPE_CONFI
 #for flag cube. It is the default
 mv DATACUBE_FINAL.fits DATACUBE_FINAL_EXP0$i.fits
 
-##for flags combined, positioned and individual
-#mv PIXTABLE_COMBINED.fits PIXTABLE_COMBINED_EXP0$i.fits
-#mv PIXTABLE_POSITIONED_0001.fits PIXTABLE_POSITIONED_0001_EXP0$i.fits
-#mv PIXTABLE_REDUCED_0001.fits  PIXTABLE_REDUCED_0001_EXP0$i.fits
-#
-##For default creation og skymodel
-#mv SKY_SPECTRUM_0001.fits SKY_SPECTRUM_0001_EXP0$i.fits
-#mv SKY_MASK_0001.fits SKY_MASK_0001_EXP0$i.fits
-#mv SKY_LINES_0001.fits SKY_LINES_0001_EXP0$i.fits
-#mv SKY_CONTINUUM_0001.fits SKY_CONTINUUM_0001_EXP0$i.fits
+#for flags combined, positioned and individual
+mv PIXTABLE_COMBINED.fits PIXTABLE_COMBINED_EXP0$i.fits
+mv PIXTABLE_POSITIONED_0001.fits PIXTABLE_POSITIONED_0001_EXP0$i.fits
+mv PIXTABLE_REDUCED_0001.fits  PIXTABLE_REDUCED_0001_EXP0$i.fits
+
+#For default creation og skymodel
+mv SKY_SPECTRUM_0001.fits SKY_SPECTRUM_0001_EXP0$i.fits
+mv SKY_MASK_0001.fits SKY_MASK_0001_EXP0$i.fits
+mv SKY_LINES_0001.fits SKY_LINES_0001_EXP0$i.fits
+mv SKY_CONTINUUM_0001.fits SKY_CONTINUUM_0001_EXP0$i.fits
 
 for j in `ls IMAGE_FOV_*`
 do 
