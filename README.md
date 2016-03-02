@@ -33,7 +33,7 @@ This folder contains the scripts used to reduce the download from [MUSE](https:/
 
 -  executables: contains all the callable routines used to generated the final data product.
 
--  products:  contains several text files with the names of the data files that are produced or are used as inputs by the scripts to reduce the data. 
+-  products:  contains several text files with the names of the data files that are produced or are used as inputs by the scripts to reduce the data. It also includes the log files produced by EsoRex. 
 
 **For more information information on how the scripts and call to MUSE recipes refer to the [wiki](https://github.com/manuelmarcano22/muse2016/wiki)**
 
