@@ -27,7 +27,8 @@ echo $ESOREX_OUTPUT_DIR/MASTER_BIAS.fits MASTER_BIAS >> $filesof
 echo $CALIB_FILES/badpix_table.fits BADPIX_TABLE >> $filesof 
 #Do it with input list and search in both master and products and calibration 
 
-taskset -c 0-23 esorex --recipe-config=$RECIPE_CONFIG/$recipe'.rc' $recipe $filesof
+export ESOREX_LOG_FILE=${0##*/}
+taskset -c 0-23 /home/detoeuf/muse1.2.1/bin/esorex --recipe-config=$RECIPE_CONFIG/$recipe'.rc' $recipe $filesof
 
 #Create list of product files to productsof.txt
 product=(MASTER_FLAT.fits TRACE_TABLE.fits)
@@ -49,3 +50,4 @@ done
 #Update product in script
 cp productsof.txt $scripts/products/
 cp $filesof $scripts/products/
+cp $ESOREX_LOG_DIR/$ESOREX_LOG_FILE $scripts/products/

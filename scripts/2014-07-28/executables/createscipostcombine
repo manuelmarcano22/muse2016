@@ -4,13 +4,14 @@
 scripts=/home/detoeuf/Manuel/scripts/2014-07-28
 source $scripts/config/params 
 
+
 cd $DATA_LOCATION
+
 
 #Variables
 recipe=muse_scipost
-#stdexp=0001 #In case there are several exposures of STD processed. 
+stdexp=0001 #In case there are several exposures of STD processed. 
 expnum="$(echo `ls PIXTABLE_OBJECT_* | wc -l`"/24" | bc)" #Create a DATACUBE for each exposure
-
 for i in $(eval echo "{1..$expnum}")
 do
 	echo $i
@@ -22,19 +23,20 @@ do
 	done
 
 # Using all the cal from the program or download online for this science verification run
-#echo $ESOREX_OUTPUT_DIR/LSF_PROFILE.fits LSF_PROFILE >> $filesof #Also have one from the calibration
-echo $CALIB_FILES/lsf_profile_slow_wfm-n.fits LSF_PROFILE   >> $filesof # The one made by the ESORex recipe with data. 
+echo $ESOREX_OUTPUT_DIR/LSF_PROFILE.fits LSF_PROFILE >> $filesof #Also have one from the calibration
+#echo $CALIB_FILES/lsf_profile_slow_wfm-n.fits LSF_PROFILE   >> $filesof # The one made by the ESORex recipe with data. 
 echo $CALIB_FILES/astrometry_wcs_wfm_comm2b.fits ASTROMETRY_WCS   >> $filesof
 echo $CALIB_FILES/sky_lines.fits SKY_LINES   >> $filesof
 echo $CALIB_FILES/extinct_table.fits EXTINCT_TABLE   >> $filesof
 echo $CALIB_FILES/filter_list.fits FILTER_LIST   >> $filesof
 # STD can be from calibration or from Data
-echo $CALIB_FILES/std_response_wfm-n.fits STD_RESPONSE   >> $filesof #Calibration
-#echo $ESOREX_OUTPUT_DIR/STD_RESPONSE_$stdexp.fits STD_RESPONSE >> $filesof
-#echo $ESOREX_OUTPUT_DIR/STD_TELLURIC_$stdexp.fits STD_TELLURIC >> $filesof
+#echo $CALIB_FILES/std_response_wfm-n.fits STD_RESPONSE   >> $filesof #Calibration
+echo $ESOREX_OUTPUT_DIR/STD_RESPONSE_$stdexp.fits STD_RESPONSE >> $filesof
+echo $ESOREX_OUTPUT_DIR/STD_TELLURIC_$stdexp.fits STD_TELLURIC >> $filesof
 
 
-taskset -c 0-23 esorex --recipe-config=$RECIPE_CONFIG/$recipe'.rc' $recipe $filesof
+export ESOREX_LOG_FILE=${0##*/}
+taskset -c 0-23 /home/detoeuf/muse1.2.1/bin/esorex --recipe-config=$RECIPE_CONFIG/$recipe'.rc' $recipe $filesof
 
 
 
@@ -83,3 +85,4 @@ cp productsof.txt $scripts/products/
 cp $filesof $scripts/products/
 
 done
+cp $ESOREX_LOG_DIR/$ESOREX_LOG_FILE $scripts/products/

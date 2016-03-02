@@ -4,19 +4,19 @@
 #bash createmastersof
 ##
 ####create BIAS
-#bash createbiasmaster
+bash createbiasmaster
 ###
 ####create FLATS
-#bash createflatmaster
+bash createflatmaster
 ###
 ####create ARC
-#bash createwavecal
+bash createwavecal
 ###
 ####create lsf
-#bash createlsf
+bash createlsf
 
 #create twilight
-#bash createtwilight
+bash createtwilight
 
 ##create pixelobjects
 bash createscibasicobject

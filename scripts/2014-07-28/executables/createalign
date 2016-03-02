@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 #It creates a set-of-frames (sof) to use the muse_bias routine from /home/detoeuf/muse1.2.1/bin/esorex 
 #and create a master bias
 
@@ -11,26 +12,27 @@ source $scripts/config/params
 cd $DATA_LOCATION
 
 #Variables
-recipe=muse_bias
-filesof=bias.sof
-numsof=11 # The ESO takes by set of 11. We make the master with that set.
-patterns=(BIAS WFM-NOAO-N) #Patterns to seach in the mastersof. 
-#WFM is instrument mode and should be the same as object.  Be careful it needs to be in the right order. The patterns are tags output of the Python program seetype.py
+recipe=muse_exp_align
+filesof=align.sof
+initexp=1
+endexp=2 # This is the number of expo of the same region
 
-a=`echo ${patterns[*]/%/.*} | rev | cut -c 3- | rev`
-cat cleanmastersof.txt | grep -Ew "$a" | head -n $numsof > $filesof 
-echo $CALIB_FILES/badpix_table.fits BADPIX_TABLE >> $filesof #Optional BadPixel data in calibration
+> $filesof
+for i in $(eval echo "{$initexp..$endexp}")
+do
+	        echo `readlink -f "EXP0"$i"IMAGE_FOV_0001.fits"` IMAGE_FOV >> $filesof
+	done
 
 
 #Call to /home/detoeuf/muse1.2.1/bin/esorex
 export ESOREX_LOG_FILE=${0##*/}
-taskset -c 0-23 /home/detoeuf/muse1.2.1/bin/esorex --recipe-config=$RECIPE_CONFIG/$recipe'.rc' $recipe $filesof 
+taskset -c 0-23 $HOME/muse1.2.1/bin/esorex --recipe-config=$RECIPE_CONFIG/$recipe'.rc' $recipe $filesof 
 
 
 test -f productsof.txt || touch productsof.txt   # Test if it does exist
 
 #Create list of product files to productsof.txt
-product=(MASTER_BIAS.fits)
+product=(OFFSET_LIST.fits)
 for i in "${product[@]}"
 do
 	if [ -f $i ]; 

@@ -27,7 +27,8 @@ echo $CALIB_FILES/badpix_table.fits BADPIX_TABLE >> $filesof
 echo $ESOREX_OUTPUT_DIR/TWILIGHT_CUBE.fits TWILIGHT_CUBE >> $filesof
 
 
-taskset -c 0-23 esorex --recipe-config=$RECIPE_CONFIG/$recipe'.rc' $recipe $filesof
+export ESOREX_LOG_FILE=${0##*/}
+taskset -c 0-23 /home/detoeuf/muse1.2.1/bin/esorex --recipe-config=$RECIPE_CONFIG/$recipe'.rc' $recipe $filesof
 
 #Create list of product files to productsof.txt
 product=(PIXTABLE_OBJECT_0001-01.fits)
@@ -49,3 +50,4 @@ done
 #Update product in script
 cp productsof.txt $scripts/products/
 cp $filesof $scripts/products/
+cp $ESOREX_LOG_DIR/$ESOREX_LOG_FILE $scripts/products/
