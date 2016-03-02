@@ -1,4 +1,4 @@
 muse.muse_scipost.filter=white,Johnson_V,Cousins_R,Cousins_I
 muse.muse_scipost.save=cube
-muse.muse_scipost.lambdamin=4000.
-muse.muse_scipost.lambdamax=5000.
+muse.muse_scipost.lambdamin=4000.0 # Default
+muse.muse_scipost.lambdamax=4800.0 
