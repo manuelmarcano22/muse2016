@@ -1,4 +1,4 @@
 muse.muse_wavecal.merge=true
-muse.muse_wavecal.nifu=0
+muse.muse_wavecal.nifu=-1
 muse.muse_wavecal.residuals=true
 muse.muse_wavecal.resample=true

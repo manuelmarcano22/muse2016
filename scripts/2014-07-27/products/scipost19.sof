@@ -22,7 +22,7 @@
 /mnt/data/MUSE/2014-07-27/PIXTABLE_OBJECT_0019-22.fits PIXTABLE_OBJECT
 /mnt/data/MUSE/2014-07-27/PIXTABLE_OBJECT_0019-23.fits PIXTABLE_OBJECT
 /mnt/data/MUSE/2014-07-27/PIXTABLE_OBJECT_0019-24.fits PIXTABLE_OBJECT
-/mnt/data/MUSE/2014-07-27/cal/lsf_profile_slow_wfm-n.fits LSF_PROFILE
+/mnt/data/MUSE/2014-07-27/LSF_PROFILE.fits LSF_PROFILE
 /mnt/data/MUSE/2014-07-27/cal/astrometry_wcs_wfm_comm2b.fits ASTROMETRY_WCS
 /mnt/data/MUSE/2014-07-27/cal/sky_lines.fits SKY_LINES
 /mnt/data/MUSE/2014-07-27/cal/extinct_table.fits EXTINCT_TABLE

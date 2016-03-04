@@ -15,7 +15,7 @@ cd $DATA_LOCATION
 recipe=muse_exp_combine
 filesof=expcombine.sof
 initexp=2
-endexp=3 # This is the number of expo of the same region
+endexp=5 # This is the number of expo of the same region
 
 > $filesof
 for i in $(eval echo "{$initexp..$endexp}")
@@ -34,7 +34,7 @@ for item in ${lista[*]}
 	do 
 		if [ $item = red ]; 
 		then
-			[[ ! -e EXP$initexp'to'$endexp'shape'*"1.fits" ]] && echo `readlink -f EXP$initexp'to'$endexp"shapeIMAGE_FOV"*"1.fits" ` OUTPUT_WCS >> $filesof
+			[[ ! -e EXP$initexp'to'$endexp'shape'*"1.fits" ]] && echo `readlink -f imageshape.fits ` OUTPUT_WCS >> $filesof
 			
 		fi
 

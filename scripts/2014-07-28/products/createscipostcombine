@@ -1,0 +1,58 @@
+
+Start time     : 2016-03-04T15:10:32
+Program name   : esorex
+Severity level : [ DEBUG ] 
+
+15:10:32 [ INFO  ] : [tid=000] Esorex, version 3.12
+15:10:32 [ INFO  ] : [tid=000] using the libraries: CPL = 6.6.1, CFITSIO = 3.36, WCSLIB = 4.24, FFTW (double and single precision), OPENMP = 201107
+
+15:10:32 [ INFO  ] muse_processing_recipeinfo: [tid=000] MUSE Instrument Pipeline v1.2.1
+15:10:32 [ DEBUG ] muse_processing_recipeinfo: [tid=000] 7 input frames:
+15:10:32 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-07-28/LSF_PROFILE.fits	LSF_PROFILE
+15:10:32 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-07-28/cal/astrometry_wcs_wfm_comm2b.fits	ASTROMETRY_WCS
+15:10:32 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-07-28/cal/sky_lines.fits	SKY_LINES
+15:10:32 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-07-28/cal/extinct_table.fits	EXTINCT_TABLE
+15:10:32 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-07-28/cal/filter_list.fits	FILTER_LIST
+15:10:32 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-07-28/STD_RESPONSE_0001.fits	STD_RESPONSE
+15:10:32 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-07-28/STD_TELLURIC_0001.fits	STD_TELLURIC
+15:10:32 [ DEBUG ] muse_processing_recipeinfo: [tid=000] non-default parameters:
+15:10:32 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   --save = individual,combined,positioned,cube,skymodel [cube,skymodel]
+15:10:32 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   --filter = white,Johnson_V,Cousins_R,Cousins_I [white]
+15:10:32 [ DEBUG ] muse_processing_recipeinfo: [tid=000] relevant environment variables:
+15:10:32 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   OMP_NUM_THREADS=24
+15:10:32 [ ERROR ] muse_processing_get_rawtags: [tid=000] No valid raw tag(s) found!
+15:10:32 [ INFO  ] muse_table_load: [tid=000] loaded STD_RESPONSE from file "/mnt/data/MUSE/2014-07-28/STD_RESPONSE_0001.fits" (ext 1)
+15:10:32 [ INFO  ] muse_table_load: [tid=000] loaded EXTINCT_TABLE from file "/mnt/data/MUSE/2014-07-28/cal/extinct_table.fits" (ext 1)
+15:10:32 [ INFO  ] muse_table_load: [tid=000] loaded STD_TELLURIC from file "/mnt/data/MUSE/2014-07-28/STD_TELLURIC_0001.fits" (ext 1)
+15:10:32 [ INFO  ] muse_propertylist_load: [tid=000] loaded ASTROMETRY_WCS from file "/mnt/data/MUSE/2014-07-28/cal/astrometry_wcs_wfm_comm2b.fits"
+15:10:32 [ INFO  ] muse_lsf_cube_load: [tid=000] Loaded LSF cube "/mnt/data/MUSE/2014-07-28/LSF_PROFILE.fits[CHAN01.LSF_PROFILE]" (ext 1)
+15:10:32 [ INFO  ] muse_lsf_cube_load: [tid=000] Loaded LSF cube "/mnt/data/MUSE/2014-07-28/LSF_PROFILE.fits[CHAN02.LSF_PROFILE]" (ext 2)
+15:10:32 [ INFO  ] muse_lsf_cube_load: [tid=000] Loaded LSF cube "/mnt/data/MUSE/2014-07-28/LSF_PROFILE.fits[CHAN03.LSF_PROFILE]" (ext 3)
+15:10:32 [ INFO  ] muse_lsf_cube_load: [tid=000] Loaded LSF cube "/mnt/data/MUSE/2014-07-28/LSF_PROFILE.fits[CHAN04.LSF_PROFILE]" (ext 4)
+15:10:32 [ INFO  ] muse_lsf_cube_load: [tid=000] Loaded LSF cube "/mnt/data/MUSE/2014-07-28/LSF_PROFILE.fits[CHAN05.LSF_PROFILE]" (ext 5)
+15:10:33 [ INFO  ] muse_lsf_cube_load: [tid=000] Loaded LSF cube "/mnt/data/MUSE/2014-07-28/LSF_PROFILE.fits[CHAN06.LSF_PROFILE]" (ext 6)
+15:10:33 [ INFO  ] muse_lsf_cube_load: [tid=000] Loaded LSF cube "/mnt/data/MUSE/2014-07-28/LSF_PROFILE.fits[CHAN07.LSF_PROFILE]" (ext 7)
+15:10:33 [ INFO  ] muse_lsf_cube_load: [tid=000] Loaded LSF cube "/mnt/data/MUSE/2014-07-28/LSF_PROFILE.fits[CHAN08.LSF_PROFILE]" (ext 8)
+15:10:33 [ INFO  ] muse_lsf_cube_load: [tid=000] Loaded LSF cube "/mnt/data/MUSE/2014-07-28/LSF_PROFILE.fits[CHAN09.LSF_PROFILE]" (ext 9)
+15:10:33 [ INFO  ] muse_lsf_cube_load: [tid=000] Loaded LSF cube "/mnt/data/MUSE/2014-07-28/LSF_PROFILE.fits[CHAN10.LSF_PROFILE]" (ext 10)
+15:10:33 [ INFO  ] muse_lsf_cube_load: [tid=000] Loaded LSF cube "/mnt/data/MUSE/2014-07-28/LSF_PROFILE.fits[CHAN11.LSF_PROFILE]" (ext 11)
+15:10:34 [ INFO  ] muse_lsf_cube_load: [tid=000] Loaded LSF cube "/mnt/data/MUSE/2014-07-28/LSF_PROFILE.fits[CHAN12.LSF_PROFILE]" (ext 12)
+15:10:34 [ INFO  ] muse_lsf_cube_load: [tid=000] Loaded LSF cube "/mnt/data/MUSE/2014-07-28/LSF_PROFILE.fits[CHAN13.LSF_PROFILE]" (ext 13)
+15:10:34 [ INFO  ] muse_lsf_cube_load: [tid=000] Loaded LSF cube "/mnt/data/MUSE/2014-07-28/LSF_PROFILE.fits[CHAN14.LSF_PROFILE]" (ext 14)
+15:10:34 [ INFO  ] muse_lsf_cube_load: [tid=000] Loaded LSF cube "/mnt/data/MUSE/2014-07-28/LSF_PROFILE.fits[CHAN15.LSF_PROFILE]" (ext 15)
+15:10:34 [ INFO  ] muse_lsf_cube_load: [tid=000] Loaded LSF cube "/mnt/data/MUSE/2014-07-28/LSF_PROFILE.fits[CHAN16.LSF_PROFILE]" (ext 16)
+15:10:35 [ INFO  ] muse_lsf_cube_load: [tid=000] Loaded LSF cube "/mnt/data/MUSE/2014-07-28/LSF_PROFILE.fits[CHAN17.LSF_PROFILE]" (ext 17)
+15:10:35 [ INFO  ] muse_lsf_cube_load: [tid=000] Loaded LSF cube "/mnt/data/MUSE/2014-07-28/LSF_PROFILE.fits[CHAN18.LSF_PROFILE]" (ext 18)
+15:10:35 [ INFO  ] muse_lsf_cube_load: [tid=000] Loaded LSF cube "/mnt/data/MUSE/2014-07-28/LSF_PROFILE.fits[CHAN19.LSF_PROFILE]" (ext 19)
+15:10:36 [ INFO  ] muse_lsf_cube_load: [tid=000] Loaded LSF cube "/mnt/data/MUSE/2014-07-28/LSF_PROFILE.fits[CHAN20.LSF_PROFILE]" (ext 20)
+15:10:37 [ INFO  ] muse_lsf_cube_load: [tid=000] Loaded LSF cube "/mnt/data/MUSE/2014-07-28/LSF_PROFILE.fits[CHAN21.LSF_PROFILE]" (ext 21)
+15:10:37 [ INFO  ] muse_lsf_cube_load: [tid=000] Loaded LSF cube "/mnt/data/MUSE/2014-07-28/LSF_PROFILE.fits[CHAN22.LSF_PROFILE]" (ext 22)
+15:10:37 [ INFO  ] muse_lsf_cube_load: [tid=000] Loaded LSF cube "/mnt/data/MUSE/2014-07-28/LSF_PROFILE.fits[CHAN23.LSF_PROFILE]" (ext 23)
+15:10:38 [ INFO  ] muse_lsf_cube_load: [tid=000] Loaded LSF cube "/mnt/data/MUSE/2014-07-28/LSF_PROFILE.fits[CHAN24.LSF_PROFILE]" (ext 24)
+15:10:38 [ DEBUG ] muse_cpltable_load: [tid=000] Loading /mnt/data/MUSE/2014-07-28/cal/sky_lines.fits['LINES'] from extension 1
+15:10:38 [ INFO  ] muse_sky_lines_load: [tid=000] Loaded sky lines from "/mnt/data/MUSE/2014-07-28/cal/sky_lines.fits"
+15:10:38 [ DEBUG ] muse_sky_continuum_load: [tid=000] No sky continuum found in input frameset!
+15:10:38 [ ERROR ] muse_scipost_compute: [tid=000] no science exposures found in input
+15:10:38 [ ERROR ] muse_cplerrorstate_dump_some: [tid=000] Dumping the 1 most recent error(s) out of a total of 1 errors:
+15:10:38 [ ERROR ] muse_cplerrorstate_dump_some: [tid=000]   [1/1] 'Data not found' (10) at muse_processing_sort_exposures:muse_processing.c:978
+15:10:38 [ ERROR ] : [tid=000] Execution of recipe 'muse_scipost' failed, status = -1
