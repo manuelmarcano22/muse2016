@@ -551,21 +551,86 @@ I try putting the option to check the checksum to FALSE in esorexrc to see if th
 I change the local installation of the muse pipeline to `/home/detoeuf/muse1.2.1` and now it includes the version 6.6.1 of CPL and not the 6.6. This was to try to fix the problem when executing the recipe *muse_scibasic* for objects and standards, but it didn't work. 
 
 
+
+# Mar-02-2016-to-Mar-04-2016 IRAP Roche J042
+
+## Commits
+
+
+
 ##  Questions
-- [ ] Can run without checksum?
+- [x] ~~Can run without checksum?~~ Will do this. At least for scibasic and scipost
+
 
 ## To-Do
-- [ ]  Update params of other days with correct recipe directory and maybe that it doesnt do the checksum. 
-- [ ] Re-run everything with new recipe version.
-- [ ] Create cleanmastersof with new data from second day of observation.
-- [ ] Get all the offsets to combine the datasets. 
-- [ ] Figure out how to use [ZAP][@zap].
+- [x]  ~~Update params of other days with correct recipe directory and maybe that it doesnt do the checksum.~~ Still dont know why didnt work the checksum after changed to new CPL. 
+- [x] ~~Re-run everything with new recipe version.~~ For first and second night. 
+- [x] ~~Create cleanmastersof with new data from second day of observation.~~ And ran all the recipes. 
+- [x] ~~Get all the offsets to combine the datasets.~~ 
+- [x] ~~Figure out how to use [ZAP][@zap].~~ Easy way in the command line `python -m zap INPUT_CUBE.fits`
+
+
+### MUSE_exp_Combine and MUSE_cube_combine
+
+The problem was that the IMAGEFOV that I was using as OUTOUT_WCS didn't have the right information about the third axis (wavelenght). I had to modify the header of the image including the following information about the third axis:
+
+NAXIS   =                    3
+NAXIS3  =                 3681
+CTYPE3  = 'AWAV    '
+CUNIT3  = 'Angstrom'
+CD3_3   =                 1.25
+CRPIX3  =                   1.
+CRVAL3  =     4749.75341796875
+CD1_3   =                   0.
+CD2_3   =                   0.
+CD3_1   =                   0.
+CD3_2   =                   0.
+
+To get the OUTPUT_WCS working I did the following process:
+
+1. Open a Datacube with all the wavelength and save as image in QFitView. 
+2. Then modify the header of the previously exported image to add or modify the keywords mentioned above. I did with some trouble in vim. There must be a better way. 
+
+This process is to be able to get the resulting wavelength limited DATACUBE from the recipe muse_exp_combine with the full wavelength range. It will have NaN for the wavelengths that are outside the specified wavelength range in the muse_exp_combine.rc. After the three datacubes (red,green and blue) are created they can be combine with `muse_cube_combine`.
+
+
+### RAM Memory
+
+The server now has more ram memory. I think 64 GB, so now I can run the recipes in parallel with the options in some of the recipes `nifu=-1`.
+
+
+## To-Do
+- [x] ~~Combine the four exposures of the center of the cluster taken the first night.~~ 
+
+
+### White Dwarfs
+
+Look for info on White Dwarfs population and type of CVs. Most should be magnetic.  
+
+
+# Mar-07-2016 IRAP Roche J042
+
+## Commits
+
+### Heliu-Core White Dwarfs
+
+NGC 6397 has population of so called "nonflickereres". This seem to be He WD with an massive Carbon-Oxygen WD. These are mentioned first in [Cool98][@Cool98NF], a spectra of one is studied in [Edmond98][@Edmonds98], three more are mention in [Taylor01][@taylor01]. And a comprehensive list of He WD can be found in [Strickler][@strickler09]. These can be interesting to studied since they can be sources for the LISA mission accroding to [Benacquista13][@benacquista13].
+
+
+### nonflickerers (NF)
+
+Using the coordinates of the first NF mentioned by [Cool98][@Cool98NF], and finding the coordinates in the paper [Strickler][@strickler09] I extracted the spectra. It is in the data folder. 
+
+##  Questions
+- [ ] Correct spectra. Can see the redshift?
+
+## To-Do
+- [ ] Get  the spectra of the CVs.
+- [ ] Find information about the white dwarfs in the cluster
 - [ ] Python routines to update productssof.txt and use this for routines. 
 - [ ] Install IRAF and Pyraf with Ureka from the STScI.
 - [ ] Do a CUBE with and without using the bad pixel table.
 - [ ] Make CUBE with lsf from calibration and created one. 
-
-
 
 
 # References
@@ -577,9 +642,13 @@ I change the local installation of the muse pipeline to `/home/detoeuf/muse1.2.1
 
 [@zap]: http://adsabs.harvard.edu/abs/2016arXiv160208037S "Soto KT, Lilly SJ, Bacon R, Richard J, Conseil S. ZAP -- Enhanced PCA Sky Subtraction for Integral Field Spectroscopy. ArXiv e-prints [Internet]. 2016 Feb 1 [cited 2016 Feb 29];1602:arXiv:1602.08037. Available from: http://adsabs.harvard.edu/abs/2016arXiv160208037S"
 
+[Cool98NF]: http://stacks.iop.org/1538-4357/508/i=1/a=L75 "Cool AM, Grindlay JE, Cohn HN, Lugger PM, Bailyn CD. Cataclysmic Variables and a New Class of Faint Ultraviolet Stars in the Globular Cluster NGC 6397. ApJ [Internet]. 1998 [cited 2016 Mar 7];508(1):L75. Available from: http://stacks.iop.org/1538-4357/508/i=1/a=L75"
 
+[@Edmonds99]: http://stacks.iop.org/0004-637X/516/i=1/a=250 "Edmonds PD, Grindlay JE, Cool A, Cohn H, Lugger P, Bailyn C. Cataclysmic Variables and a Candidate Helium White Dwarf in the Globular Cluster NGC 6397. ApJ [Internet]. 1999 [cited 2016 Feb 23];516(1):250. Available from: http://stacks.iop.org/0004-637X/516/i=1/a=250"
 
+[@taylor01]: http://stacks.iop.org/1538-4357/553/i=2/a=L169  "Taylor JM, Grindlay JE, Edmonds PD, Cool AM. Helium White Dwarfs and BY Draconis Binaries in the Globular Cluster NGC 6397. ApJ [Internet]. 2001 [cited 2016 Mar 7];553(2):L169. Available from: http://stacks.iop.org/1538-4357/553/i=2/a=L169"
 
+[@strickler09]: http://adsabs.harvard.edu/abs/2009ApJ...699...40S "Strickler RR, Cool AM, Anderson J, Cohn HN, Lugger PM, Serenelli AM. Helium-core White Dwarfs in the Globular Cluster NGC 6397. The Astrophysical Journal [Internet]. 2009 Jul 1 [cited 2016 Mar 7];699:40–55. Available from: http://adsabs.harvard.edu/abs/2009ApJ...699...40S"
 
-
+[@benacquista13]: http://www.livingreviews.org/lrr-2013-4 "Benacquista MJ, Downing JMB. Relativistic Binaries in Globular Clusters. Living Reviews in Relativity [Internet]. 2013 [cited 2016 Mar 7];16. Available from: http://www.livingreviews.org/lrr-2013-4"
 
