@@ -1,0 +1,42 @@
+SIMPLE  =                    T                                                  
+BITPIX  =                  -32                                                  
+NAXIS   =                    3                                                  
+NAXIS1  =                  419                                                  
+NAXIS2  =                  420                                                  
+NAXIS3  =                 3681                                                  
+PCOUNT  =                    0 / required keyword; must = 0                     
+GCOUNT  =                    1 / required keyword; must = 1                     
+EXTNAME = 'DATA    '           / This extension contains data values            
+HDUCLASS= 'ESO     '           / class name (ESO format)                        
+HDUDOC  = 'DICD    '           / document with class description                
+HDUVERS = 'DICD version 6'     / version number (according to spec v2.5.1)      
+HDUCLAS1= 'IMAGE   '           / Image data format                              
+HDUCLAS2= 'DATA    '           / this extension contains the data itself        
+ERRDATA = 'STAT    '           / pointer to the variance extension              
+OBJECT  = 'NGC6397 (DATA)'                                                      
+BUNIT   = '10**(-20)*erg/s/cm**2/Angstrom'                                      
+CRPIX1  =     215.218579276884                                                  
+CRPIX2  =     216.530588746824                                                  
+CD1_1   = -5.55555555555556E-05 / Coordinate transformation matrix element      
+CD1_2   =                   0. / Coordinate transformation matrix element       
+CD2_1   =                   0. / Coordinate transformation matrix element       
+CD2_2   = 5.55555555555556E-05 / Coordinate transformation matrix element       
+CUNIT1  = 'deg     '           / Units of coordinate increment and value        
+CUNIT2  = 'deg     '           / Units of coordinate increment and value        
+CTYPE1  = 'RA---TAN'           / Right ascension, gnomonic projection           
+CTYPE2  = 'DEC--TAN'           / Declination, gnomonic projection               
+CSYER1  =    1.51033062781E-05 / [deg] Systematic error in coordinate           
+CSYER2  =    5.76768648658E-06 / [deg] Systematic error in coordinate           
+CRVAL1  =            265.17538                                                  
+CRVAL2  =            -53.67449                                                  
+CTYPE3  = 'AWAV    '                                                            
+CUNIT3  = 'Angstrom'                                                            
+CD3_3   =                 1.25                                                  
+CRPIX3  =                   1.                                                  
+CRVAL3  =     4749.75341796875                                                  
+CD1_3   =                   0.                                                  
+CD2_3   =                   0.                                                  
+CD3_1   =                   0.                                                  
+CD3_2   =                   0.                                                  
+END                                                                             
+
