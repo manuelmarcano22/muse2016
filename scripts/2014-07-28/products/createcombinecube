@@ -1,0 +1,11 @@
+
+Start time     : 2016-03-08T12:41:24
+Program name   : esorex
+Severity level : [ DEBUG ] 
+
+12:41:24 [ INFO  ] : [tid=000] Esorex, version 3.12
+12:41:24 [ INFO  ] : [tid=000] using the libraries: CPL = 6.6.1, CFITSIO = 3.36, WCSLIB = 4.24, FFTW (double and single precision), OPENMP = 201107
+
+12:41:24 [ ERROR ] : [tid=000] The input data file '/mnt/data/MUSE/2014-07-28/OFFSET_LIST.fits', in line 5 of the SOF file does not exist...
+12:41:24 [ ERROR ] : [tid=000] Problem occurred loading frameset from the SOF file 'expcombine.sof'.
+If you want to ignore errors of missing files in the sof, set '--check-sof-exist=false'.
