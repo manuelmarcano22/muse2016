@@ -13,7 +13,7 @@ This work was done using version 1.2.1. The pipeline distribution kit includes s
 -  The [Common Pipeline Library](http://www.eso.org/sci/software/cpl/download.html) version 6.6
 -  The [ESO Recipe Execution Tool](http://www.eso.org/sci/software/cpl/esorex.html) (EsoRex) version 3.12 
 
-All the data reduction was done calling EsoRex to exexute the MUSE DRS recipes from a bash (version 4.3.11) script.  The configuration files for each of the called MUSE recipes used, the bash scripts, useful python (Python 2.7.6) scripts and other text files can be found in the *scripts* folder. 
+All the data reduction was done calling EsoRex to execute the MUSE DRS recipes from a bash (version 4.3.11) script.  The configuration files for each of the called MUSE recipes used, the bash scripts, useful python (Python 2.7.6) scripts and other text files can be found in the *scripts* folder. 
 
 ## In the Repo:
 
