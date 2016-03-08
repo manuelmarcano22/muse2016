@@ -1,0 +1,12 @@
+
+Start time     : 2016-03-08T13:28:09
+Program name   : esorex
+Severity level : [ DEBUG ] 
+
+13:28:09 [ INFO  ] : [tid=000] Esorex, version 3.12
+13:28:09 [ INFO  ] : [tid=000] using the libraries: CPL = 6.6.1, CFITSIO = 3.36, WCSLIB = 4.24, FFTW (double and single precision), OPENMP = 201107
+
+13:28:09 [ ERROR ] : [tid=000] The input data file '/mnt/data/MUSE/combine2014-07-27and2014-07-28/CenterExposure/logs:', in line 11 of the SOF file does not exist...
+13:28:09 [ ERROR ] : [tid=000] The input data file '/mnt/data/MUSE/combine2014-07-27and2014-07-28/CenterExposure/createalign', in line 12 of the SOF file does not exist...
+13:28:09 [ ERROR ] : [tid=000] Problem occurred loading frameset from the SOF file 'align.sof'.
+If you want to ignore errors of missing files in the sof, set '--check-sof-exist=false'.
