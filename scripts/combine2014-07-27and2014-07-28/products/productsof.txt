@@ -1,7 +1,19 @@
-OFFSET_LIST.fits  Has not been created yet
-OFFSET_LIST.fits  Has not been created yet
-OFFSET_LIST.fits  Has not been created yet
-OFFSET_LIST.fits  Has not been created yet
-OFFSET_LIST.fits  Has not been created yet
-OFFSET_LIST.fits  Has not been created yet
-OFFSET_LIST.fits  Has not been created yet
+/mnt/data/MUSE/combine2014-07-27and2014-07-28/CenterExposure/CUBEEXPtoshape.fits 2016-03-08 18:59:48.635872027 +0100
+/mnt/data/MUSE/combine2014-07-27and2014-07-28/CenterExposure/CUBEEXPtored.fits 2016-03-08 19:51:59.443775604 +0100
+/mnt/data/MUSE/combine2014-07-27and2014-07-28/CenterExposure/CUBEEXPtogreen.fits 2016-03-08 20:38:42.623689272 +0100
+/mnt/data/MUSE/combine2014-07-27and2014-07-28/CenterExposure/CUBEEXPtoblue.fits 2016-03-08 21:51:11.455555337 +0100
+/mnt/data/MUSE/combine2014-07-27and2014-07-28/CenterExposure/CUBEEXPtoFINAL.fits 2016-03-08 18:32:33.983922371 +0100
+/mnt/data/MUSE/combine2014-07-27and2014-07-28/CenterExposure/CUBEEXPtoshape.fits 2016-03-08 18:59:48.635872027 +0100
+/mnt/data/MUSE/combine2014-07-27and2014-07-28/CenterExposure/CUBEEXPtored.fits 2016-03-08 19:51:59.443775604 +0100
+/mnt/data/MUSE/combine2014-07-27and2014-07-28/CenterExposure/CUBEEXPtogreen.fits 2016-03-08 20:38:42.623689272 +0100
+/mnt/data/MUSE/combine2014-07-27and2014-07-28/CenterExposure/CUBEEXPtoblue.fits 2016-03-08 21:51:11.455555337 +0100
+/mnt/data/MUSE/combine2014-07-27and2014-07-28/CenterExposure/CUBEEXPtoFINAL.fits 2016-03-08 18:32:33.983922371 +0100
+/mnt/data/MUSE/combine2014-07-27and2014-07-28/CenterExposure/CUBEEXPtoshape.fits 2016-03-08 18:59:48.635872027 +0100
+/mnt/data/MUSE/combine2014-07-27and2014-07-28/CenterExposure/CUBEEXPtored.fits 2016-03-08 19:51:59.443775604 +0100
+/mnt/data/MUSE/combine2014-07-27and2014-07-28/CenterExposure/CUBEEXPtogreen.fits 2016-03-08 20:38:42.623689272 +0100
+/mnt/data/MUSE/combine2014-07-27and2014-07-28/CenterExposure/CUBEEXPtoblue.fits 2016-03-08 21:51:11.455555337 +0100
+/mnt/data/MUSE/combine2014-07-27and2014-07-28/CenterExposure/CUBEEXPtoFINAL.fits 2016-03-08 18:32:33.983922371 +0100
+/mnt/data/MUSE/combine2014-07-27and2014-07-28/CenterExposure/CUBEEXPtoshape.fits 2016-03-08 18:59:48.635872027 +0100
+/mnt/data/MUSE/combine2014-07-27and2014-07-28/CenterExposure/CUBEEXPtored.fits 2016-03-08 19:51:59.443775604 +0100
+/mnt/data/MUSE/combine2014-07-27and2014-07-28/CenterExposure/CUBEEXPtoshape.fits 2016-03-08 18:59:48.635872027 +0100
+/mnt/data/MUSE/combine2014-07-27and2014-07-28/CenterExposure/CUBEEXPtoblue.fits 2016-03-08 21:51:11.455555337 +0100

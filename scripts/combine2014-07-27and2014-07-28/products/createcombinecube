@@ -1,0 +1,184 @@
+
+Start time     : 2016-03-08T20:38:41
+Program name   : esorex
+Severity level : [ DEBUG ] 
+
+20:38:41 [ INFO  ] : [tid=000] Esorex, version 3.12
+20:38:41 [ INFO  ] : [tid=000] using the libraries: CPL = 6.6.1, CFITSIO = 3.36, WCSLIB = 4.24, FFTW (double and single precision), OPENMP = 201107
+
+20:38:41 [ INFO  ] muse_processing_recipeinfo: [tid=000] MUSE Instrument Pipeline v1.2.1
+20:38:41 [ DEBUG ] muse_processing_recipeinfo: [tid=000] 11 input frames:
+20:38:41 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/combine2014-07-27and2014-07-28/CenterExposure/FirstNightPIXTABLE_REDUCED_0001_EXP02.fits	PIXTABLE_REDUCED
+20:38:41 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/combine2014-07-27and2014-07-28/CenterExposure/FirstNightPIXTABLE_REDUCED_0001_EXP03.fits	PIXTABLE_REDUCED
+20:38:41 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/combine2014-07-27and2014-07-28/CenterExposure/FirstNightPIXTABLE_REDUCED_0001_EXP04.fits	PIXTABLE_REDUCED
+20:38:41 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/combine2014-07-27and2014-07-28/CenterExposure/FirstNightPIXTABLE_REDUCED_0001_EXP05.fits	PIXTABLE_REDUCED
+20:38:41 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/combine2014-07-27and2014-07-28/CenterExposure/SecondNightPIXTABLE_REDUCED_0001_EXP01.fits	PIXTABLE_REDUCED
+20:38:41 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/combine2014-07-27and2014-07-28/CenterExposure/SecondNightPIXTABLE_REDUCED_0001_EXP02.fits	PIXTABLE_REDUCED
+20:38:41 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/combine2014-07-27and2014-07-28/CenterExposure/SecondNightPIXTABLE_REDUCED_0001_EXP03.fits	PIXTABLE_REDUCED
+20:38:41 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/combine2014-07-27and2014-07-28/CenterExposure/SecondNightPIXTABLE_REDUCED_0001_EXP04.fits	PIXTABLE_REDUCED
+20:38:41 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/combine2014-07-27and2014-07-28/CenterExposure/OFFSET_LIST.fits	OFFSET_LIST
+20:38:41 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/combine2014-07-27and2014-07-28/CenterExposure/cal/filter_list.fits	FILTER_LIST
+20:38:41 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/combine2014-07-27and2014-07-28/CenterExposure/imageshape.fits	OUTPUT_WCS
+20:38:41 [ DEBUG ] muse_processing_recipeinfo: [tid=000] non-default parameters:
+20:38:41 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   --filter = white,Johnson_V,Cousins_R,Cousins_I [white]
+20:38:41 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   --lambdamax = 6285 [10000]
+20:38:41 [ DEBUG ] muse_processing_recipeinfo: [tid=000] relevant environment variables:
+20:38:41 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   OMP_NUM_THREADS=24
+20:38:41 [ DEBUG ] muse_processing_sort_exposures: [tid=000] "/mnt/data/MUSE/combine2014-07-27and2014-07-28/CenterExposure/FirstNightPIXTABLE_REDUCED_0001_EXP02.fits" seems to contain merged data (no EXTNAME=CHANnn)
+20:38:41 [ DEBUG ] muse_processing_sort_exposures: [tid=000] "/mnt/data/MUSE/combine2014-07-27and2014-07-28/CenterExposure/FirstNightPIXTABLE_REDUCED_0001_EXP03.fits" seems to contain merged data (no EXTNAME=CHANnn)
+20:38:42 [ DEBUG ] muse_processing_sort_exposures: [tid=000] "/mnt/data/MUSE/combine2014-07-27and2014-07-28/CenterExposure/FirstNightPIXTABLE_REDUCED_0001_EXP04.fits" seems to contain merged data (no EXTNAME=CHANnn)
+20:38:42 [ DEBUG ] muse_processing_sort_exposures: [tid=000] "/mnt/data/MUSE/combine2014-07-27and2014-07-28/CenterExposure/FirstNightPIXTABLE_REDUCED_0001_EXP05.fits" seems to contain merged data (no EXTNAME=CHANnn)
+20:38:42 [ DEBUG ] muse_processing_sort_exposures: [tid=000] "/mnt/data/MUSE/combine2014-07-27and2014-07-28/CenterExposure/SecondNightPIXTABLE_REDUCED_0001_EXP01.fits" seems to contain merged data (no EXTNAME=CHANnn)
+20:38:42 [ DEBUG ] muse_processing_sort_exposures: [tid=000] "/mnt/data/MUSE/combine2014-07-27and2014-07-28/CenterExposure/SecondNightPIXTABLE_REDUCED_0001_EXP02.fits" seems to contain merged data (no EXTNAME=CHANnn)
+20:38:42 [ DEBUG ] muse_processing_sort_exposures: [tid=000] "/mnt/data/MUSE/combine2014-07-27and2014-07-28/CenterExposure/SecondNightPIXTABLE_REDUCED_0001_EXP03.fits" seems to contain merged data (no EXTNAME=CHANnn)
+20:38:42 [ DEBUG ] muse_processing_sort_exposures: [tid=000] "/mnt/data/MUSE/combine2014-07-27and2014-07-28/CenterExposure/SecondNightPIXTABLE_REDUCED_0001_EXP04.fits" seems to contain merged data (no EXTNAME=CHANnn)
+20:38:42 [ DEBUG ] muse_processing_sort_exposures: [tid=000] Data from exposure  1 is contained in  0 IFUs/1 merged file
+20:38:42 [ DEBUG ] muse_processing_sort_exposures: [tid=000] Data from exposure  2 is contained in  0 IFUs/1 merged file
+20:38:42 [ DEBUG ] muse_processing_sort_exposures: [tid=000] Data from exposure  3 is contained in  0 IFUs/1 merged file
+20:38:42 [ DEBUG ] muse_processing_sort_exposures: [tid=000] Data from exposure  4 is contained in  0 IFUs/1 merged file
+20:38:42 [ DEBUG ] muse_processing_sort_exposures: [tid=000] Data from exposure  5 is contained in  0 IFUs/1 merged file
+20:38:42 [ DEBUG ] muse_processing_sort_exposures: [tid=000] Data from exposure  6 is contained in  0 IFUs/1 merged file
+20:38:42 [ DEBUG ] muse_processing_sort_exposures: [tid=000] Data from exposure  7 is contained in  0 IFUs/1 merged file
+20:38:42 [ DEBUG ] muse_processing_sort_exposures: [tid=000] Data from exposure  8 is contained in  0 IFUs/1 merged file
+20:38:42 [ INFO  ] muse_table_load: [tid=000] loaded OFFSET_LIST from file "/mnt/data/MUSE/combine2014-07-27and2014-07-28/CenterExposure/OFFSET_LIST.fits" (ext 1)
+20:38:42 [ INFO  ] muse_pixtable_load_window: [tid=000] Loading pixel table "/mnt/data/MUSE/combine2014-07-27and2014-07-28/CenterExposure/FirstNightPIXTABLE_REDUCED_0001_EXP02.fits" (image format)
+20:39:43 [ INFO  ] muse_pixtable_load_window: [tid=000] Loading pixel table "/mnt/data/MUSE/combine2014-07-27and2014-07-28/CenterExposure/FirstNightPIXTABLE_REDUCED_0001_EXP03.fits" (image format)
+20:40:30 [ INFO  ] muse_pixtable_load_window: [tid=000] Loading pixel table "/mnt/data/MUSE/combine2014-07-27and2014-07-28/CenterExposure/FirstNightPIXTABLE_REDUCED_0001_EXP04.fits" (image format)
+20:41:19 [ INFO  ] muse_pixtable_load_window: [tid=000] Loading pixel table "/mnt/data/MUSE/combine2014-07-27and2014-07-28/CenterExposure/FirstNightPIXTABLE_REDUCED_0001_EXP05.fits" (image format)
+20:42:04 [ INFO  ] muse_pixtable_load_window: [tid=000] Loading pixel table "/mnt/data/MUSE/combine2014-07-27and2014-07-28/CenterExposure/SecondNightPIXTABLE_REDUCED_0001_EXP01.fits" (image format)
+20:42:49 [ INFO  ] muse_pixtable_load_window: [tid=000] Loading pixel table "/mnt/data/MUSE/combine2014-07-27and2014-07-28/CenterExposure/SecondNightPIXTABLE_REDUCED_0001_EXP02.fits" (image format)
+20:43:36 [ INFO  ] muse_pixtable_load_window: [tid=000] Loading pixel table "/mnt/data/MUSE/combine2014-07-27and2014-07-28/CenterExposure/SecondNightPIXTABLE_REDUCED_0001_EXP03.fits" (image format)
+20:44:22 [ INFO  ] muse_pixtable_load_window: [tid=000] Loading pixel table "/mnt/data/MUSE/combine2014-07-27and2014-07-28/CenterExposure/SecondNightPIXTABLE_REDUCED_0001_EXP04.fits" (image format)
+20:45:05 [ INFO  ] muse_xcombine_weights: [tid=000] 8 tables to be weighted using EXPTIME.
+20:45:05 [ DEBUG ] muse_xcombine_weights: [tid=000] Table 1, weight = 1.000000 (EXPTIME = 25.000000)
+20:45:06 [ DEBUG ] muse_xcombine_weights: [tid=000] Table 2, weight = 1.000000 (EXPTIME = 25.000000)
+20:45:06 [ DEBUG ] muse_xcombine_weights: [tid=000] Table 3, weight = 1.000000 (EXPTIME = 25.000000)
+20:45:06 [ DEBUG ] muse_xcombine_weights: [tid=000] Table 4, weight = 1.000000 (EXPTIME = 25.000000)
+20:45:06 [ DEBUG ] muse_xcombine_weights: [tid=000] Table 5, weight = 2.400000 (EXPTIME = 60.000000)
+20:45:07 [ DEBUG ] muse_xcombine_weights: [tid=000] Table 6, weight = 2.400000 (EXPTIME = 60.000000)
+20:45:07 [ DEBUG ] muse_xcombine_weights: [tid=000] Table 7, weight = 2.400000 (EXPTIME = 60.000000)
+20:45:07 [ DEBUG ] muse_xcombine_weights: [tid=000] Table 8, weight = 2.400000 (EXPTIME = 60.000000)
+20:45:08 [ INFO  ] muse_xcombine_tables: [tid=000] 8 tables to be combined
+20:45:08 [ DEBUG ] muse_xcombine_tables: [tid=000] Applying coordinate offsets to exposure 1: 0.000000e+00/0.000000e+00 deg
+20:45:08 [ INFO  ] muse_wcs_position_celestial: [tid=000] Adapting WCS to RA/DEC=265.175380/-53.674490 deg
+20:45:12 [ DEBUG ] muse_xcombine_tables: [tid=000] Applying coordinate offsets to exposure 2: 5.716367e-06/6.437840e-05 deg
+20:45:12 [ INFO  ] muse_wcs_position_celestial: [tid=000] Adapting WCS to RA/DEC=265.175884/-53.674544 deg
+20:45:16 [ INFO  ] muse_xcombine_tables: [tid=000] Approx. offset of exposure 2: 2.987e-04,-5.438e-05 deg
+20:45:24 [ DEBUG ] muse_xcombine_tables: [tid=000] Applying coordinate offsets to exposure 3: 5.891016e-05/9.043221e-05 deg
+20:45:24 [ INFO  ] muse_wcs_position_celestial: [tid=000] Adapting WCS to RA/DEC=265.176030/-53.674370 deg
+20:45:29 [ INFO  ] muse_xcombine_tables: [tid=000] Approx. offset of exposure 3: 3.851e-04,1.196e-04 deg
+20:45:36 [ DEBUG ] muse_xcombine_tables: [tid=000] Applying coordinate offsets to exposure 4: 1.099482e-04/6.046732e-05 deg
+20:45:36 [ INFO  ] muse_wcs_position_celestial: [tid=000] Adapting WCS to RA/DEC=265.175772/-53.674100 deg
+20:45:40 [ INFO  ] muse_xcombine_tables: [tid=000] Approx. offset of exposure 4: 2.322e-04,3.895e-04 deg
+20:45:48 [ DEBUG ] muse_xcombine_tables: [tid=000] Applying coordinate offsets to exposure 5: -3.739296e-05/4.188661e-05 deg
+20:45:48 [ INFO  ] muse_wcs_position_celestial: [tid=000] Adapting WCS to RA/DEC=265.175611/-53.674402 deg
+20:45:52 [ INFO  ] muse_xcombine_tables: [tid=000] Approx. offset of exposure 5: 1.371e-04,8.811e-05 deg
+20:45:59 [ DEBUG ] muse_xcombine_tables: [tid=000] Applying coordinate offsets to exposure 6: -1.158779e-04/6.932231e-05 deg
+20:45:59 [ INFO  ] muse_wcs_position_celestial: [tid=000] Adapting WCS to RA/DEC=265.175290/-53.674299 deg
+20:46:03 [ INFO  ] muse_xcombine_tables: [tid=000] Approx. offset of exposure 6: -5.339e-05,1.907e-04 deg
+20:46:09 [ DEBUG ] muse_xcombine_tables: [tid=000] Applying coordinate offsets to exposure 7: -1.448505e-04/1.037649e-04 deg
+20:46:09 [ INFO  ] muse_wcs_position_celestial: [tid=000] Adapting WCS to RA/DEC=265.175165/-53.674474 deg
+20:46:13 [ INFO  ] muse_xcombine_tables: [tid=000] Approx. offset of exposure 7: -1.274e-04,1.624e-05 deg
+20:46:18 [ DEBUG ] muse_xcombine_tables: [tid=000] Applying coordinate offsets to exposure 8: -1.078112e-04/1.282280e-04 deg
+20:46:18 [ INFO  ] muse_wcs_position_celestial: [tid=000] Adapting WCS to RA/DEC=265.175072/-53.674578 deg
+20:46:22 [ INFO  ] muse_xcombine_tables: [tid=000] Approx. offset of exposure 8: -1.826e-04,-8.823e-05 deg
+20:46:33 [ DEBUG ] muse_xcombine_tables: [tid=000] Combining 8 tables took 85.6589s (wall-clock) and 472.14s (CPU)
+20:46:35 [ DEBUG ] muse_postproc_cube_load_output_wcs: [tid=000] Apparently valid header OUTPUT_WCS found in extension 0 of "/mnt/data/MUSE/combine2014-07-27and2014-07-28/CenterExposure/imageshape.fits"
+20:46:36 [ INFO  ] muse_postproc_cube_resample_and_collapse: [tid=000] Resampling to final cube follows, output format "FITS cube"
+20:46:36 [ DEBUG ] muse_resampling_cube: [tid=000]   steps from parameters: 0.200000 arcsec, 0.200000 arcsec, 1.250 Angstrom
+20:46:36 [ INFO  ] muse_resampling_cube: [tid=000]   Output cube size 433 x 439 x 1230 (fit to data)
+20:46:36 [ INFO  ] muse_resampling_cube: [tid=000]   Overriding NAXIS1=419 (was 433)
+20:46:36 [ INFO  ] muse_resampling_cube: [tid=000]   Overriding NAXIS2=420 (was 439)
+20:46:36 [ INFO  ] muse_resampling_cube: [tid=000]   Overriding NAXIS3=3681 (was 1230)
+20:46:36 [ INFO  ] muse_resampling_cube: [tid=000]   Overriding CRVAL1=265.175 (was 265.175)
+20:46:36 [ INFO  ] muse_resampling_cube: [tid=000]   Overriding CRVAL2=-53.6745 (was -53.6745)
+20:46:36 [ INFO  ] muse_resampling_cube: [tid=000]   Overriding CRPIX1=215.219 (was 208.137)
+20:46:36 [ INFO  ] muse_resampling_cube: [tid=000]   Overriding CRPIX2=216.531 (was 209.589)
+20:46:36 [ INFO  ] muse_resampling_cube: [tid=000]   Overriding CD1_1=-5.55556e-05 (was -5.55556e-05)
+20:46:36 [ INFO  ] muse_resampling_cube: [tid=000]   Overriding CD1_2=0.00000 (was 0.00000)
+20:46:36 [ INFO  ] muse_resampling_cube: [tid=000]   Overriding CD2_1=0.00000 (was 0.00000)
+20:46:36 [ INFO  ] muse_resampling_cube: [tid=000]   Overriding CD2_2=5.55556e-05 (was 5.55556e-05)
+20:46:36 [ INFO  ] muse_resampling_cube: [tid=000]   Overriding CRVAL3=4749.75 (was 4749.75)
+20:46:36 [ INFO  ] muse_resampling_cube: [tid=000]   Overriding CRPIX3=1.00000 (was 1.00000)
+20:46:36 [ INFO  ] muse_resampling_cube: [tid=000]   Overriding CD3_3=1.25000 (was 1.25000)
+20:46:36 [ DEBUG ] muse_resampling_cube: [tid=000]   Output WCS was forced, won't update CRPIX[12]!
+20:47:22 [ INFO  ] muse_pixgrid_create: [tid=000]   pixel grid creation is 2.3% complete, 30.1377s elapsed, ~1256.55s remaining
+20:47:53 [ INFO  ] muse_pixgrid_create: [tid=000]   pixel grid creation is 5.3% complete, 60.766s elapsed, ~1092.27s remaining
+20:48:24 [ INFO  ] muse_pixgrid_create: [tid=000]   pixel grid creation is 9.1% complete, 91.6227s elapsed, ~911.382s remaining
+20:48:54 [ INFO  ] muse_pixgrid_create: [tid=000]   pixel grid creation is 12.2% complete, 121.959s elapsed, ~879.367s remaining
+20:49:25 [ INFO  ] muse_pixgrid_create: [tid=000]   pixel grid creation is 15.2% complete, 152.65s elapsed, ~849.997s remaining
+20:49:56 [ INFO  ] muse_pixgrid_create: [tid=000]   pixel grid creation is 18.3% complete, 183.627s elapsed, ~821.465s remaining
+20:50:27 [ INFO  ] muse_pixgrid_create: [tid=000]   pixel grid creation is 20.7% complete, 214.725s elapsed, ~821.14s remaining
+20:50:58 [ INFO  ] muse_pixgrid_create: [tid=000]   pixel grid creation is 23.0% complete, 246.162s elapsed, ~826.243s remaining
+20:51:29 [ INFO  ] muse_pixgrid_create: [tid=000]   pixel grid creation is 25.4% complete, 276.924s elapsed, ~812.747s remaining
+20:52:00 [ INFO  ] muse_pixgrid_create: [tid=000]   pixel grid creation is 28.0% complete, 308.238s elapsed, ~793.004s remaining
+20:52:31 [ INFO  ] muse_pixgrid_create: [tid=000]   pixel grid creation is 30.0% complete, 338.914s elapsed, ~791.517s remaining
+20:53:02 [ INFO  ] muse_pixgrid_create: [tid=000]   pixel grid creation is 31.7% complete, 369.617s elapsed, ~794.982s remaining
+20:53:32 [ INFO  ] muse_pixgrid_create: [tid=000]   pixel grid creation is 33.8% complete, 399.881s elapsed, ~781.601s remaining
+20:54:03 [ INFO  ] muse_pixgrid_create: [tid=000]   pixel grid creation is 36.1% complete, 431.13s elapsed, ~764.101s remaining
+20:54:35 [ INFO  ] muse_pixgrid_create: [tid=000]   pixel grid creation is 38.2% complete, 463.29s elapsed, ~750.182s remaining
+20:55:07 [ INFO  ] muse_pixgrid_create: [tid=000]   pixel grid creation is 40.4% complete, 494.928s elapsed, ~730.018s remaining
+20:55:37 [ INFO  ] muse_pixgrid_create: [tid=000]   pixel grid creation is 42.4% complete, 525.306s elapsed, ~713.771s remaining
+20:56:10 [ INFO  ] muse_pixgrid_create: [tid=000]   pixel grid creation is 44.6% complete, 557.776s elapsed, ~692.279s remaining
+20:56:40 [ INFO  ] muse_pixgrid_create: [tid=000]   pixel grid creation is 46.7% complete, 588.309s elapsed, ~670.694s remaining
+20:57:12 [ INFO  ] muse_pixgrid_create: [tid=000]   pixel grid creation is 48.7% complete, 619.433s elapsed, ~652.005s remaining
+20:57:42 [ INFO  ] muse_pixgrid_create: [tid=000]   pixel grid creation is 50.6% complete, 649.634s elapsed, ~634.408s remaining
+20:58:12 [ INFO  ] muse_pixgrid_create: [tid=000]   pixel grid creation is 52.6% complete, 679.689s elapsed, ~612.893s remaining
+20:58:42 [ INFO  ] muse_pixgrid_create: [tid=000]   pixel grid creation is 54.3% complete, 709.762s elapsed, ~596.376s remaining
+20:59:12 [ INFO  ] muse_pixgrid_create: [tid=000]   pixel grid creation is 56.3% complete, 740.197s elapsed, ~573.806s remaining
+20:59:43 [ INFO  ] muse_pixgrid_create: [tid=000]   pixel grid creation is 58.2% complete, 770.661s elapsed, ~553.379s remaining
+21:00:14 [ INFO  ] muse_pixgrid_create: [tid=000]   pixel grid creation is 60.2% complete, 801.423s elapsed, ~529.929s remaining
+21:00:45 [ INFO  ] muse_pixgrid_create: [tid=000]   pixel grid creation is 62.4% complete, 832.563s elapsed, ~501.217s remaining
+21:01:16 [ INFO  ] muse_pixgrid_create: [tid=000]   pixel grid creation is 64.5% complete, 864.017s elapsed, ~474.935s remaining
+21:01:47 [ INFO  ] muse_pixgrid_create: [tid=000]   pixel grid creation is 66.4% complete, 895.228s elapsed, ~452.942s remaining
+21:02:19 [ INFO  ] muse_pixgrid_create: [tid=000]   pixel grid creation is 68.2% complete, 926.935s elapsed, ~433.007s remaining
+21:02:49 [ INFO  ] muse_pixgrid_create: [tid=000]   pixel grid creation is 70.0% complete, 957.121s elapsed, ~409.537s remaining
+21:03:21 [ INFO  ] muse_pixgrid_create: [tid=000]   pixel grid creation is 71.9% complete, 988.931s elapsed, ~386.351s remaining
+21:03:53 [ INFO  ] muse_pixgrid_create: [tid=000]   pixel grid creation is 74.0% complete, 1020.41s elapsed, ~358.232s remaining
+21:04:24 [ INFO  ] muse_pixgrid_create: [tid=000]   pixel grid creation is 76.1% complete, 1051.97s elapsed, ~329.954s remaining
+21:04:55 [ INFO  ] muse_pixgrid_create: [tid=000]   pixel grid creation is 78.0% complete, 1082.89s elapsed, ~305.477s remaining
+21:05:27 [ INFO  ] muse_pixgrid_create: [tid=000]   pixel grid creation is 80.1% complete, 1114.57s elapsed, ~276.809s remaining
+21:05:58 [ INFO  ] muse_pixgrid_create: [tid=000]   pixel grid creation is 82.1% complete, 1146.11s elapsed, ~249.944s remaining
+21:06:30 [ INFO  ] muse_pixgrid_create: [tid=000]   pixel grid creation is 83.9% complete, 1177.55s elapsed, ~226.751s remaining
+21:07:01 [ INFO  ] muse_pixgrid_create: [tid=000]   pixel grid creation is 85.5% complete, 1208.84s elapsed, ~205.131s remaining
+21:07:33 [ INFO  ] muse_pixgrid_create: [tid=000]   pixel grid creation is 87.6% complete, 1240.79s elapsed, ~175.626s remaining
+21:08:03 [ INFO  ] muse_pixgrid_create: [tid=000]   pixel grid creation is 89.6% complete, 1271.24s elapsed, ~147.688s remaining
+21:08:35 [ INFO  ] muse_pixgrid_create: [tid=000]   pixel grid creation is 91.6% complete, 1302.81s elapsed, ~119.743s remaining
+21:09:06 [ INFO  ] muse_pixgrid_create: [tid=000]   pixel grid creation is 93.5% complete, 1333.81s elapsed, ~93.3916s remaining
+21:09:38 [ INFO  ] muse_pixgrid_create: [tid=000]   pixel grid creation is 95.2% complete, 1365.57s elapsed, ~68.6563s remaining
+21:10:09 [ INFO  ] muse_pixgrid_create: [tid=000]   pixel grid creation is 97.0% complete, 1396.38s elapsed, ~43.6365s remaining
+21:10:39 [ INFO  ] muse_pixgrid_create: [tid=000]   pixel grid creation is 98.7% complete, 1427.17s elapsed, ~18.4106s remaining
+21:11:12 [ DEBUG ] muse_pixgrid_create: [tid=000]   pixel grid: 419x420x3681, 853874815 pixels total, 116425864 (13.6%) in extension map; took 1460.05s (wall-clock) and 1413.71s (CPU) to create
+21:11:12 [ INFO  ] muse_resampling_cube: [tid=000]   Using median statistics (10.000 sigma level) for cosmic-ray rejection
+21:11:12 [ DEBUG ] muse_resampling_cube: [tid=000]   CR rejection: posang = -148.600000 deg --> DIR_NONE (yes / false / false / false / false / false)
+21:16:37 [ INFO  ] muse_resampling_cube: [tid=000]   Starting resampling, using method "drizzle" (pixfrac f=0.600,0.600,0.600, loop distance ld=1)
+21:25:41 [ DEBUG ] muse_resampling_cube: [tid=000]   resampling took 2344.651s (wall-clock) and 543.425s (4504.400s CPU, 24 CPUs) for muse_resampling_cube*() alone
+21:25:41 [WARNING] muse_postproc_qc_fwhm: [tid=000] No sources found for FWHM measurement down to 3.0 sigma limit on plane 1841, QC parameters will not contain useful information
+21:25:41 [ DEBUG ] muse_table_load_filter: [tid=000] White-light integration wanted (filter "white")
+21:25:41 [ DEBUG ] muse_datacube_collapse_filter_buffer: [tid=000] filter wavelength range 4749.8..9301.0A (planes 0..3641)
+21:31:57 [ INFO  ] muse_processing_save_image: [tid=000] Saving image as IMAGE_FOV_0001.fits
+21:31:58 [ INFO  ] muse_table_load_filter: [tid=000] loaded filter "Johnson_V" from file "/mnt/data/MUSE/combine2014-07-27and2014-07-28/CenterExposure/cal/filter_list.fits" (ext 2)
+21:31:58 [ DEBUG ] muse_datacube_collapse_filter_buffer: [tid=000] filter wavelength range 4749.8..7401.0A (planes 0..2121)
+21:32:03 [ INFO  ] muse_processing_save_image: [tid=000] Saving image as IMAGE_FOV_0002.fits
+21:32:04 [ INFO  ] muse_table_load_filter: [tid=000] loaded filter "Cousins_R" from file "/mnt/data/MUSE/combine2014-07-27and2014-07-28/CenterExposure/cal/filter_list.fits" (ext 3)
+21:32:04 [ DEBUG ] muse_datacube_collapse_filter_buffer: [tid=000] filter wavelength range 5499.8..9001.0A (planes 600..3401)
+21:47:03 [ INFO  ] muse_processing_save_image: [tid=000] Saving image as IMAGE_FOV_0003.fits
+21:47:03 [ INFO  ] muse_table_load_filter: [tid=000] loaded filter "Cousins_I" from file "/mnt/data/MUSE/combine2014-07-27and2014-07-28/CenterExposure/cal/filter_list.fits" (ext 4)
+21:47:03 [ DEBUG ] muse_datacube_collapse_filter_buffer: [tid=000] filter wavelength range 6999.8..9201.0A (planes 1800..3561)
+21:47:19 [ INFO  ] muse_processing_save_image: [tid=000] Saving image as IMAGE_FOV_0004.fits
+21:49:21 [WARNING] muse_processing_prepare_property: [tid=000] Property ESO QC EXPCOMB FWHM NVALID (Number of detected sources with valid FWHM in combined cube.) not used
+21:49:21 [WARNING] muse_processing_prepare_property: [tid=000] Property ESO QC EXPCOMB FWHM MEDIAN ([arcsec] Median FWHM of all sources with valid FWHM measurement (in x- and y-direction) in combined cube. If less than three sources with valid FWHM are detected, this value is zero.) not used
+21:49:21 [WARNING] muse_processing_prepare_property: [tid=000] Property ESO QC EXPCOMB FWHM MAD ([arcsec] Median absolute deviation of the FWHM of all sources with valid FWHM measurement (in x- and y-direction) in combined cube. If less than three sources with valid FWHM are detected, this value is zero.) not used
+21:49:21 [ INFO  ] muse_processing_save_cube: [tid=000] Saving FITS cube as "DATACUBE_FINAL.fits"
+21:50:38 [ INFO  ] : [tid=000] Calculating product checksums
+21:51:10 [ INFO  ] : [tid=000] Created product DATACUBE_FINAL.fits (in place)
+21:51:10 [ INFO  ] : [tid=000] Created product IMAGE_FOV_0001.fits (in place)
+21:51:10 [ INFO  ] : [tid=000] Created product IMAGE_FOV_0002.fits (in place)
+21:51:10 [ INFO  ] : [tid=000] Created product IMAGE_FOV_0003.fits (in place)
+21:51:10 [ INFO  ] : [tid=000] Created product IMAGE_FOV_0004.fits (in place)
+21:51:10 [ INFO  ] : [tid=000] 5 products created
+21:51:10 [ INFO  ] : [tid=000] Recipe operation(s) took       4.35e+03 seconds to complete.
+21:51:10 [ INFO  ] : [tid=000] Total size of 8 raw input frames  = 72546.32 MB
+
+21:51:10 [ INFO  ] : [tid=000] => processing rate of    16.68 MB/sec 
+

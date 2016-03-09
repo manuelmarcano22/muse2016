@@ -8,19 +8,26 @@
 scripts=/home/detoeuf/Manuel/scripts/combine2014-07-27and2014-07-28
 source $scripts/config/params 
 
-#Change to data location
-cd $DATA_LOCATION
+
 
 #Variables
+exposure=CenterExposure
 recipe=muse_exp_combine
 filesof=expcombine.sof
-initexp=2
-endexp=5 # This is the number of expo of the same region
+
+DATA_LOCATION=$DATA_LOCATION/$exposure
+ESOREX_OUTPUT_DIR=$ESOREX_OUTPUT_DIR/$exposure
+ESOREX_LOG_DIR=$ESOREX_OUTPUT_DIR/logs
+CALIB_FILES=$ESOREX_OUTPUT_DIR/cal
+
+#Change to data location
+cd $DATA_LOCATION
+echo $DATA_LOCATION
 
 > $filesof
-for i in $(eval echo "{$initexp..$endexp}")
+for i in `ls *PIXTABLE_RE*.fits`
 do
-	        echo `readlink -f PIXTABLE_REDUCED_*EXP0$i.fits` PIXTABLE_REDUCED >> $filesof
+	        echo `readlink -f $i` PIXTABLE_REDUCED >> $filesof
 	done
 
 echo `readlink -f OFFSET_LIST.fits` OFFSET_LIST >> $filesof
