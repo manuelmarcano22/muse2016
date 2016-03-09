@@ -626,14 +626,74 @@ Using the coordinates of the first NF mentioned by [Cool98][@Cool98NF], and find
 To be able to find the correct source I looked in a Hubble image. There I can locate the star with the astrometry and then try to locate it in my datacube. The fits file image is called *hlsp_acsggct_hst_acs-wfc_ngc6397_f606w_v2_img.fits* and it is located in the data folder. 
 
 
-##  Questions
-- [ ] Correct spectra. Can see the redshift?
+
+# Mar-08-2016 IRAP Roche J042
+
+## Commits
+
+### Terrible Mistake
+
+Doing the combine datacube for the second night I discovered that the Offset list was only done for two exposures. The spectra for day 2 looks much better. 
+
+### Second day observation
+
+I finally was done reducing the observation for the second day. The next step is to combine them with the first day. 
+
+
+### IRAF
+
+IRAF is installed in the server and I can access it like:
+
+```bash
+marcano@edelweiss.cesr.fr
+```
+and then do: `.xiraf_redhat`
 
 ## To-Do
-- [ ] Get  the spectra of the CVs.
+- [x] ~~Get combined DataCube for second day.~~ 
+- [x] ~~Install IRAF and Pyraf with Ureka from the STScI.~~ No need now. Can use the one in the server. See details above.  
+
+
+
+# Mar-09-2016 IRAP Roche J042
+
+## Commits
+
+### ZAP and sky-lines
+
+In my field I don't have much sky. This is the reason maybe they didn't take any SKY frames. When I compared my spectra after processing it with ZAP, it takes a lot of signal. Compare the fits of the U23 and some He lines are missing. Take spectra with both doing in the DPUSER command line in QFitsView
+
+```bash
+DPUSER> buffer1 = readfitsextension("pathtocube.fits",1)
+DPUSER> buffer2 = 3dspec(buffer1,206,137, /sum)
+DPUSER> buffer3 = 3dspec(buffer1,206,137, 4,  /sum)
+```
+
+Where the 4 is the radius if the selection is "circular".
+
+
+### Combination first night
+
+It wasn't done right so there are some sharp transition between different wavelength. So I have to redo changing the wavelength ranges. This doesn't appear for the second night.  
+
+
+## To-Do
+- [x] ~~Rerun combined with good align for first day~~
+- [x] ~~Combine first and second day~~
+- [x] ~~Recombine First and Second night with good first night.~~ No need to do it again. I did this with the PIXTABLE_REDUCED which are product of the scipost routine and used to combined. I think that the combination of one night or of several night depend on the combination of the other.   
+
+
+##  Questions
+- [ ] Correct spectra. Can see the redshift?
+- [ ] He and H$\alpha$ line present, normal? 
+
+## To-Do
+- [ ] Recombine first night to get good combine cube without sharp jumps in wavelength. 
+- [ ] Process spectra in IRAF
+- [ ] Get  the spectra of the CV.
+- [ ] Get spectra of the He WD. Specially of NF2 since I have one to compared with. 
 - [ ] Find information about the white dwarfs in the cluster
 - [ ] Python routines to update productssof.txt and use this for routines. 
-- [ ] Install IRAF and Pyraf with Ureka from the STScI.
 - [ ] Do a CUBE with and without using the bad pixel table.
 - [ ] Make CUBE with lsf from calibration and created one. 
 
