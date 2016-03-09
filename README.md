@@ -15,6 +15,8 @@ This work was done using version 1.2.1. The pipeline distribution kit includes s
 
 All the data reduction was done calling EsoRex to execute the MUSE DRS recipes from a bash (version 4.3.11) script.  The configuration files for each of the called MUSE recipes used, the bash scripts, useful python (Python 2.7.6) scripts and other text files can be found in the *scripts* folder. 
 
+To visualize the data and extract the spectra the program [QFitsView](http://www.mpe.mpg.de/~ott/QFitsView/),version 3.1 Rev. 741, was used.
+
 ## In the Repo:
 
 ### *Documents*
