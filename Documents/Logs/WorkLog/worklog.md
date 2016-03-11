@@ -683,14 +683,49 @@ It wasn't done right so there are some sharp transition between different wavele
 - [x] ~~Recombine First and Second night with good first night.~~ No need to do it again. I did this with the PIXTABLE_REDUCED which are product of the scipost routine and used to combined. I think that the combination of one night or of several night depend on the combination of the other.   
 
 
+
+# Mar-10-2016 IRAP Roche J042
+
+### http://manuelpm.me/muselabbook16/
+
+I started the new Github repository (https://github.com/manuelmarcano22/muselabbook16/tree/gh-pages) for  what it should be my new labbook journal following the examples from [Jekyll-lablog](https://github.com/fdschneider/jekyll-lablog), this  [labnotebook](https://github.com/cboettig/labnotebook) and also [labnotebookmadsenlab](http://notebook.madsenlab.org/labnotebook.html).
+
+It is using [Jekyll](https://jekyllrb.com/), build locally in my computer then pushed to the branch gh-pages to create the project [GitHub page](https://pages.github.com/).
+
+
+
+# Mar-11-2016 IRAP Roche J042
+
+### qLMXB
+
+Cool stuff look into it how to extract it. 
+
+
+```bash
+DPUSER> 3dspec(buffer1,237, 332,1, /sum)
+```
+
+Strange line at 6404 Angstrom. And a dip at 7600 and peak at 7626. The last dip and peak is common. Check that is not earth like it seems in Fig. 2 with the spectra in the first MUSE NGC 6397 paper. 
+
+Now found out if line is real and not only noise. Get spectra with different methods in QFitsView. 
+
+### White Image of Whole Cluster
+
+To try to locate sources seen by Chandra outside of the Core Radius, I have to download and process for all the observation days. This is to try to locate new X-rays source seen by Chandra outside of the Core Radius.   
+
+
+## To-Do
+- [x] ~~Recombine first night to get good combine cube without sharp jumps in wavelength.~~ Did it with 
+
 ##  Questions
-- [ ] Correct spectra. Can see the redshift?
+- [ ] Correct spectra? Can see the redshift?
 - [ ] He and H$\alpha$ line present, normal? 
 
 ## To-Do
-- [ ] Recombine first night to get good combine cube without sharp jumps in wavelength. 
+- [ ] Try to figure out weird line in supposed place of the qLMXB U24. 
+- [ ] Download data for all days to search CVs outside Core-Radius
 - [ ] Process spectra in IRAF
-- [ ] Get  the spectra of the CV.
+- [ ] Get  the spectra of the CVs.
 - [ ] Get spectra of the He WD. Specially of NF2 since I have one to compared with. 
 - [ ] Find information about the white dwarfs in the cluster
 - [ ] Python routines to update productssof.txt and use this for routines. 
