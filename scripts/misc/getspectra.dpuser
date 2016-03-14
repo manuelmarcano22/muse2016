@@ -1,0 +1,384 @@
+// Config
+pathtocubes="/media/mmarcano22/SAMSUNG1/Documentos/stage2016/combine/FirstandSecondNight/"
+pathtspectra="/media/mmarcano22/SAMSUNG1/Documentos/stage2016/combine/FirstandSecondNight/U24/"
+cubezap=pathtocubes+"CUBEEXPtoZAPFINAL.fits"
+cubenozap=pathtocubes+"CUBEEXPtoFINAL.fits"
+
+
+//Load Cubes
+buffer1 = readfitsextension(cubenozap,1)
+buffer2 = readfitsextension(cubezap,1)
+
+
+
+//************************//
+//*********noZap**********//
+//************************//
+cubeoption="nozap"
+
+// Operation: SUM
+operation="sum"
+// Params
+file="U24"
+xpos=237
+ypos=332
+//Circ1
+circ=1
+circval="1"
+//Function
+buffer3 = 3dspec(buffer1, xpos, ypos, circ, /sum)
+writefits, pathtspectra+cubeoption+ "/" + operation + "/" + file + "circ(" + circval +")" + ".fits", buffer3
+smooth buffer3, 3
+writefits, pathtspectra+cubeoption+ "/" + operation + "/" + file + "circ(" + circval +")" +   "smooth3.fits", buffer3
+//Circ2
+circ=2
+circval="2"
+//Function
+buffer3 = 3dspec(buffer1, xpos, ypos, circ, /sum)
+writefits, pathtspectra+cubeoption+ "/" + operation + "/" + file + "circ(" + circval +")" + ".fits", buffer3
+smooth buffer3, 3
+writefits, pathtspectra+cubeoption+ "/" + operation + "/" + file + "circ(" + circval +")" +   "smooth3.fits", buffer3
+
+//Background
+// Params
+fileback="U24(Background)"
+xpos=240
+ypos=332
+//Circ1
+circ=1
+circval="1"
+//Function
+buffer3 = 3dspec(buffer1, xpos, ypos, circ, /sum)
+writefits, pathtspectra+cubeoption+ "/" + operation + "/" + fileback + "circ(" + circval +")" + ".fits", buffer3
+smooth buffer3, 3
+writefits, pathtspectra+cubeoption+ "/" + operation + "/" + fileback + "circ(" + circval +")" +   "smooth3.fits", buffer3
+//Circ2
+circ=2
+circval="2"
+//Function
+buffer3 = 3dspec(buffer1, xpos, ypos, circ, /sum)
+writefits, pathtspectra+cubeoption+ "/" + operation + "/" + fileback + "circ(" + circval +")" + ".fits", buffer3
+smooth buffer3, 3
+writefits, pathtspectra+cubeoption+ "/" + operation + "/" + fileback + "circ(" + circval +")" +   "smooth3.fits", buffer3
+
+//Operation
+// Params
+operbuffers="minus"
+fileope="U24("+ operbuffers  +"background)"
+//Circ1
+circ=1
+circval="1"
+//Function
+buffer4 = readfits(pathtspectra+cubeoption+ "/" + operation + "/" + file + "circ(" + circval +")" + ".fits")
+buffer5 = readfits(pathtspectra+cubeoption+ "/" + operation + "/" + fileback + "circ(" + circval +")" + ".fits")
+buffer4 -= resize(buffer5, 3681, 1)
+writefits, pathtspectra+cubeoption+ "/" + operation + "/" + fileope + "circ(" + circval +")" + ".fits", buffer4
+
+
+// Operation: Average
+operation="average"
+
+
+// Params
+file="U24"
+xpos=237
+ypos=332
+//Circ1
+circ=1
+circval="1"
+//Function
+buffer3 = 3dspec(buffer1, xpos, ypos, circ, /average)
+writefits, pathtspectra+cubeoption+ "/" + operation + "/" + file + "circ(" + circval +")" + ".fits", buffer3
+smooth buffer3, 3
+writefits, pathtspectra+cubeoption+ "/" + operation + "/" + file + "circ(" + circval +")" +   "smooth3.fits", buffer3
+//Circ2
+circ=2
+circval="2"
+//Function
+buffer3 = 3dspec(buffer1, xpos, ypos, circ, /average)
+writefits, pathtspectra+cubeoption+ "/" + operation + "/" + file + "circ(" + circval +")" + ".fits", buffer3
+smooth buffer3, 3
+writefits, pathtspectra+cubeoption+ "/" + operation + "/" + file + "circ(" + circval +")" +   "smooth3.fits", buffer3
+
+//Background
+// Params
+fileback="U24(Background)"
+xpos=242
+ypos=333
+//Circ1
+circ=1
+circval="1"
+//Function
+buffer3 = 3dspec(buffer1, xpos, ypos, circ, /average)
+writefits, pathtspectra+cubeoption+ "/" + operation + "/" + fileback + "circ(" + circval +")" + ".fits", buffer3
+smooth buffer3, 3
+writefits, pathtspectra+cubeoption+ "/" + operation + "/" + fileback + "circ(" + circval +")" +   "smooth3.fits", buffer3
+//Circ2
+circ=2
+circval="2"
+//Function
+buffer3 = 3dspec(buffer1, xpos, ypos, circ, /average)
+writefits, pathtspectra+cubeoption+ "/" + operation + "/" + fileback + "circ(" + circval +")" + ".fits", buffer3
+smooth buffer3, 3
+writefits, pathtspectra+cubeoption+ "/" + operation + "/" + fileback + "circ(" + circval +")" +   "smooth3.fits", buffer3
+
+//Operation
+// Params
+operbuffers="minus"
+fileope="U24("+ operbuffers  +"background)"
+//Circ1
+circ=1
+circval="1"
+//Function
+buffer4 = readfits(pathtspectra+cubeoption+ "/" + operation + "/" + file + "circ(" + circval +")" + ".fits")
+buffer5 = readfits(pathtspectra+cubeoption+ "/" + operation + "/" + fileback + "circ(" + circval +")" + ".fits")
+buffer4 -= resize(buffer5, 3681, 1)
+writefits, pathtspectra+cubeoption+ "/" + operation + "/" + fileope + "circ(" + circval +")" + ".fits", buffer4
+
+
+// Operation: Median
+operation="median"
+
+// Params
+file="U24"
+xpos=237
+ypos=332
+//Circ1
+circ=1
+circval="1"
+//Function
+buffer3 = 3dspec(buffer1, xpos, ypos, circ, /median)
+writefits, pathtspectra+cubeoption+ "/" + operation + "/" + file + "circ(" + circval +")" + ".fits", buffer3
+smooth buffer3, 3
+writefits, pathtspectra+cubeoption+ "/" + operation + "/" + file + "circ(" + circval +")" +   "smooth3.fits", buffer3
+//Circ2
+circ=2
+circval="2"
+//Function
+buffer3 = 3dspec(buffer1, xpos, ypos, circ, /median)
+writefits, pathtspectra+cubeoption+ "/" + operation + "/" + file + "circ(" + circval +")" + ".fits", buffer3
+smooth buffer3, 3
+writefits, pathtspectra+cubeoption+ "/" + operation + "/" + file + "circ(" + circval +")" +   "smooth3.fits", buffer3
+
+//Background
+// Params
+fileback="U24(Background)"
+xpos=242
+ypos=333
+//Circ1
+circ=1
+circval="1"
+//Function
+buffer3 = 3dspec(buffer1, xpos, ypos, circ, /median)
+writefits, pathtspectra+cubeoption+ "/" + operation + "/" + fileback + "circ(" + circval +")" + ".fits", buffer3
+smooth buffer3, 3
+writefits, pathtspectra+cubeoption+ "/" + operation + "/" + fileback + "circ(" + circval +")" +   "smooth3.fits", buffer3
+//Circ2
+circ=2
+circval="2"
+//Function
+buffer3 = 3dspec(buffer1, xpos, ypos, circ, /median)
+writefits, pathtspectra+cubeoption+ "/" + operation + "/" + fileback + "circ(" + circval +")" + ".fits", buffer3
+smooth buffer3, 3
+writefits, pathtspectra+cubeoption+ "/" + operation + "/" + fileback + "circ(" + circval +")" +   "smooth3.fits", buffer3
+
+//Operation
+// Params
+operbuffers="minus"
+fileope="U24("+ operbuffers  +"background)"
+//Circ1
+circ=1
+circval="1"
+//Function
+buffer4 = readfits(pathtspectra+cubeoption+ "/" + operation + "/" + file + "circ(" + circval +")" + ".fits")
+buffer5 = readfits(pathtspectra+cubeoption+ "/" + operation + "/" + fileback + "circ(" + circval +")" + ".fits")
+buffer4 -= resize(buffer5, 3681, 1)
+writefits, pathtspectra+cubeoption+ "/" + operation + "/" + fileope + "circ(" + circval +")" + ".fits", buffer4
+
+
+//************************//
+//*********Zap************//
+//************************//
+cubeoption="zap"
+
+// Operation: SUM
+operation="sum"
+// Params
+file="U24"
+xpos=237
+ypos=332
+//Circ1
+circ=1
+circval="1"
+//Function
+buffer3 = 3dspec(buffer1, xpos, ypos, circ, /sum)
+writefits, pathtspectra+cubeoption+ "/" + operation + "/" + file + "circ(" + circval +")" + ".fits", buffer3
+smooth buffer3, 3
+writefits, pathtspectra+cubeoption+ "/" + operation + "/" + file + "circ(" + circval +")" +   "smooth3.fits", buffer3
+//Circ2
+circ=2
+circval="2"
+//Function
+buffer3 = 3dspec(buffer1, xpos, ypos, circ, /sum)
+writefits, pathtspectra+cubeoption+ "/" + operation + "/" + file + "circ(" + circval +")" + ".fits", buffer3
+smooth buffer3, 3
+writefits, pathtspectra+cubeoption+ "/" + operation + "/" + file + "circ(" + circval +")" +   "smooth3.fits", buffer3
+
+//Background
+// Params
+fileback="U24(Background)"
+xpos=242
+ypos=333
+//Circ1
+circ=1
+circval="1"
+//Function
+buffer3 = 3dspec(buffer1, xpos, ypos, circ, /sum)
+writefits, pathtspectra+cubeoption+ "/" + operation + "/" + fileback + "circ(" + circval +")" + ".fits", buffer3
+smooth buffer3, 3
+writefits, pathtspectra+cubeoption+ "/" + operation + "/" + fileback + "circ(" + circval +")" +   "smooth3.fits", buffer3
+//Circ2
+circ=2
+circval="2"
+//Function
+buffer3 = 3dspec(buffer1, xpos, ypos, circ, /sum)
+writefits, pathtspectra+cubeoption+ "/" + operation + "/" + fileback + "circ(" + circval +")" + ".fits", buffer3
+smooth buffer3, 3
+writefits, pathtspectra+cubeoption+ "/" + operation + "/" + fileback + "circ(" + circval +")" +   "smooth3.fits", buffer3
+
+//Operation
+// Params
+operbuffers="minus"
+fileope="U24("+ operbuffers  +"background)"
+//Circ1
+circ=1
+circval="1"
+//Function
+buffer4 = readfits(pathtspectra+cubeoption+ "/" + operation + "/" + file + "circ(" + circval +")" + ".fits")
+buffer5 = readfits(pathtspectra+cubeoption+ "/" + operation + "/" + fileback + "circ(" + circval +")" + ".fits")
+buffer4 -= resize(buffer5, 3681, 1)
+writefits, pathtspectra+cubeoption+ "/" + operation + "/" + fileope + "circ(" + circval +")" + ".fits", buffer4
+
+
+// Operation: Average
+operation="average"
+
+
+// Params
+file="U24"
+xpos=237
+ypos=332
+//Circ1
+circ=1
+circval="1"
+//Function
+buffer3 = 3dspec(buffer1, xpos, ypos, circ, /average)
+writefits, pathtspectra+cubeoption+ "/" + operation + "/" + file + "circ(" + circval +")" + ".fits", buffer3
+smooth buffer3, 3
+writefits, pathtspectra+cubeoption+ "/" + operation + "/" + file + "circ(" + circval +")" +   "smooth3.fits", buffer3
+//Circ2
+circ=2
+circval="2"
+//Function
+buffer3 = 3dspec(buffer1, xpos, ypos, circ, /average)
+writefits, pathtspectra+cubeoption+ "/" + operation + "/" + file + "circ(" + circval +")" + ".fits", buffer3
+smooth buffer3, 3
+writefits, pathtspectra+cubeoption+ "/" + operation + "/" + file + "circ(" + circval +")" +   "smooth3.fits", buffer3
+
+//Background
+// Params
+fileback="U24(Background)"
+xpos=242
+ypos=333
+//Circ1
+circ=1
+circval="1"
+//Function
+buffer3 = 3dspec(buffer1, xpos, ypos, circ, /average)
+writefits, pathtspectra+cubeoption+ "/" + operation + "/" + fileback + "circ(" + circval +")" + ".fits", buffer3
+smooth buffer3, 3
+writefits, pathtspectra+cubeoption+ "/" + operation + "/" + fileback + "circ(" + circval +")" +   "smooth3.fits", buffer3
+//Circ2
+circ=2
+circval="2"
+//Function
+buffer3 = 3dspec(buffer1, xpos, ypos, circ, /average)
+writefits, pathtspectra+cubeoption+ "/" + operation + "/" + fileback + "circ(" + circval +")" + ".fits", buffer3
+smooth buffer3, 3
+writefits, pathtspectra+cubeoption+ "/" + operation + "/" + fileback + "circ(" + circval +")" +   "smooth3.fits", buffer3
+
+//Operation
+// Params
+operbuffers="minus"
+fileope="U24("+ operbuffers  +"background)"
+//Circ1
+circ=1
+circval="1"
+//Function
+buffer4 = readfits(pathtspectra+cubeoption+ "/" + operation + "/" + file + "circ(" + circval +")" + ".fits")
+buffer5 = readfits(pathtspectra+cubeoption+ "/" + operation + "/" + fileback + "circ(" + circval +")" + ".fits")
+buffer4 -= resize(buffer5, 3681, 1)
+writefits, pathtspectra+cubeoption+ "/" + operation + "/" + fileope + "circ(" + circval +")" + ".fits", buffer4
+
+
+// Operation: Median
+operation="median"
+
+// Params
+file="U24"
+xpos=237
+ypos=332
+//Circ1
+circ=1
+circval="1"
+//Function
+buffer3 = 3dspec(buffer1, xpos, ypos, circ, /median)
+writefits, pathtspectra+cubeoption+ "/" + operation + "/" + file + "circ(" + circval +")" + ".fits", buffer3
+smooth buffer3, 3
+writefits, pathtspectra+cubeoption+ "/" + operation + "/" + file + "circ(" + circval +")" +   "smooth3.fits", buffer3
+//Circ2
+circ=2
+circval="2"
+//Function
+buffer3 = 3dspec(buffer1, xpos, ypos, circ, /median)
+writefits, pathtspectra+cubeoption+ "/" + operation + "/" + file + "circ(" + circval +")" + ".fits", buffer3
+smooth buffer3, 3
+writefits, pathtspectra+cubeoption+ "/" + operation + "/" + file + "circ(" + circval +")" +   "smooth3.fits", buffer3
+
+//Background
+// Params
+fileback="U24(Background)"
+xpos=242
+ypos=333
+//Circ1
+circ=1
+circval="1"
+//Function
+buffer3 = 3dspec(buffer1, xpos, ypos, circ, /median)
+writefits, pathtspectra+cubeoption+ "/" + operation + "/" + fileback + "circ(" + circval +")" + ".fits", buffer3
+smooth buffer3, 3
+writefits, pathtspectra+cubeoption+ "/" + operation + "/" + fileback + "circ(" + circval +")" +   "smooth3.fits", buffer3
+//Circ2
+circ=2
+circval="2"
+//Function
+buffer3 = 3dspec(buffer1, xpos, ypos, circ, /median)
+writefits, pathtspectra+cubeoption+ "/" + operation + "/" + fileback + "circ(" + circval +")" + ".fits", buffer3
+smooth buffer3, 3
+writefits, pathtspectra+cubeoption+ "/" + operation + "/" + fileback + "circ(" + circval +")" +   "smooth3.fits", buffer3
+
+//Operation
+// Params
+operbuffers="minus"
+fileope="U24("+ operbuffers  +"background)"
+//Circ1
+circ=1
+circval="1"
+//Function
+buffer4 = readfits(pathtspectra+cubeoption+ "/" + operation + "/" + file + "circ(" + circval +")" + ".fits")
+buffer5 = readfits(pathtspectra+cubeoption+ "/" + operation + "/" + fileback + "circ(" + circval +")" + ".fits")
+buffer4 -= resize(buffer5, 3681, 1)
+writefits, pathtspectra+cubeoption+ "/" + operation + "/" + fileope + "circ(" + circval +")" + ".fits", buffer4
+
+
+
