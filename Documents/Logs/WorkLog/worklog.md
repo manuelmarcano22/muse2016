@@ -715,9 +715,30 @@ To try to locate sources seen by Chandra outside of the Core Radius, I have to d
 
 
 ## To-Do
-- [x] ~~Recombine first night to get good combine cube without sharp jumps in wavelength.~~ Did it with 
+- [x] ~~Recombine first night to get good combine cube without sharp jumps in wavelength.~~ Did with overlap 
+
+
+
+# Mar-14-2016 IRAP Roche J042
+
+### FLAT,SKY
+
+For some observations night there are not SKYFLATs in the correct instrument mode (WFM-N). This is the case for 2014-07-29, 2014-07-31. So I had to do the following thing:
+
+- Use SKYFLATS taking at 22h UT on 2014-07-27, for  2014-07-27, 2014-07-28 and 2014-07-30.
+- Use SKYFLATS taking at 22h UT on 2014-08-02, for both 2014-07-31 and 2014-08-01.
+
+All the observations are taking around 1h to 2h UT. 
+
+
+### U24 (LMXB)
+
+To try to see if the emission line seeing for U24 around 640.5 nm, I extracted the spectra around that area with QFitsView to the different datasets (First Night only, Second Night and both Nights), using different options (sum, average, median). This is done with DPUSER script to be run using QFitsView. The script is in the folder misc and with the extension`.dpuser`.
+
+
 
 ##  Questions
+- [ ] Using same SKYFLATS for two different days. 
 - [ ] Correct spectra? Can see the redshift?
 - [ ] He and H$\alpha$ line present, normal? 
 
