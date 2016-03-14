@@ -1,0 +1,6 @@
+muse.muse_exp_combine.filter=white,Johnson_V,Cousins_R,Cousins_I
+muse.muse_exp_combine.save=cube
+muse.muse_exp_combine.lambdamin=6282.5
+muse.muse_exp_combine.lambdamax=7817.5 
+
+

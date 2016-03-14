@@ -1,0 +1,96 @@
+
+Start time     : 2016-03-14T13:15:27
+Program name   : esorex
+Severity level : [ DEBUG ] 
+
+13:15:27 [ INFO  ] : [tid=000] Esorex, version 3.12
+13:15:27 [ INFO  ] : [tid=000] using the libraries: CPL = 6.6.1, CFITSIO = 3.36, WCSLIB = 4.24, FFTW (double and single precision), OPENMP = 201107
+
+13:15:28 [ INFO  ] muse_processing_recipeinfo: [tid=000] MUSE Instrument Pipeline v1.2.1
+13:15:28 [ DEBUG ] muse_processing_recipeinfo: [tid=000] 30 input frames:
+13:15:28 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T01:40:08.386.fits.fz	OBJECT
+13:15:28 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T01:49:48.332.fits.fz	OBJECT
+13:15:28 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T01:52:30.416.fits.fz	OBJECT
+13:15:28 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T01:55:11.343.fits.fz	OBJECT
+13:15:28 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T01:57:54.294.fits.fz	OBJECT
+13:15:28 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T02:08:16.815.fits.fz	OBJECT
+13:15:28 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T02:17:48.130.fits.fz	OBJECT
+13:15:28 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T02:45:30.632.fits.fz	OBJECT
+13:15:28 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T02:48:11.269.fits.fz	OBJECT
+13:15:28 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T02:50:54.362.fits.fz	OBJECT
+13:15:28 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T02:53:37.380.fits.fz	OBJECT
+13:15:28 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T03:00:01.108.fits.fz	OBJECT
+13:15:28 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T03:02:33.060.fits.fz	OBJECT
+13:15:28 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T03:05:07.470.fits.fz	OBJECT
+13:15:28 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T03:07:41.100.fits.fz	OBJECT
+13:15:28 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T03:12:02.161.fits.fz	OBJECT
+13:15:28 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T03:14:33.067.fits.fz	OBJECT
+13:15:28 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T03:17:05.327.fits.fz	OBJECT
+13:15:28 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T03:29:27.242.fits.fz	OBJECT
+13:15:28 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T03:32:00.291.fits.fz	OBJECT
+13:15:28 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T03:34:32.010.fits.fz	OBJECT
+13:15:28 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T03:37:04.200.fits.fz	OBJECT
+13:15:28 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T01:47:20.921.fits.fz	ILLUM
+13:15:28 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-08-01/MASTER_BIAS.fits	MASTER_BIAS
+13:15:28 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-08-01/MASTER_FLAT.fits	MASTER_FLAT
+13:15:28 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-08-01/TRACE_TABLE.fits	TRACE_TABLE
+13:15:28 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-08-01/WAVECAL_TABLE.fits	WAVECAL_TABLE
+13:15:28 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-08-01/cal/geometry_table_wfm_comm2b.fits	GEOMETRY_TABLE
+13:15:28 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-08-01/cal/badpix_table.fits	BADPIX_TABLE
+13:15:28 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-08-01/TWILIGHT_CUBE.fits	TWILIGHT_CUBE
+13:15:28 [ DEBUG ] muse_processing_recipeinfo: [tid=000] non-default parameters:
+13:15:28 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   --merge = true [false]
+13:15:28 [ DEBUG ] muse_processing_recipeinfo: [tid=000] relevant environment variables:
+13:15:28 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   OMP_NUM_THREADS=24
+13:15:54 [ DEBUG ] muse_processing_check_input: [tid=000] Optional frame with tag "MASTER_DARK" not given
+13:16:14 [ DEBUG ] muse_frameset_check_raw: [tid=000] Determine properties of all 23 raw frames of IFU 1
+13:16:16 [WARNING] muse_frameset_check_raw: [tid=000] File "/mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T01:49:48.332.fits.fz" (IFU 1) was taken with a different read-out mode (reference "/mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T01:40:08.386.fits.fz", 1/SCI1.0 instead of 10/FAST)!
+13:16:17 [WARNING] muse_frameset_check_raw: [tid=000] File "/mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T01:52:30.416.fits.fz" (IFU 1) was taken with a different read-out mode (reference "/mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T01:40:08.386.fits.fz", 1/SCI1.0 instead of 10/FAST)!
+13:16:18 [WARNING] muse_frameset_check_raw: [tid=000] File "/mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T01:55:11.343.fits.fz" (IFU 1) was taken with a different read-out mode (reference "/mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T01:40:08.386.fits.fz", 1/SCI1.0 instead of 10/FAST)!
+13:16:18 [WARNING] muse_frameset_check_raw: [tid=000] File "/mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T01:57:54.294.fits.fz" (IFU 1) was taken with a different read-out mode (reference "/mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T01:40:08.386.fits.fz", 1/SCI1.0 instead of 10/FAST)!
+13:16:21 [WARNING] muse_frameset_check_raw: [tid=000] File "/mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T02:45:30.632.fits.fz" (IFU 1) was taken with a different read-out mode (reference "/mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T01:40:08.386.fits.fz", 1/SCI1.0 instead of 10/FAST)!
+13:16:22 [WARNING] muse_frameset_check_raw: [tid=000] File "/mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T02:48:11.269.fits.fz" (IFU 1) was taken with a different read-out mode (reference "/mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T01:40:08.386.fits.fz", 1/SCI1.0 instead of 10/FAST)!
+13:16:23 [WARNING] muse_frameset_check_raw: [tid=000] File "/mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T02:50:54.362.fits.fz" (IFU 1) was taken with a different read-out mode (reference "/mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T01:40:08.386.fits.fz", 1/SCI1.0 instead of 10/FAST)!
+13:16:24 [WARNING] muse_frameset_check_raw: [tid=000] File "/mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T02:53:37.380.fits.fz" (IFU 1) was taken with a different read-out mode (reference "/mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T01:40:08.386.fits.fz", 1/SCI1.0 instead of 10/FAST)!
+13:16:25 [WARNING] muse_frameset_check_raw: [tid=000] File "/mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T03:00:01.108.fits.fz" (IFU 1) was taken with a different read-out mode (reference "/mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T01:40:08.386.fits.fz", 1/SCI1.0 instead of 10/FAST)!
+13:16:25 [WARNING] muse_frameset_check_raw: [tid=000] File "/mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T03:02:33.060.fits.fz" (IFU 1) was taken with a different read-out mode (reference "/mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T01:40:08.386.fits.fz", 1/SCI1.0 instead of 10/FAST)!
+13:16:26 [WARNING] muse_frameset_check_raw: [tid=000] File "/mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T03:05:07.470.fits.fz" (IFU 1) was taken with a different read-out mode (reference "/mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T01:40:08.386.fits.fz", 1/SCI1.0 instead of 10/FAST)!
+13:16:27 [WARNING] muse_frameset_check_raw: [tid=000] File "/mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T03:07:41.100.fits.fz" (IFU 1) was taken with a different read-out mode (reference "/mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T01:40:08.386.fits.fz", 1/SCI1.0 instead of 10/FAST)!
+13:16:28 [WARNING] muse_frameset_check_raw: [tid=000] File "/mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T03:12:02.161.fits.fz" (IFU 1) was taken with a different read-out mode (reference "/mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T01:40:08.386.fits.fz", 1/SCI1.0 instead of 10/FAST)!
+13:16:29 [WARNING] muse_frameset_check_raw: [tid=000] File "/mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T03:14:33.067.fits.fz" (IFU 1) was taken with a different read-out mode (reference "/mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T01:40:08.386.fits.fz", 1/SCI1.0 instead of 10/FAST)!
+13:16:30 [WARNING] muse_frameset_check_raw: [tid=000] File "/mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T03:17:05.327.fits.fz" (IFU 1) was taken with a different read-out mode (reference "/mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T01:40:08.386.fits.fz", 1/SCI1.0 instead of 10/FAST)!
+13:16:31 [WARNING] muse_frameset_check_raw: [tid=000] File "/mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T03:29:27.242.fits.fz" (IFU 1) was taken with a different read-out mode (reference "/mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T01:40:08.386.fits.fz", 1/SCI1.0 instead of 10/FAST)!
+13:16:31 [WARNING] muse_frameset_check_raw: [tid=000] File "/mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T03:32:00.291.fits.fz" (IFU 1) was taken with a different read-out mode (reference "/mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T01:40:08.386.fits.fz", 1/SCI1.0 instead of 10/FAST)!
+13:16:32 [WARNING] muse_frameset_check_raw: [tid=000] File "/mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T03:34:32.010.fits.fz" (IFU 1) was taken with a different read-out mode (reference "/mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T01:40:08.386.fits.fz", 1/SCI1.0 instead of 10/FAST)!
+13:16:33 [WARNING] muse_frameset_check_raw: [tid=000] File "/mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T03:37:04.200.fits.fz" (IFU 1) was taken with a different read-out mode (reference "/mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T01:40:08.386.fits.fz", 1/SCI1.0 instead of 10/FAST)!
+13:16:34 [WARNING] muse_frameset_check_raw: [tid=000] File "/mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T01:47:20.921.fits.fz" (IFU 1) was taken with a different read-out mode (reference "/mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T01:40:08.386.fits.fz", 1/SCI1.0 instead of 10/FAST)!
+13:16:36 [ INFO  ] muse_image_load_from_raw: [tid=000] loaded "/mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T01:40:08.386.fits.fz[CHAN01]" (extension 18)
+13:16:37 [ INFO  ] muse_image_load_from_raw: [tid=000] loaded "/mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T02:08:16.815.fits.fz[CHAN01]" (extension 18)
+13:16:39 [ INFO  ] muse_image_load_from_raw: [tid=000] loaded "/mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T02:17:48.130.fits.fz[CHAN01]" (extension 18)
+13:16:39 [ INFO  ] muse_table_load: [tid=000] loaded BADPIX_TABLE from file "/mnt/data/MUSE/2014-08-01/cal/badpix_table.fits[CHAN01]" (ext 1)
+13:16:40 [ DEBUG ] muse_basicproc_apply_badpix: [tid=000] Applied 9843 bad pixels from BADPIX_TABLE in IFU 1.
+13:16:40 [ DEBUG ] muse_basicproc_check_saturation: [tid=000] Raw exposure 1 in IFU 1 (0 of 17909760 pixels saturated)!
+13:16:41 [ DEBUG ] muse_basicproc_check_saturation: [tid=000] Raw exposure 2 in IFU 1 (0 of 17909760 pixels saturated)!
+13:16:42 [ DEBUG ] muse_basicproc_check_saturation: [tid=000] Raw exposure 3 in IFU 1 (0 of 17909760 pixels saturated)!
+13:16:42 [ DEBUG ] muse_quadrants_overscan_stats: [tid=000] Using DCR cosmic ray rejection for overscan statistics (128x32, 3, 2.500000)
+13:16:42 [ DEBUG ] muse_quadrants_overscan_stats: [tid=000] quadrant 1: 1207.741+/-3.586 (h=1208.7+/-3.2; v=1206.8+/-3.7; nrej=0) [dcr]
+13:16:42 [ DEBUG ] muse_quadrants_overscan_stats: [tid=000] quadrant 2: 1207.722+/-3.307 (h=1208.2+/-3.2; v=1207.2+/-3.3; nrej=0) [dcr]
+13:16:42 [ DEBUG ] muse_quadrants_overscan_stats: [tid=000] quadrant 3: 1207.649+/-3.493 (h=1208.6+/-3.1; v=1206.7+/-3.6; nrej=0) [dcr]
+13:16:42 [ DEBUG ] muse_quadrants_overscan_stats: [tid=000] quadrant 4: 1209.599+/-3.443 (h=1210.0+/-3.4; v=1209.2+/-3.5; nrej=0) [dcr]
+13:16:42 [ DEBUG ] muse_quadrants_overscan_stats: [tid=000] Using DCR cosmic ray rejection for overscan statistics (128x32, 3, 2.500000)
+13:16:42 [ DEBUG ] muse_quadrants_overscan_stats: [tid=000] quadrant 1: 1208.141+/-3.550 (h=1209.0+/-3.2; v=1207.3+/-3.7; nrej=0) [dcr]
+13:16:42 [ DEBUG ] muse_quadrants_overscan_stats: [tid=000] quadrant 2: 1208.244+/-3.295 (h=1208.7+/-3.2; v=1207.8+/-3.3; nrej=0) [dcr]
+13:16:42 [ DEBUG ] muse_quadrants_overscan_stats: [tid=000] quadrant 3: 1208.010+/-3.451 (h=1209.0+/-3.0; v=1207.1+/-3.6; nrej=0) [dcr]
+13:16:42 [ DEBUG ] muse_quadrants_overscan_stats: [tid=000] quadrant 4: 1210.002+/-3.428 (h=1210.4+/-3.4; v=1209.6+/-3.4; nrej=0) [dcr]
+13:16:42 [ DEBUG ] muse_quadrants_overscan_stats: [tid=000] Using DCR cosmic ray rejection for overscan statistics (128x32, 3, 2.500000)
+13:16:42 [ DEBUG ] muse_quadrants_overscan_stats: [tid=000] quadrant 1: 1208.342+/-3.573 (h=1209.3+/-3.2; v=1207.4+/-3.7; nrej=0) [dcr]
+13:16:42 [ DEBUG ] muse_quadrants_overscan_stats: [tid=000] quadrant 2: 1208.599+/-3.309 (h=1209.1+/-3.2; v=1208.1+/-3.3; nrej=0) [dcr]
+13:16:42 [ DEBUG ] muse_quadrants_overscan_stats: [tid=000] quadrant 3: 1208.316+/-3.484 (h=1209.3+/-3.0; v=1207.3+/-3.6; nrej=0) [dcr]
+13:16:42 [ DEBUG ] muse_quadrants_overscan_stats: [tid=000] quadrant 4: 1210.209+/-3.439 (h=1210.7+/-3.4; v=1209.8+/-3.5; nrej=0) [dcr]
+13:16:42 [ DEBUG ] muse_basicproc_correct_overscans_vpoly: [tid=000] vpoly: vpoly (vorder=5, frms=1.010000, fchisq=1.040000, ignore=3, sigma=30.000)
+13:16:44 [ INFO  ] muse_basicproc_apply_bias: [tid=000] Bias correction in IFU 1 using "/mnt/data/MUSE/2014-08-01/MASTER_BIAS.fits[CHAN01.DATA]"
+13:16:44 [ DEBUG ] muse_basicproc_apply_bias: [tid=000] overscan parameters between MASTER_BIAS and given parameters nicely match
+13:16:44 [ ERROR ] muse_basicproc_verify_setup: [tid=000] Read-out mode of "/mnt/data/MUSE/2014-08-01/MUSE.2014-08-02T01:40:08.386.fits.fz" (10: FAST) and "/mnt/data/MUSE/2014-08-01/MASTER_BIAS.fits" (1: SCI1.0) does not match
+13:16:44 [ ERROR ] muse_cplerrorstate_dump_some: [tid=000] Dumping the 1 most recent error(s) out of a total of 1 errors:
+13:16:44 [ ERROR ] muse_cplerrorstate_dump_some: [tid=000]   [1/1] 'An unspecified error' (1) at muse_scibasic_compute:muse_scibasic.c:179
+13:16:44 [ ERROR ] : [tid=000] Execution of recipe 'muse_scibasic' failed, status = -1

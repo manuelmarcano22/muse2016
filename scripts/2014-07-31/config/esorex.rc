@@ -1,0 +1,70 @@
+#
+# Date: 08-Feb-2016 
+#
+#Note: For the data of 2014-07-31
+
+# ESOREX
+
+# --check-sof-exist
+# When TRUE, all the input files must exist  and be readable before calling the
+# recipe. This option may also be set using the environment variable
+# ESOREX_CHECK_SOF_EXIST.
+esorex.caller.check-sof-exist=TRUE
+
+# --log-dir
+# Directory where to place the logfile. This option may also be set using the
+# environment variable ESOREX_LOG_DIR.
+#esorex.caller.log-dir
+#Defined in file params
+
+
+# --no-checksum
+# Disables the computation of the standard FITS product checksums. This option
+# may also be set using the environment variable ESOREX_NO_CHECKSUM.
+#esorex.caller.no-checksum=FALSE
+esorex.caller.no-checksum=TRUE
+
+
+# --mem-check
+# Report on memory status at completion of recipe execution. This option may
+# also be set using the environment variable ESOREX_MEM_CHECK.
+esorex.caller.mem-check=TRUE
+
+
+# --output-dir
+# The directory where the product files should be finally moved to (all products
+# are first created in the current dir). This option may also be set using
+# the environment variable ESOREX_OUTPUT_DIR.
+#esorex.caller.output-dir=
+#Definec in file params
+
+
+# --recipe-dir
+# Directory containing recipe libraries. Note that esorex will recursively
+# search not only the specified directory, but all sub-directories below it
+# as well. Multiple directory heads may be specified, by separating the
+# starting paths with colons (:). This option may also be set using the
+# environment variable ESOREX_PLUGIN_DIR.
+esorex.caller.recipe-dir=/home/detoeuf/muse1.2.1/lib/esopipes-plugins/muse-1.2.1
+#Old
+#esorex.caller.recipe-dir=/opt/reflex/install/lib/esopipes-plugins/muse-1.0.1
+
+
+# --link-dir
+#The directory for the symbolic dir
+#Can be set with variable ESOREX_LINK_DIR
+#esorex.caller.link-dir=/home/detoeuf/Manuel/scripts/2014-08-02/products
+
+# -suppress-link
+# When TRUE, no symbolic link is created to the output product. However, if
+# FALSE, then a symbolic link is created in the directory specified with the
+# option '--link-dir' for each product that is created by the recipe. This
+# option may also be set using the environment variable ESOREX_SUPPRESS_LINK.
+esorex.caller.suppress-link=TRUE
+
+# --time
+# Measure and show the recipe's execution time. This option may also be set
+# using the environment variable ESOREX_TIME.
+esorex.caller.time=TRUE
+
+# End of file
