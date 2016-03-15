@@ -19,14 +19,14 @@
 #bash createtwilight
 
 ##create pixelobjects
-bash createscibasicobject
+#bash createscibasicobject
 
 ##Create std object
-bash createscibasicstd
+#bash createscibasicstd
 
 
 ##Create standard STD response
-bash createstandard
+#bash createstandard
 
 ##create Cube
 bash createscipostcombine
