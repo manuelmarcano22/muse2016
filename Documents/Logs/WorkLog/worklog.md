@@ -733,8 +733,76 @@ All the observations are taking around 1h to 2h UT.
 
 ### U24 (LMXB)
 
-To try to see if the emission line seeing for U24 around 640.5 nm, I extracted the spectra around that area with QFitsView to the different datasets (First Night only, Second Night and both Nights), using different options (sum, average, median). This is done with DPUSER script to be run using QFitsView. The script is in the folder misc and with the extension`.dpuser`.
+To try to see if the emission line seen for U24 around 640.5 nm, I extracted the spectra around that area with QFitsView to the different datasets (First Night only, Second Night and both Nights), using different options (sum, average, median). This is done with DPUSER script to be run using QFitsView. The script is in the folder misc and with the extension`.dpuser`.
 
+It is hard to believe that the 640.5 nm line is the shifted H$\alpha$, the next thing to do is to look at the possible H$\alpha$ emission from the source and look at the [MUSE Exposure Time Calculator](https://www.eso.org/observing/etc/bin/gen/form?INS.NAME=MUSE+INS.MODE=swspectr). Calculate it for a SNR of 3. 
+
+
+
+# Mar-15-2016 IRAP Roche J042
+
+### Building an Image Mosaic
+
+I finally reduced all the nights and have all the IMAGE_FOV for all the data taken for the Globular Cluster. 
+
+![](https://raw.githubusercontent.com/manuelmarcano22/muse2016/master/Documents/images/AllImage.jpeg)
+
+The next step would be to combine all the different exposures of the same field together. 
+
+
+
+# Mar-16-2016 IRAP Roche J042
+
+
+### Pyraf to extract Equivalent Width 
+
+There are several ways to do this. One is using `splot`, then the option **e**. This *measure equivalent width by marking two continuum points around the line to be measured*. I should take the two of them. One at continuum and the other from where it starts. This is since maybe we will have emission inside an absorption line. 
+
+Also can fit a single line profile with `k + (g, l or v)`. Need to mark two continuum points and select the profile. Do this for the continuum and inside absorption line.  
+
+
+Also can do it with d, then g. I cant since it is very low signal. Something like this:
+
+```bash
+splot U24_minusbackground_circ_1_.fits  xmin=6500 xmax=6700 
+```
+
+### Horne Optimal Spectra Extraction
+
+There is a method mention in [Horne86][@SpectraHorne86], the idea is to try to do it with Python. There is an example code in i[](http://www.lpl.arizona.edu/~ianc/python/_modules/spec.html#optimalExtract)
+
+
+
+# Mar-17-2016 IRAP Roche J042
+
+
+### X-Ray Chandra Data
+
+[Dr. Sebastien Guillot](http://www.astro.puc.cl/~sguillot/) gave me two fits of the Chandra X-Ray data taken of NGC6397. They are in the hard drive. 
+
+### ds9 
+
+#### Mosaic 
+
+Open a mosaic in ds9 do:
+
+```bash
+ds9 -mosaic
+```
+
+#### Regions
+
+I can manually select regions in the X-ray data, then export it as a .reg. This way they can be easily displayed overlaying them in an image. 
+
+#### Contours
+
+I can export the contour from the X-Ray and then overlay the contour in the IMAGE_FOV of the MUSE data. 
+
+## To-Do
+- [x] ~~Download data for all days to search CVs outside Core-Radius~~. I downloaded all the data and now is procesced. Need to combine them. 
+
+
+# Mar-18-2016 IRAP Roche J042
 
 
 ##  Questions
@@ -743,8 +811,10 @@ To try to see if the emission line seeing for U24 around 640.5 nm, I extracted t
 - [ ] He and H$\alpha$ line present, normal? 
 
 ## To-Do
+- [ ] Do Optimal Extraction Algorithm in Python. 
+- [ ] Align X-ray data with MUSE. 
 - [ ] Try to figure out weird line in supposed place of the qLMXB U24. 
-- [ ] Download data for all days to search CVs outside Core-Radius
+- [ ] Forget about the line and extract H$alpha$ emmision.
 - [ ] Process spectra in IRAF
 - [ ] Get  the spectra of the CVs.
 - [ ] Get spectra of the He WD. Specially of NF2 since I have one to compared with. 
@@ -755,6 +825,26 @@ To try to see if the emission line seeing for U24 around 640.5 nm, I extracted t
 
 
 # References
+
+*Husser T-O, Kamann S, Dreizler S, Wendt M, Wulff N, Bacon R, et al.* MUSE crowded field 3D spectroscopy of over 12,000 stars in the globular cluster NGC 6397 - I. The first comprehensive spectroscopic HRD of a globular cluster. ArXiv e-prints [Internet]. 2016 Feb 1 [cited 2016 Feb 23];1602:arXiv:1602.01649. Available from: http://adsabs.harvard.edu/abs/2016arXiv160201649H
+
+*Kamann S, Husser T-O, Brinchmann J, Emsellem E, Weilbacher PM, Wisotzki L, et al.* MUSE crowded field 3D spectroscopy of over 12,000 stars in the globular cluster NGC 6397 - II. Probing the internal dynamics and the presence of a central black hole. ArXiv e-prints [Internet]. 2016 Feb 1 [cited 2016 Feb 23];1602:arXiv:1602.01643. Available from: http://adsabs.harvard.edu/abs/2016arXiv160201643K
+
+
+*Soto KT, Lilly SJ, Bacon R, Richard J, Conseil S*. ZAP -- Enhanced PCA Sky Subtraction for Integral Field Spectroscopy. ArXiv e-prints [Internet]. 2016 Feb 1 [cited 2016 Feb 29];1602:arXiv:1602.08037. Available from: http://adsabs.harvard.edu/abs/2016arXiv160208037S
+
+*Cool AM, Grindlay JE, Cohn HN, Lugger PM, Bailyn CD.* Cataclysmic Variables and a New Class of Faint Ultraviolet Stars in the Globular Cluster NGC 6397. ApJ [Internet]. 1998 [cited 2016 Mar 7];508(1):L75. Available from: http://stacks.iop.org/1538-4357/508/i=1/a=L75
+
+*Edmonds PD, Grindlay JE, Cool A, Cohn H, Lugger P, Bailyn C.* Cataclysmic Variables and a Candidate Helium White Dwarf in the Globular Cluster NGC 6397. ApJ [Internet]. 1999 [cited 2016 Feb 23];516(1):250. Available from: http://stacks.iop.org/0004-637X/516/i=1/a=250
+
+*Taylor JM, Grindlay JE, Edmonds PD, Cool AM.* Helium White Dwarfs and BY Draconis Binaries in the Globular Cluster NGC 6397. ApJ [Internet]. 2001 [cited 2016 Mar 7];553(2):L169. Available from: http://stacks.iop.org/1538-4357/553/i=2/a=L169
+
+*Strickler RR, Cool AM, Anderson J, Cohn HN, Lugger PM, Serenelli AM.* Helium-core White Dwarfs in the Globular Cluster NGC 6397. The Astrophysical Journal [Internet]. 2009 Jul 1 [cited 2016 Mar 7];699:40–55. Available from: http://adsabs.harvard.edu/abs/2009ApJ...699...40S
+
+*Benacquista MJ, Downing JMB.* Relativistic Binaries in Globular Clusters. Living Reviews in Relativity [Internet]. 2013 [cited 2016 Mar 7];16. Available from: http://www.livingreviews.org/lrr-2013-4
+
+
+*Horne K.* An optimal extraction algorithm for CCD spectroscopy. Publications of the Astronomical Society of the Pacific [Internet]. 1986 Jun 1 [cited 2016 Mar 16];98:609–17. Available from: http://adsabs.harvard.edu/abs/1986PASP...98..609H
 
 [@musecluster1]: http://dx.doi.org/10.1002/aris.201 "Husser T-O, Kamann S, Dreizler S, Wendt M, Wulff N, Bacon R, et al. MUSE crowded field 3D spectroscopy of over 12,000 stars in the globular cluster NGC 6397 - I. The first comprehensive spectroscopic HRD of a globular cluster. ArXiv e-prints [Internet]. 2016 Feb 1 [cited 2016 Feb 23];1602:arXiv:1602.01649. Available from: http://adsabs.harvard.edu/abs/2016arXiv160201649H"
 
@@ -772,4 +862,7 @@ To try to see if the emission line seeing for U24 around 640.5 nm, I extracted t
 [@strickler09]: http://adsabs.harvard.edu/abs/2009ApJ...699...40S "Strickler RR, Cool AM, Anderson J, Cohn HN, Lugger PM, Serenelli AM. Helium-core White Dwarfs in the Globular Cluster NGC 6397. The Astrophysical Journal [Internet]. 2009 Jul 1 [cited 2016 Mar 7];699:40–55. Available from: http://adsabs.harvard.edu/abs/2009ApJ...699...40S"
 
 [@benacquista13]: http://www.livingreviews.org/lrr-2013-4 "Benacquista MJ, Downing JMB. Relativistic Binaries in Globular Clusters. Living Reviews in Relativity [Internet]. 2013 [cited 2016 Mar 7];16. Available from: http://www.livingreviews.org/lrr-2013-4"
+
+
+[@SpectraHorne86]: http://adsabs.harvard.edu/abs/1986PASP...98..609H "Horne K. An optimal extraction algorithm for CCD spectroscopy. Publications of the Astronomical Society of the Pacific [Internet]. 1986 Jun 1 [cited 2016 Mar 16];98:609–17. Available from: http://adsabs.harvard.edu/abs/1986PASP...98..609H"
 
