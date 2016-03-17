@@ -1,0 +1,165 @@
+
+Start time     : 2016-03-17T01:34:46
+Program name   : esorex
+Severity level : [ DEBUG ] 
+
+01:34:46 [ INFO  ] : [tid=000] Esorex, version 3.12
+01:34:46 [ INFO  ] : [tid=000] using the libraries: CPL = 6.6.1, CFITSIO = 3.36, WCSLIB = 4.24, FFTW (double and single precision), OPENMP = 201107
+
+01:34:46 [ INFO  ] muse_processing_recipeinfo: [tid=000] MUSE Instrument Pipeline v1.2.1
+01:34:46 [ DEBUG ] muse_processing_recipeinfo: [tid=000] 27 input frames:
+01:34:46 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-07-31/PIXTABLE_STD_0001-01.fits	PIXTABLE_STD
+01:34:46 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-07-31/PIXTABLE_STD_0001-02.fits	PIXTABLE_STD
+01:34:46 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-07-31/PIXTABLE_STD_0001-03.fits	PIXTABLE_STD
+01:34:46 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-07-31/PIXTABLE_STD_0001-04.fits	PIXTABLE_STD
+01:34:46 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-07-31/PIXTABLE_STD_0001-05.fits	PIXTABLE_STD
+01:34:46 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-07-31/PIXTABLE_STD_0001-06.fits	PIXTABLE_STD
+01:34:46 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-07-31/PIXTABLE_STD_0001-07.fits	PIXTABLE_STD
+01:34:46 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-07-31/PIXTABLE_STD_0001-08.fits	PIXTABLE_STD
+01:34:46 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-07-31/PIXTABLE_STD_0001-09.fits	PIXTABLE_STD
+01:34:46 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-07-31/PIXTABLE_STD_0001-10.fits	PIXTABLE_STD
+01:34:46 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-07-31/PIXTABLE_STD_0001-11.fits	PIXTABLE_STD
+01:34:46 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-07-31/PIXTABLE_STD_0001-12.fits	PIXTABLE_STD
+01:34:46 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-07-31/PIXTABLE_STD_0001-13.fits	PIXTABLE_STD
+01:34:46 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-07-31/PIXTABLE_STD_0001-14.fits	PIXTABLE_STD
+01:34:46 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-07-31/PIXTABLE_STD_0001-15.fits	PIXTABLE_STD
+01:34:46 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-07-31/PIXTABLE_STD_0001-16.fits	PIXTABLE_STD
+01:34:46 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-07-31/PIXTABLE_STD_0001-17.fits	PIXTABLE_STD
+01:34:46 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-07-31/PIXTABLE_STD_0001-18.fits	PIXTABLE_STD
+01:34:46 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-07-31/PIXTABLE_STD_0001-19.fits	PIXTABLE_STD
+01:34:46 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-07-31/PIXTABLE_STD_0001-20.fits	PIXTABLE_STD
+01:34:46 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-07-31/PIXTABLE_STD_0001-21.fits	PIXTABLE_STD
+01:34:46 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-07-31/PIXTABLE_STD_0001-22.fits	PIXTABLE_STD
+01:34:46 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-07-31/PIXTABLE_STD_0001-23.fits	PIXTABLE_STD
+01:34:46 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-07-31/PIXTABLE_STD_0001-24.fits	PIXTABLE_STD
+01:34:46 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-07-31/cal/extinct_table.fits	EXTINCT_TABLE
+01:34:46 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-07-31/cal/std_flux_table.fits	STD_FLUX_TABLE
+01:34:46 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   /mnt/data/MUSE/2014-07-31/cal/filter_list.fits	FILTER_LIST
+01:34:46 [ DEBUG ] muse_processing_recipeinfo: [tid=000] non-default parameters:
+01:34:46 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   none
+01:34:46 [ DEBUG ] muse_processing_recipeinfo: [tid=000] relevant environment variables:
+01:34:46 [ DEBUG ] muse_processing_recipeinfo: [tid=000]   OMP_NUM_THREADS=24
+01:34:46 [ INFO  ] muse_table_load: [tid=000] loaded EXTINCT_TABLE from file "/mnt/data/MUSE/2014-07-31/cal/extinct_table.fits" (ext 1)
+01:34:46 [ DEBUG ] muse_table_load: [tid=000] No table found for tag TELLURIC_REGIONS
+01:34:46 [ DEBUG ] muse_standard_compute: [tid=000] TELLURIC_REGIONS could not be found or loaded, using defaults
+01:34:46 [ DEBUG ] muse_processing_sort_exposures: [tid=000] Data from exposure  1 is contained in 24 IFUs/0 merged files
+01:34:46 [ INFO  ] muse_postproc_process_exposure: [tid=000] Starting to process exposure 1 (DATE-OBS=2014-07-31T09:36:50.325)
+01:34:46 [ INFO  ] muse_pixtable_load_window: [tid=000] Loading pixel table "/mnt/data/MUSE/2014-07-31/PIXTABLE_STD_0001-01.fits" (image format)
+01:34:48 [ DEBUG ] muse_pixtable_load_merge_channels: [tid=000] loaded pixel table with 13509244 rows
+01:34:48 [ DEBUG ] muse_pixtable_load_merge_channels: [tid=000] reference flat fluxes sky: 1.779367e+11 lamp: 4.251754e+11
+01:34:48 [ INFO  ] muse_pixtable_load_window: [tid=000] Loading pixel table "/mnt/data/MUSE/2014-07-31/PIXTABLE_STD_0001-02.fits" (image format)
+01:34:50 [ DEBUG ] muse_pixtable_load_merge_channels: [tid=000] big pixel table now has 26961566 entries, scale was 9.872366e-01 (flat fluxes sky: 1.756657e+11 lamp: 4.240211e+11)
+01:34:50 [ INFO  ] muse_pixtable_load_window: [tid=000] Loading pixel table "/mnt/data/MUSE/2014-07-31/PIXTABLE_STD_0001-03.fits" (image format)
+01:34:52 [ DEBUG ] muse_pixtable_load_merge_channels: [tid=000] big pixel table now has 40500633 entries, scale was 1.044676e+00 (flat fluxes sky: 1.858862e+11 lamp: 4.463234e+11)
+01:34:52 [ INFO  ] muse_pixtable_load_window: [tid=000] Loading pixel table "/mnt/data/MUSE/2014-07-31/PIXTABLE_STD_0001-04.fits" (image format)
+01:34:56 [ DEBUG ] muse_pixtable_load_merge_channels: [tid=000] big pixel table now has 53962789 entries, scale was 1.031999e+00 (flat fluxes sky: 1.836305e+11 lamp: 4.437268e+11)
+01:34:56 [ INFO  ] muse_pixtable_load_window: [tid=000] Loading pixel table "/mnt/data/MUSE/2014-07-31/PIXTABLE_STD_0001-05.fits" (image format)
+01:34:58 [ DEBUG ] muse_pixtable_load_merge_channels: [tid=000] big pixel table now has 67458009 entries, scale was 1.072253e+00 (flat fluxes sky: 1.907931e+11 lamp: 4.602284e+11)
+01:34:58 [ INFO  ] muse_pixtable_load_window: [tid=000] Loading pixel table "/mnt/data/MUSE/2014-07-31/PIXTABLE_STD_0001-06.fits" (image format)
+01:35:00 [ DEBUG ] muse_pixtable_load_merge_channels: [tid=000] big pixel table now has 80943504 entries, scale was 1.053305e+00 (flat fluxes sky: 1.874217e+11 lamp: 4.544312e+11)
+01:35:00 [ INFO  ] muse_pixtable_load_window: [tid=000] Loading pixel table "/mnt/data/MUSE/2014-07-31/PIXTABLE_STD_0001-07.fits" (image format)
+01:35:02 [ DEBUG ] muse_pixtable_load_merge_channels: [tid=000] big pixel table now has 94424594 entries, scale was 1.056601e+00 (flat fluxes sky: 1.880082e+11 lamp: 4.554810e+11)
+01:35:02 [ INFO  ] muse_pixtable_load_window: [tid=000] Loading pixel table "/mnt/data/MUSE/2014-07-31/PIXTABLE_STD_0001-08.fits" (image format)
+01:35:04 [ DEBUG ] muse_pixtable_load_merge_channels: [tid=000] big pixel table now has 107950908 entries, scale was 1.053400e+00 (flat fluxes sky: 1.874385e+11 lamp: 4.555337e+11)
+01:35:04 [ INFO  ] muse_pixtable_load_window: [tid=000] Loading pixel table "/mnt/data/MUSE/2014-07-31/PIXTABLE_STD_0001-09.fits" (image format)
+01:35:06 [ DEBUG ] muse_pixtable_load_merge_channels: [tid=000] big pixel table now has 121458668 entries, scale was 1.065618e+00 (flat fluxes sky: 1.896126e+11 lamp: 4.602403e+11)
+01:35:06 [ INFO  ] muse_pixtable_load_window: [tid=000] Loading pixel table "/mnt/data/MUSE/2014-07-31/PIXTABLE_STD_0001-10.fits" (image format)
+01:35:08 [ DEBUG ] muse_pixtable_load_merge_channels: [tid=000] big pixel table now has 134941843 entries, scale was 1.082747e+00 (flat fluxes sky: 1.926606e+11 lamp: 4.684105e+11)
+01:35:08 [ INFO  ] muse_pixtable_load_window: [tid=000] Loading pixel table "/mnt/data/MUSE/2014-07-31/PIXTABLE_STD_0001-11.fits" (image format)
+01:35:10 [ DEBUG ] muse_pixtable_load_merge_channels: [tid=000] big pixel table now has 148452710 entries, scale was 1.076196e+00 (flat fluxes sky: 1.914947e+11 lamp: 4.651172e+11)
+01:35:10 [ INFO  ] muse_pixtable_load_window: [tid=000] Loading pixel table "/mnt/data/MUSE/2014-07-31/PIXTABLE_STD_0001-12.fits" (image format)
+01:35:12 [ DEBUG ] muse_pixtable_load_merge_channels: [tid=000] big pixel table now has 161939888 entries, scale was 1.080086e+00 (flat fluxes sky: 1.921870e+11 lamp: 4.688106e+11)
+01:35:12 [ INFO  ] muse_pixtable_load_window: [tid=000] Loading pixel table "/mnt/data/MUSE/2014-07-31/PIXTABLE_STD_0001-13.fits" (image format)
+01:35:14 [ DEBUG ] muse_pixtable_load_merge_channels: [tid=000] big pixel table now has 175455160 entries, scale was 1.105077e+00 (flat fluxes sky: 1.966338e+11 lamp: 4.789959e+11)
+01:35:14 [ INFO  ] muse_pixtable_load_window: [tid=000] Loading pixel table "/mnt/data/MUSE/2014-07-31/PIXTABLE_STD_0001-14.fits" (image format)
+01:35:17 [ DEBUG ] muse_pixtable_load_merge_channels: [tid=000] big pixel table now has 188990247 entries, scale was 1.116873e+00 (flat fluxes sky: 1.987327e+11 lamp: 4.841559e+11)
+01:35:17 [ INFO  ] muse_pixtable_load_window: [tid=000] Loading pixel table "/mnt/data/MUSE/2014-07-31/PIXTABLE_STD_0001-15.fits" (image format)
+01:35:19 [ DEBUG ] muse_pixtable_load_merge_channels: [tid=000] big pixel table now has 202493943 entries, scale was 1.088628e+00 (flat fluxes sky: 1.937069e+11 lamp: 4.721990e+11)
+01:35:19 [ INFO  ] muse_pixtable_load_window: [tid=000] Loading pixel table "/mnt/data/MUSE/2014-07-31/PIXTABLE_STD_0001-16.fits" (image format)
+01:35:21 [ DEBUG ] muse_pixtable_load_merge_channels: [tid=000] big pixel table now has 215980752 entries, scale was 1.050762e+00 (flat fluxes sky: 1.869692e+11 lamp: 4.570932e+11)
+01:35:21 [ INFO  ] muse_pixtable_load_window: [tid=000] Loading pixel table "/mnt/data/MUSE/2014-07-31/PIXTABLE_STD_0001-17.fits" (image format)
+01:35:23 [ DEBUG ] muse_pixtable_load_merge_channels: [tid=000] big pixel table now has 229451706 entries, scale was 1.094507e+00 (flat fluxes sky: 1.947530e+11 lamp: 4.773725e+11)
+01:35:23 [ INFO  ] muse_pixtable_load_window: [tid=000] Loading pixel table "/mnt/data/MUSE/2014-07-31/PIXTABLE_STD_0001-18.fits" (image format)
+01:35:25 [ DEBUG ] muse_pixtable_load_merge_channels: [tid=000] big pixel table now has 242974995 entries, scale was 1.099508e+00 (flat fluxes sky: 1.956428e+11 lamp: 4.783983e+11)
+01:35:25 [ INFO  ] muse_pixtable_load_window: [tid=000] Loading pixel table "/mnt/data/MUSE/2014-07-31/PIXTABLE_STD_0001-19.fits" (image format)
+01:35:27 [ DEBUG ] muse_pixtable_load_merge_channels: [tid=000] big pixel table now has 256464832 entries, scale was 1.098863e+00 (flat fluxes sky: 1.955280e+11 lamp: 4.791102e+11)
+01:35:27 [ INFO  ] muse_pixtable_load_window: [tid=000] Loading pixel table "/mnt/data/MUSE/2014-07-31/PIXTABLE_STD_0001-20.fits" (image format)
+01:35:30 [ DEBUG ] muse_pixtable_load_merge_channels: [tid=000] big pixel table now has 269963366 entries, scale was 1.109836e+00 (flat fluxes sky: 1.974807e+11 lamp: 4.843960e+11)
+01:35:30 [ INFO  ] muse_pixtable_load_window: [tid=000] Loading pixel table "/mnt/data/MUSE/2014-07-31/PIXTABLE_STD_0001-21.fits" (image format)
+01:35:32 [ DEBUG ] muse_pixtable_load_merge_channels: [tid=000] big pixel table now has 283452884 entries, scale was 1.101156e+00 (flat fluxes sky: 1.959361e+11 lamp: 4.817151e+11)
+01:35:32 [ INFO  ] muse_pixtable_load_window: [tid=000] Loading pixel table "/mnt/data/MUSE/2014-07-31/PIXTABLE_STD_0001-22.fits" (image format)
+01:35:34 [ DEBUG ] muse_pixtable_load_merge_channels: [tid=000] big pixel table now has 296966009 entries, scale was 1.096137e+00 (flat fluxes sky: 1.950431e+11 lamp: 4.780180e+11)
+01:35:34 [ INFO  ] muse_pixtable_load_window: [tid=000] Loading pixel table "/mnt/data/MUSE/2014-07-31/PIXTABLE_STD_0001-23.fits" (image format)
+01:35:36 [ DEBUG ] muse_pixtable_load_merge_channels: [tid=000] big pixel table now has 310467096 entries, scale was 1.058299e+00 (flat fluxes sky: 1.883102e+11 lamp: 4.638098e+11)
+01:35:37 [ INFO  ] muse_pixtable_load_window: [tid=000] Loading pixel table "/mnt/data/MUSE/2014-07-31/PIXTABLE_STD_0001-24.fits" (image format)
+01:35:39 [ DEBUG ] muse_pixtable_load_merge_channels: [tid=000] big pixel table now has 323942363 entries, scale was 1.020974e+00 (flat fluxes sky: 1.816689e+11 lamp: 4.469389e+11)
+01:35:41 [ DEBUG ] muse_astro_airmass: [tid=000] airmass=1.257182 (header 1.249000, 1.266000)
+01:35:41 [ DEBUG ] muse_postproc_process_exposure: [tid=000] WFM detected: starting DAR correction
+01:35:41 [ DEBUG ] muse_astro_airmass: [tid=000] airmass=1.257182 (header 1.249000, 1.266000)
+01:35:41 [ INFO  ] muse_dar_correct: [tid=000] DAR for T=14.98 degC, fp=1.197 mmHg, P=559.0 mmHg, at airmass=1.2572, using ref. wavelength 0.700000 um (Filippenko)
+01:35:43 [ DEBUG ] muse_postproc_process_exposure: [tid=000] DAR correction returned rc=0: 
+01:35:43 [ DEBUG ] muse_postproc_load_nearest: [tid=000] reference coordinates: RA = 3.499952e+02 deg, DEC =-5.165950e+00 deg
+01:35:43 [ DEBUG ] muse_postproc_load_nearest: [tid=000] extension 1 [GD_71]: RA = 8.811506e+01 deg, DEC = 1.588715e+01 deg --> d = 9.920370e+01 deg
+01:35:43 [ DEBUG ] muse_postproc_load_nearest: [tid=000] extension 2 [GD_108]: RA = 1.501969e+02 deg, DEC = -7.558614e+00 deg --> d = 1.565032e+02 deg
+01:35:43 [ DEBUG ] muse_postproc_load_nearest: [tid=000] extension 3 [GD_153]: RA = 1.942597e+02 deg, DEC = 2.203130e+01 deg --> d = 1.510960e+02 deg
+01:35:43 [ DEBUG ] muse_postproc_load_nearest: [tid=000] extension 4 [HD_49798]: RA = 1.020196e+02 deg, DEC = -4.431623e+01 deg --> d = 1.017895e+02 deg
+01:35:43 [ DEBUG ] muse_postproc_load_nearest: [tid=000] extension 5 [CD-32_9927_BAD]: RA = 2.129430e+02 deg, DEC = -3.305397e+01 deg --> d = 1.241878e+02 deg
+01:35:43 [ DEBUG ] muse_postproc_load_nearest: [tid=000] extension 6 [GJ_754.1_A]: RA = 2.901455e+02 deg, DEC = -7.666686e+00 deg --> d = 5.948457e+01 deg
+01:35:43 [ DEBUG ] muse_postproc_load_nearest: [tid=000] extension 7 [LDS_749B]: RA = 3.230677e+02 deg, DEC = 2.540000e-01 deg --> d = 2.743298e+01 deg
+01:35:43 [ DEBUG ] muse_postproc_load_nearest: [tid=000] extension 8 [Feige_110]: RA = 3.499933e+02 deg, DEC = -5.165600e+00 deg --> d = 1.932620e-03 deg
+01:35:43 [ DEBUG ] muse_postproc_load_nearest: [tid=000] extension 9 [LTT_7987]: RA = 3.027369e+02 deg, DEC = -3.021851e+01 deg --> d = 5.099395e+01 deg
+01:35:43 [ DEBUG ] muse_postproc_load_nearest: [tid=000] extension 10 [EG_274]: RA = 2.458910e+02 deg, DEC = -3.922949e+01 deg --> d = 9.753047e+01 deg
+01:35:43 [ DEBUG ] muse_postproc_load_nearest: [tid=000] extension 11 [LTT_3218]: RA = 1.303854e+02 deg, DEC = -3.294278e+01 deg --> d = 1.265086e+02 deg
+01:35:43 [ INFO  ] muse_postproc_load_nearest: [tid=000] Loading "/mnt/data/MUSE/2014-07-31/cal/std_flux_table.fits[Feige_110]" (distance 7.0 arcsec)
+01:35:43 [ INFO  ] muse_flux_reference_table_check: [tid=000] Found HST CALSPEC format on input, converted to MUSE format; average sampling 4.301 Angstrom/bin over MUSE range (assumed vacuum wavelengths on input, converted to air).
+01:35:43 [ DEBUG ] muse_resampling_cube: [tid=000] steps from parameters: 1.00 pix, 1.00 pix, 1.250 Angstrom
+01:35:43 [ INFO  ] muse_resampling_cube: [tid=000] Output cube size 317 x 308 x 3681 (fit to data)
+01:36:21 [ INFO  ] muse_pixgrid_create: [tid=000] pixel grid creation is 63.9% complete, 30.0548s elapsed, ~16.9791s remaining
+01:36:33 [ DEBUG ] muse_pixgrid_create: [tid=000] pixel grid: 317x308x3681, 323942363 pixels total, 11870991 (3.7%) in extension map; took 42.1607s (wall-clock) and 30.74s (CPU) to create
+01:36:33 [ INFO  ] muse_resampling_cube: [tid=000] Using median statistics (25.000 sigma level) for cosmic-ray rejection
+01:36:33 [ DEBUG ] muse_resampling_cube: [tid=000] CR rejection: posang = -0.000000 deg --> DIR_X (no / true / false / false)
+01:43:58 [ INFO  ] muse_resampling_cube: [tid=000] Starting resampling, using method "drizzle" (pixfrac f=1.000,1.000,1.000, loop distance ld=1)
+01:44:35 [ DEBUG ] muse_resampling_cube: [tid=000] resampling took 531.275s (wall-clock) and 36.234s (688.680s CPU, 24 CPUs) for muse_resampling_cube*() alone
+01:44:35 [ DEBUG ] muse_flux_integrate_std: [tid=000] The 50.0 sigma threshold was used to find 1 source
+01:44:35 [ INFO  ] muse_flux_integrate_cube: [tid=000] Moffat profile fits for flux integration
+01:44:35 [ DEBUG ] muse_flux_integrate_cube: [tid=000] Using DIMM seeing of 3.575 pix for reference FWHM
+01:44:45 [ INFO  ] muse_flux_integrate_cube: [tid=000] Half-sizes used for flux integration for source 1: 10.728985 +/- 0.033259 (10.725000) 10.725000..11.200348
+01:44:45 [ DEBUG ] muse_wcs_create_default: [tid=000] found wcslib 4.24, using smallvalue = 0.000000e+00
+01:44:45 [ DEBUG ] muse_wcs_apply_cd: [tid=000] WCS solution: scales 0.200000 / 0.200000 arcsec, angles 0.000000 / 0.000000 deg
+01:44:45 [ DEBUG ] muse_wcs_apply_cd: [tid=000] Updated CD matrix (-0.000000 deg field rotation): -5.555556e-05 0.000000e+00 0.000000e+00 5.555556e-05 (scales 0.200000 / 0.200000 arcsec, angles 0.000000 / 0.000000 deg)
+01:44:45 [ DEBUG ] muse_flux_integrate_cube: [tid=000] Source 01: 194.567,161.847 pix, 349.993306,-5.165597 deg, flux 1.314509e+09 count
+01:44:45 [ INFO  ] muse_flux_integrate_cube: [tid=000] Successful fits in 3681 wavelength planes
+01:44:45 [ DEBUG ] muse_postproc_process_exposure: [tid=000] Flux integration found 1 stars
+01:44:46 [ DEBUG ] muse_flux_response_set_telluric_bands: [tid=000] using builtin regions for telluric bands (7 entries)
+01:44:46 [ DEBUG ] muse_flux_response_compute: [tid=000] distance(1) = 7.029036 arcsec
+01:44:46 [ DEBUG ] muse_flux_response_compute: [tid=000] flux(1) = 1.314509e+09 count
+01:44:46 [ INFO  ] muse_flux_response_compute: [tid=000] Selected the brightest star (1 of 1; 1.315e+09 count) as reference source
+01:44:46 [ DEBUG ] muse_flux_response_telluric: [tid=000] Telluric region 1: 6273.00...6320.00, reference region 6213.00...6380.00
+01:44:46 [ DEBUG ] muse_flux_response_telluric: [tid=000] Telluric region 2: 6864.00...6967.00, reference region 6750.00...7130.00
+01:44:46 [ DEBUG ] muse_flux_response_telluric: [tid=000] Telluric region 3: 7164.00...7325.00, reference region 7070.00...7580.00
+01:44:46 [ DEBUG ] muse_flux_response_telluric: [tid=000] Telluric region 4: 7590.00...7700.00, reference region 7470.00...7830.00
+01:44:46 [ DEBUG ] muse_flux_response_telluric: [tid=000] Telluric region 5: 8131.00...8345.00, reference region 7900.00...8600.00
+01:44:46 [ DEBUG ] muse_flux_response_telluric: [tid=000] Telluric region 6: 8952.00...9028.00, reference region 8850.00...9082.00
+01:44:46 [ DEBUG ] muse_flux_response_telluric: [tid=000] Telluric region 7: 9274.00...9770.00, reference region 9080.00...9263.00
+01:44:46 [ DEBUG ] muse_flux_response_extrapolate: [tid=000] Extrapolated blue end: 4150.0...4744.0 Angstrom (using data from 4750.0...4900.0 Angstrom)
+01:44:46 [ DEBUG ] muse_flux_response_extrapolate: [tid=000] Extrapolated red end: 9354.5...9800.0 Angstrom (using data from 9200.0...9350.0 Angstrom)
+01:44:46 [ INFO  ] muse_flux_get_response_table: [tid=000] Smoothing response curve with piecewise polynomial
+01:44:47 [ DEBUG ] muse_flux_get_response_table_smooth: [tid=000]  smoothing response +/- 15.000 Angstrom between 0.000 and 20000.000 Angstrom
+01:44:47 [ DEBUG ] muse_table_load_filter: [tid=000] White-light integration wanted (filter "white")
+01:44:47 [ DEBUG ] muse_datacube_collapse_filter_buffer: [tid=000] filter wavelength range 4750.0..9300.0A (planes 0..3640)
+01:44:54 [ INFO  ] muse_postproc_qc_fwhm: [tid=000] Computed FWHM QC parameters for 1 of 1 source found down to the 5.0 sigma threshold on plane 1841
+01:44:55 [ INFO  ] muse_processing_save_cube: [tid=000] Saving FITS cube as "DATACUBE_STD_0001.fits"
+01:45:24 [ INFO  ] muse_processing_save_image: [tid=000] Saving image as STD_FLUXES_0001.fits
+01:45:24 [ INFO  ] muse_processing_save_table: [tid=000] Saving table as "STD_RESPONSE_0001.fits"
+01:45:25 [ INFO  ] muse_processing_save_table: [tid=000] Saving table as "STD_TELLURIC_0001.fits"
+01:45:26 [ INFO  ] : [tid=000] Calculating product checksums
+01:45:38 [ INFO  ] : [tid=000] Created product DATACUBE_STD_0001.fits (in place)
+01:45:38 [ INFO  ] : [tid=000] Created product STD_FLUXES_0001.fits (in place)
+01:45:38 [ INFO  ] : [tid=000] Created product STD_RESPONSE_0001.fits (in place)
+01:45:38 [ INFO  ] : [tid=000] Created product STD_TELLURIC_0001.fits (in place)
+01:45:38 [ INFO  ] : [tid=000] 4 products created
+01:45:38 [ INFO  ] : [tid=000] Recipe operation(s) took            652 seconds to complete.
+01:45:38 [ INFO  ] : [tid=000] Total size of 24 raw input frames  =  9073.17 MB
+
+01:45:38 [ INFO  ] : [tid=000] => processing rate of    13.91 MB/sec 
+
