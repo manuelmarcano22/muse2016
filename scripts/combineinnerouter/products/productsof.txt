@@ -1,2 +1,3 @@
-/mnt/data/MUSE/combineinnerouter/CUBEEXPtoshape.fits 2016-03-15 17:49:07.121376051 +0100
+/mnt/data/MUSE/combineinnerouter/CUBEEXPtoshape.fits 2016-03-17 15:01:21.392364167 +0100
+CUBEEXPtoFINAL.fits  Has not been created yet
 CUBEEXPtoFINAL.fits  Has not been created yet
