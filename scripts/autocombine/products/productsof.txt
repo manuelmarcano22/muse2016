@@ -1,1 +1,1 @@
-/mnt/data/MUSE/autocombine/region16/OFFSET_LIST.fits 2016-03-31 22:15:16.178420010 +0200
+/mnt/data/MUSE/autocombine/region19/OFFSET_LIST.fits 2016-03-31 23:20:08.310300140 +0200
