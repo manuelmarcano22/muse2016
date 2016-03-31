@@ -12,11 +12,9 @@ source $scripts/config/params
 
 
 #Variables
-exposure=CenterExposure
+exposure=region34andCenter
 recipe=muse_exp_align
 filesof=align.sof
-initexp=1
-endexp=8 # This is the number of expo of the same region
 
 
 DATA_LOCATION=$DATA_LOCATION/$exposure

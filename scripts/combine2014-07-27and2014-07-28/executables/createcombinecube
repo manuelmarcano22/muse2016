@@ -11,7 +11,7 @@ source $scripts/config/params
 
 
 #Variables
-exposure=CenterExposure
+exposure=region34andCenter
 recipe=muse_exp_combine
 filesof=expcombine.sof
 
@@ -41,7 +41,9 @@ for item in ${lista[*]}
 	do 
 		if [ $item = red ]; 
 		then
-			[[ ! -e EXP$initexp'to'$endexp'shape'*"1.fits" ]] && echo `readlink -f imageshape.fits ` OUTPUT_WCS >> $filesof
+		#	[[ ! -e "newWCSe.fits" ]] && 
+#			echo `readlink -f newWCSe.fits ` OUTPUT_WCS >> $filesof
+echo a
 			
 		fi
 

@@ -1,10 +1,10 @@
-#!/usr/bin/python2
+#!/usr/bin/env python2
 
 from astropy.io import fits
-import os
-os.system('cp EXP2to3shapeIMAGE_FOV_0001.fits newWCS.fits')
+from astropy import wcs
 
-headerco= fits.open('DATACUBE_FINAL_EXP02.fits')
-
-
+datac = fits.open('DATACUBE_FINAL_EXP05.fits')
+datacw = wcs.WCS(datac[1].header)
+im=fits.open('newWCSe.fits')
+imw = wcs.WCS(im[1].header)
 

@@ -1,8 +1,0 @@
-#!/bin/bash
-line=badpix_table.fits
-
-#for i in `ls *`; do sed -i "/$line/s/^/#/" $i; done
-#Can use other delimeter
-#for i in `ls createt*`; do echo $i ; sed  -i "\#esore#s#esorex#$HOME/musepipeline1.2.1/bin/esorex#" $i ; done
-#find executables/ -type f -exec sed  "/2014-07-27/s/2014-07-27/2014-08-01/" {} +
-
