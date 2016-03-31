@@ -1,0 +1,1 @@
+for i in `cat listallwhiteImages.txt`; do name1=$(echo $i | cut -f 5 -d '/'); name2=$(echo $i | cut -f 6 -d '/'); scp detoeuf@kerr.cesr.fr:$i . ; mv $name2 $name1'_'$name2 ; sleep 1s;     done
