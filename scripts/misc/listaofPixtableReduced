@@ -1,0 +1,2 @@
+for i in `ls 2014-0[7,8]-[0-9][1-9]/PIXTABLE_R*`; do echo `readlink -f $i` >> listallPixtableReduced.txt ; done
+
