@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+##
+#Creates two files with all the images and PIXTABLE_REDUCED tables, copy them and rename them. 
+##
+
 #Souce Params file with enviroment variables
 scripts=/home/detoeuf/Manuel/scripts/autocombine
 source $scripts/config/params 

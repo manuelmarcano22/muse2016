@@ -1,4 +1,6 @@
-/mnt/data/MUSE/autocombine/region19/2014-07-30_EXP016IMAGE_FOV_0001.fits IMAGE_FOV
-/mnt/data/MUSE/autocombine/region19/2014-07-30_EXP017IMAGE_FOV_0001.fits IMAGE_FOV
-/mnt/data/MUSE/autocombine/region19/2014-07-30_EXP018IMAGE_FOV_0001.fits IMAGE_FOV
-/mnt/data/MUSE/autocombine/region19/2014-07-30_EXP019IMAGE_FOV_0001.fits IMAGE_FOV
+/mnt/data/MUSE/autocombine/region19/2014-07-30_PIXTABLE_REDUCED_0001_EXP016.fits PIXTABLE_REDUCED
+/mnt/data/MUSE/autocombine/region19/2014-07-30_PIXTABLE_REDUCED_0001_EXP017.fits PIXTABLE_REDUCED
+/mnt/data/MUSE/autocombine/region19/2014-07-30_PIXTABLE_REDUCED_0001_EXP018.fits PIXTABLE_REDUCED
+/mnt/data/MUSE/autocombine/region19/2014-07-30_PIXTABLE_REDUCED_0001_EXP019.fits PIXTABLE_REDUCED
+/mnt/data/MUSE/autocombine/region19/OFFSET_LIST.fits OFFSET_LIST
+/mnt/data/MUSE/autocombine/cal/filter_list.fits FILTER_LIST

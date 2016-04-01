@@ -1,1 +1,16 @@
-/mnt/data/MUSE/autocombine/region19/OFFSET_LIST.fits 2016-03-31 23:20:08.310300140 +0200
+/mnt/data/MUSE/autocombine/region7/OFFSET_LIST.fits 2016-03-31 23:12:17.078314653 +0200
+CUBEEXPtoshape.fits  Has not been created yet
+CUBEEXPtored.fits  Has not been created yet
+CUBEEXPtogreen.fits  Has not been created yet
+CUBEEXPtoblue.fits  Has not been created yet
+CUBEEXPtoFINAL.fits  Has not been created yet
+CUBEEXPtoshape.fits  Has not been created yet
+CUBEEXPtored.fits  Has not been created yet
+CUBEEXPtogreen.fits  Has not been created yet
+CUBEEXPtoblue.fits  Has not been created yet
+CUBEEXPtoFINAL.fits  Has not been created yet
+CUBEEXPtoshape.fits  Has not been created yet
+CUBEEXPtored.fits  Has not been created yet
+CUBEEXPtogreen.fits  Has not been created yet
+CUBEEXPtoblue.fits  Has not been created yet
+CUBEEXPtoFINAL.fits  Has not been created yet

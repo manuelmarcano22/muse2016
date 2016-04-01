@@ -1,4 +1,6 @@
 #!/usr/bin/python2
+
+#Cluster all the images, then creates a folder and move the images and tables group to their folder. 
 from astropy.io import fits
 import re
 import numpy as np
