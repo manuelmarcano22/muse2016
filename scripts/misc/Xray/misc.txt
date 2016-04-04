@@ -1,0 +1,7 @@
+#ds9
+ds9 -scale log -scale minmax EXPtoredIMAGE_FOV_0001.fits -regions load all newreg.reg -crop +17:40:42.794 -53:40:28.47 10 10 wcs fk5
+> shift.txt ; for i in $(seq 0 0.01 3); do ./pythonmatchcoords.py $i ; done ; sort -k4 -n shift.txt > shiftsortnew.txt 
+
+> shift.txt ; for j in $(seq 1 1 13); do  for i in $(seq 0 1 10); do python3 pythonmatchwithxy.py $i $j ; done ; done;  sort -k11 -n shift.txt > shiftsortnew.txt
+
+ > shift.txt ; for j in $(seq 1 1 13); do  for i in $(seq 0 .01 10); do python3 -W"ignore" pythonmatchwithxy.py $i $j ; done ; done;  sort -k11 -n shift.txt > shiftsortnew.txt
