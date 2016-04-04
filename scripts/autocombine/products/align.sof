@@ -1,6 +1,6 @@
-/mnt/data/MUSE/autocombine/region19/2014-07-30_PIXTABLE_REDUCED_0001_EXP016.fits PIXTABLE_REDUCED
-/mnt/data/MUSE/autocombine/region19/2014-07-30_PIXTABLE_REDUCED_0001_EXP017.fits PIXTABLE_REDUCED
-/mnt/data/MUSE/autocombine/region19/2014-07-30_PIXTABLE_REDUCED_0001_EXP018.fits PIXTABLE_REDUCED
-/mnt/data/MUSE/autocombine/region19/2014-07-30_PIXTABLE_REDUCED_0001_EXP019.fits PIXTABLE_REDUCED
-/mnt/data/MUSE/autocombine/region19/OFFSET_LIST.fits OFFSET_LIST
+/mnt/data/MUSE/autocombine/region3/2014-07-31_PIXTABLE_REDUCED_0001_EXP017.fits PIXTABLE_REDUCED
+/mnt/data/MUSE/autocombine/region3/2014-07-31_PIXTABLE_REDUCED_0001_EXP018.fits PIXTABLE_REDUCED
+/mnt/data/MUSE/autocombine/region3/2014-07-31_PIXTABLE_REDUCED_0001_EXP019.fits PIXTABLE_REDUCED
+/mnt/data/MUSE/autocombine/region3/OFFSET_LIST.fits OFFSET_LIST
 /mnt/data/MUSE/autocombine/cal/filter_list.fits FILTER_LIST
+/mnt/data/MUSE/autocombine/region3/DATACUBE_FINAL_EXP018.fits OUTPUT_WCS
