@@ -1,0 +1,16 @@
+./llamar.py --plot U21_nozap_normalized.fits 6558 6563 6568
+./llamar.py --plot U21_nozap_normalized.fits 6563
+
+
+import glob
+import os
+lista1 = glob.glob('*.eps')
+n = [ i.split('.')[0] for i in lista1]
+
+
+for i in lista1:
+    os.system('epstopdf '+str(i))
+lista1 = glob.glob('*.pdf')
+
+for j,i in enumerate(lista1):
+    os.system('pdf2svg '+str(i)+' '+ str(n[j])+'.svg')
