@@ -7,20 +7,22 @@ import pysynphot as S
 from astropy.io import ascii
 import matplotlib.pyplot as plt
 
-def getflux(star):
+def getflux(star,filterband,plot=False):
     cvs = star
     filename=cvs+'spectra.txt'
     tab = ascii.read(filename, names=['wave', 'flux']) 
     wave = tab['wave']  # First column
     flux = tab['flux']*10**(-20)  # Second column
     sp = S.ArraySpectrum(wave=wave, flux=flux, waveunits='angstrom', fluxunits='flam')
-
-    bp_acs = S.ObsBandpass('acs,wfc1,f625w')
+    #bp_acs = S.ObsBandpass('acs,wfc1,f625w')
+    bp_acs = S.ObsBandpass('acs,wfc2,'+str(filterband))
     obstar=S.Observation(sp, bp_acs, force='taper')
     obvega=S.Observation(S.Vega, bp_acs, force='taper')
         
-    flux = -2.5 * np.log10(np.trapz(obstar.flux, x=obstar.wave)
-            /np.trapz(obvega.flux, x = obvega.wave))
+    #flux = -2.5 * np.log10(np.trapz(obstar.flux, x=obstar.wave)
+    flux = -2.5 * np.log10(obstar.integrate(fluxunits='flam')
+            / obvega.integrate(fluxunits='flam'))
+#    flux2 = -2.5 * np.log10(obstar.integrate(fluxunits='flam') - 25 + 12
 #    flux2 = -2.5 * np.log10(np.trapz(obstar.flux *obstar.wave ,x=obstar.wave)
             #/ np.trapz(obvega.flux *  obvega.wave ,x=obvega.wave)) + 25.731 
 #    flux2 = -2.5 * np.log10(np.trapz(obstar.flux  ,x=obstar.wave)) - 25.731 
@@ -28,9 +30,10 @@ def getflux(star):
     plt.semilogy(obstar.wave, obstar.flux, 'k', label=cvs)
     plt.semilogy(obvega.wave, obvega.flux, 'r--', label='Vega')
     plt.xlim(4000,8000)
-#    plt.show()
+    if plot == True:
+        plt.show()
 
-    return flux, obstar, obvega
+    return flux 
 
 #Old way
 #
