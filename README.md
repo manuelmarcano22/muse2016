@@ -1,6 +1,6 @@
 # MUSE Data Reduction 2016
 
-This is the repository for the created code and documents as part of a research project done in Spring 2016 at [IRAP](http://www.irap.omp.eu/en) under the supervision of [Dr. Natalie Webb](http://userpages.irap.omp.eu/~nwebb/).
+This is the repository for the created code and documents as part of a research project done in Spring 2016 at [IRAP](http://www.irap.omp.eu/en) under the supervision of [Dr. Natalie Webb](http://userpages.irap.omp.eu/~nwebb/) and [Dr. Sebastian Guillot](http://www.astro.puc.cl/~sguillot/).
 
 ####  The Reduction of the Data
 
